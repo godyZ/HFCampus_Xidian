@@ -82,6 +82,9 @@
 		0145491C186C19A2007E8C25 = {
 			isa = PBXGroup;
 			children = (
+				0145495F186C19E7007E8C25 /* 通用工具 */,
+				0145495E186C19D2007E8C25 /* 框架工具 */,
+				0145495D186C19C7007E8C25 /* 网络工具 */,
 				0145492E186C19A2007E8C25 /* HFCampus */,
 				0145494D186C19A2007E8C25 /* HFCampusTests */,
 				01454927186C19A2007E8C25 /* Frameworks */,
@@ -150,6 +153,27 @@
 				01454950186C19A2007E8C25 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0145495D186C19C7007E8C25 /* 网络工具 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "网络工具";
+			sourceTree = "<group>";
+		};
+		0145495E186C19D2007E8C25 /* 框架工具 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "框架工具";
+			sourceTree = "<group>";
+		};
+		0145495F186C19E7007E8C25 /* 通用工具 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "通用工具";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
