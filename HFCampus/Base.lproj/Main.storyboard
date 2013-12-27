@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - 每周人物-->
+        <!--Persons Table View Controller - 每周人物-->
         <scene sceneID="eSV-ly-OW9">
             <objects>
-                <tableViewController storyboardIdentifier="personsTableViewController" title="每周人物" id="tCf-Lv-KiI" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="personsTableViewController" title="每周人物" id="tCf-Lv-KiI" customClass="PersonsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SVk-PR-7Pj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="-2530" y="-22"/>
         </scene>
-        <!--Table View Controller - 话题-->
+        <!--Topics Table View Controller - 话题-->
         <scene sceneID="rCJ-Ld-zDp">
             <objects>
-                <tableViewController storyboardIdentifier="topicTableViewController" title="话题" id="Ztz-Ow-Sgu" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="topicTableViewController" title="话题" id="Ztz-Ow-Sgu" customClass="TopicsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dYE-wA-IdT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
         <!--Navigation Controller - 话题类-->
         <scene sceneID="h5I-8h-xfo">
             <objects>
-                <navigationController title="话题类" definesPresentationContext="YES" id="xa6-sp-SVe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="topicsNavigationController" title="话题类" definesPresentationContext="YES" id="xa6-sp-SVe" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="luO-yo-ul2">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -72,7 +72,7 @@
         <!--Navigation Controller - 图片类-->
         <scene sceneID="oe1-PY-Znv">
             <objects>
-                <navigationController title="图片类" definesPresentationContext="YES" id="8K6-YC-8gw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="picturesNavigationController" title="图片类" definesPresentationContext="YES" id="8K6-YC-8gw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WMU-We-tbx">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -106,7 +106,7 @@
         <!--Navigation Controller - 算法类-->
         <scene sceneID="QCo-u2-o47">
             <objects>
-                <navigationController title="算法类" definesPresentationContext="YES" id="ikI-pL-txj" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="algorithmNavigationController" title="算法类" definesPresentationContext="YES" id="ikI-pL-txj" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WzJ-Xf-nL7">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -174,7 +174,7 @@
         <!--Navigation Controller - 人物类-->
         <scene sceneID="CEy-AE-DBR">
             <objects>
-                <navigationController title="人物类" definesPresentationContext="YES" id="x8A-q5-077" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="personsNavigationController" title="人物类" definesPresentationContext="YES" id="x8A-q5-077" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6kk-Jw-fJT">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -189,7 +189,7 @@
         <!--Navigation Controller - 新闻类-->
         <scene sceneID="MUL-XD-bLr">
             <objects>
-                <navigationController title="新闻类" definesPresentationContext="YES" id="2k3-iw-BMf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="newsNavigationController" title="新闻类" definesPresentationContext="YES" id="2k3-iw-BMf" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zOT-FY-fwg">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -205,11 +205,10 @@
             </objects>
             <point key="canvasLocation" x="-3064" y="-696"/>
         </scene>
-        <!--View Controller - 新闻-->
+        <!--News View Controller - 新闻-->
         <scene sceneID="Zrr-5X-Kol">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zQH-Ve-oyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="NewsController" title="新闻" id="0Ux-x2-cYi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsController" title="新闻" id="0Ux-x2-cYi" customClass="NewsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z9h-Wf-619"/>
                         <viewControllerLayoutGuide type="bottom" id="mbh-4G-p5S"/>
@@ -218,11 +217,115 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" label="">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                     </view>
-                    <navigationItem key="navigationItem" id="8Hb-Y8-Naj"/>
+                    <navigationItem key="navigationItem" id="8Hb-Y8-Naj">
+                        <barButtonItem key="backBarButtonItem" title="阿斯蒂芬是的" id="A63-16-3tI"/>
+                    </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQH-Ve-oyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2533" y="-691"/>
+        </scene>
+        <!--News Content Table View Controller-->
+        <scene sceneID="yby-FV-LjA">
+            <objects>
+                <tableViewController storyboardIdentifier="newsContentTVB" id="yCU-7Y-0np" customClass="newsContentTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="FRc-du-LzB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopLineImages" rowHeight="237" id="eud-VP-vSz">
+                                <rect key="frame" x="0.0" y="22" width="320" height="237"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eud-VP-vSz" id="i0A-R0-9lg">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="236"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TopLineTestImage" translatesAutoresizingMaskIntoConstraints="NO" id="x5V-yN-Zn6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="236"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsLines" rowHeight="65" id="8ta-g5-xis">
+                                <rect key="frame" x="0.0" y="259" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="8ta-g5-xis" id="h2f-5G-gKN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中国土豪不为人知的另一面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXs-sH-mG4">
+                                            <rect key="frame" x="92" y="5" width="204" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="西电新闻网  |  12.28" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yi-4q-D5E">
+                                            <rect key="frame" x="92" y="23" width="155" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="吊炸天 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-T7-5c0">
+                                            <rect key="frame" x="92" y="46" width="32" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.92438009509999997" green="0.15091160379999999" blue="0.24022675569999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="牛逼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33G-R6-O3A">
+                                            <rect key="frame" x="129" y="46" width="30" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.36322211139999999" blue="0.36299185249999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="神秘" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiT-nN-DEU">
+                                            <rect key="frame" x="164" y="46" width="32" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="重感情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOx-Qq-WKe">
+                                            <rect key="frame" x="200" y="46" width="32" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.044000257035710977" blue="0.88466341288420269" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newsLineTestImage" translatesAutoresizingMaskIntoConstraints="NO" id="ifV-Eb-5cI">
+                                            <rect key="frame" x="11" y="5" width="73" height="54"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="yCU-7Y-0np" id="OPW-4x-8Eh"/>
+                            <outlet property="delegate" destination="yCU-7Y-0np" id="AnE-Gh-MVp"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FxZ-Cv-EY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2117" y="-696"/>
         </scene>
         <!--Navigation Controller - 注册类-->
         <scene sceneID="Frm-e8-N2P">
@@ -237,7 +340,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOK-Wz-4AL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1670" y="-706"/>
+            <point key="canvasLocation" x="-598" y="-691"/>
         </scene>
         <!--View Controller - 广告-->
         <scene sceneID="3Xl-RL-lxR">
@@ -274,9 +377,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gye-Ls-DuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1193" y="-706"/>
+            <point key="canvasLocation" x="-121" y="-691"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TopLineTestImage" width="1440" height="900"/>
+        <image name="newsLineTestImage" width="600" height="454"/>
+    </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
