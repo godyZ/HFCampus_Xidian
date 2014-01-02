@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../RESTfulEngine/RESTfulEngine.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) RESTfulEngine *restfulEngine;
 
 + (NSInteger)OSVersion;
-
 @end

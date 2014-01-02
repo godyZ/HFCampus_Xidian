@@ -16,7 +16,7 @@
 @property (copy, nonatomic)NSArray *typeArr;  //新闻类别
 @property (copy, nonatomic)NSArray *engTypes; //英文类别  用于填补url地址
 @property (strong, nonatomic)NSMutableArray *menuItems;
--(void)getInforForCell:(NSIndexPath *)indexPath;
+//-(void)getInforForCell:(NSIndexPath *)indexPath;
 
 @end
 
@@ -51,18 +51,23 @@
     
     self.navigationController.navigationBar.barTintColor = colorNavBarTint;
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,200,100)];
-    titleLabel.textAlignment = UITextAlignmentCenter;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:23];
-    titleLabel.text = @"  新闻";
+    titleLabel.text = @"  资讯";
     self.navigationItem.titleView = titleLabel;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenu"] style:UIBarButtonItemStylePlain target:self action:@selector(showLeftMenu)];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Set"] style:UIBarButtonItemStylePlain target:self action:@selector(showRightMenu)];
+   
     
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setTranslucent:YES];  //与AMScrollingNavbar相关
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,6 +97,7 @@
     
     newsContentTableViewController *newsTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"newsContentTVB"];
     newsTVC.newsType = self.engTypes[index];
+    newsTVC.originalNavigationController = self.navigationController;
     return newsTVC;
 }
 
@@ -123,7 +129,7 @@
     
     switch (component) {
         case ViewPagerIndicator:
-            return [[UIColor redColor] colorWithAlphaComponent:0.64];
+            return colorChinaRed;
             break;
         default:
             break;
@@ -139,7 +145,7 @@
     __block UINavigationController *tempNavigationController = NULL;
     
     if (!_sideMenu) {
-        RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"新闻" action:^(RESideMenu *menu, RESideMenuItem *item) {
+        RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"资讯" action:^(RESideMenu *menu, RESideMenuItem *item) {
             tempNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"newsNavigationController"];
             [menu setRootViewController:tempNavigationController];
         }];

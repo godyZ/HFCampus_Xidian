@@ -15,8 +15,35 @@
 
 //常用颜色表
 #define colorNavBarTint [UIColor colorWithRed:219.0f/255.0f green:112.0f/255.0f blue:147.0f/255.0f alpha:1.0f]
+#define colorChinaRed   [UIColor colorWithRed:206.0/255.0 green:16.0/255.0 blue:37.0/255.0 alpha:1.0f]
+
+//高度表
 #define CONETHEIGHT 64
 #define NewsTVCOriginalY 64+30
+#define TopLineCellHeight 195
+#define NewsLineCellHeight 70
+#define LoadMoreCellHeight 40
+
+//网络id
+#define CAMPUS_ID @"10701"
+#define kHiMainURL @"http://58.215.177.233:8000"
+
+#define UMENG_APPKEY  @"512f4ff4527015753300000c"
+#define PLAYDATA_APPKEY @"d0b879d816eb351b"
+
+#define BAIDU_APPKEY  @"9027ac2585273e77ad917850cc6c332b"
+
+#define HICAMPOUS_URL @"58.215.177.233:8000/mobile"
+
+#define LOGIN_URL @"login/"
+#define REGISTER_URL @"register/"
+#define USER_INFO @"user_info"
+
+//本地存储文件
+#define kHiSaveNews @"news.dat"
+#define kHiSavePerson @"person.dat"
+#define kHiSaveAct @"act.dat"
+
 
 
 

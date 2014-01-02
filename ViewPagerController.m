@@ -44,7 +44,7 @@
     _selected = selected;
     
     UILabel *tempLabel = (UILabel *)self.subviews[0];
-    tempLabel.textColor = selected ? [UIColor redColor] :[UIColor blackColor];
+    tempLabel.textColor = selected ? colorChinaRed :[UIColor blackColor];
     
     // Update view as state changed
     [self setNeedsDisplay];
@@ -77,7 +77,7 @@
         // Draw the indicator
         [bezierPath moveToPoint:CGPointMake(0.0 + 10.0, rect.size.height - 1.0)];
         [bezierPath addLineToPoint:CGPointMake(rect.size.width - 10.0, rect.size.height - 1.0)];
-        [bezierPath setLineWidth:2.0];
+        [bezierPath setLineWidth:3.0];
         [self.indicatorColor setStroke];
         [bezierPath stroke];
     }

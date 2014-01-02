@@ -11,5 +11,8 @@
 @interface newsContentTableViewController : UITableViewController
 
 @property (nonatomic, copy) NSString *newsType; //标实是什么类型新闻，并且填充url
+@property (nonatomic, assign) BOOL isNoMore;
+@property (nonatomic, strong) UINavigationController *originalNavigationController;
+
 
 @end
