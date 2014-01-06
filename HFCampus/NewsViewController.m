@@ -56,13 +56,13 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:23];
-    titleLabel.text = @"  资讯";
+    titleLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:24];
+    titleLabel.text = @" 资讯";
     self.navigationItem.titleView = titleLabel;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenu"] style:UIBarButtonItemStylePlain target:self action:@selector(showLeftMenu)];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Set"] style:UIBarButtonItemStylePlain target:self action:@selector(showRightMenu)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"general"] style:UIBarButtonItemStylePlain target:self action:@selector(showRightMenu)];
 }
 
 - (void)viewWillAppear:(BOOL)animated

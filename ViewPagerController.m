@@ -25,6 +25,8 @@
 #define kDefaultContentViewBackgroundColor [UIColor colorWithRed:248.0/255.0 green:248.0/255.0 blue:248.0/255.0 alpha:0.75]//contentViewBacgroundColor
 
 // TabView for tabs, that provides un/selected state indicators
+#pragma mark - TabView
+
 @class TabView;
 
 @interface TabView : UIView
@@ -84,13 +86,31 @@
 }
 @end
 
+#pragma mark - TabScrollView
 
-// ViewPagerController
+@class TabScrollView;
+
+@interface TabScrollView : UIScrollView
+
+@end
+
+@implementation TabScrollView
+
+- (void)drawRect:(CGRect)rect
+{
+
+    
+}
+
+@end
+
+#pragma mark - ViewPagerController
+
 @interface ViewPagerController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property UIPageViewController *pageViewController;
 
-@property UIScrollView *tabsView;           //tabsScrollView
+@property TabScrollView *tabsView;           //tabsScrollView
 @property UIView *contentView;              //only the current contentView
 
 @property NSMutableArray *tabs;             //tabsView Array
@@ -126,6 +146,7 @@
     [super viewDidLoad];
 	
     [self reloadData];
+
 }
 - (void)viewWillLayoutSubviews {
     
@@ -334,7 +355,8 @@
     }
     
     // Add tabsView
-    _tabsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.tabHeight)];
+    _tabsView = [[TabScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.tabHeight)];
+    
     _tabsView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     _tabsView.backgroundColor = self.tabsViewBackgroundColor;
     _tabsView.showsHorizontalScrollIndicator = NO;
@@ -363,6 +385,7 @@
     }
     
     _tabsView.contentSize = CGSizeMake(contentSizeWidth, self.tabHeight);
+    
     
     // Add contentView
     _contentView = [self.view viewWithTag:kPageViewTag];

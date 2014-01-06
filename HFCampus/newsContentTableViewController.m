@@ -104,36 +104,39 @@
 {
     [self.loadMoreIndicatorView startAnimating];
     MenuItem *menuItem = [self.menuItems objectAtIndex:[self.menuItems count]-1];
-    NSString *urlPath = [NSString stringWithFormat:@"list/%@/%@/%@", self.newsType, CAMPUS_ID, menuItem.itemId];
-    [HFcampusDelegate.restfulEngine fetchMenuItemsForPath:urlPath
-                                                onSucceed:^(NSMutableArray *listOfModelObjects) {
-                                                    [self.loadMoreIndicatorView stopAnimating];
-                                                    if([listOfModelObjects count] == 0) //最后一个没有了
-                                                    {
-                                                        self.isNoMore = YES;
-                                                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.menuItems count] inSection:0];
-                                                        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-                                                        [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationFade];
-                                                    }
-                                                    else{     //暂时还有
-                                                        
-                                                        NSUInteger insertStart = [self.menuItems count];
-                                                        [self.menuItems addObjectsFromArray:listOfModelObjects];
-                                                        //插入新增加的列表数据
-                                                        NSMutableArray *insertIndexPaths = [NSMutableArray arrayWithCapacity:listOfModelObjects.count];
-                                                        
-                                                        for (NSUInteger ind = insertStart; ind < insertStart + [listOfModelObjects count]; ind++)
+    if (menuItem.itemId) {
+        NSString *urlPath = [NSString stringWithFormat:@"list/%@/%@/%@", self.newsType, CAMPUS_ID, menuItem.itemId];
+        [HFcampusDelegate.restfulEngine fetchMenuItemsForPath:urlPath
+                                                    onSucceed:^(NSMutableArray *listOfModelObjects) {
+                                                        [self.loadMoreIndicatorView stopAnimating];
+                                                        if([listOfModelObjects count] == 0) //最后一个没有了
                                                         {
-                                                            NSIndexPath *newPath = [NSIndexPath indexPathForRow:ind inSection:0];
-                                                            [insertIndexPaths addObject:newPath];
+                                                            self.isNoMore = YES;
+                                                            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.menuItems count] inSection:0];
+                                                            NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+                                                            [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationFade];
                                                         }
-                                                        //insertPaths时 自动会 reloadTableData, 从menusItems中
-                                                        [self.tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationFade];
-                                                        
-                                                    }
-                                                } onError:^(NSError *engineError) {
-                                                    [UIAlertView showWithError:engineError];
-                                                }];
+                                                        else{     //暂时还有
+                                                            
+                                                            NSUInteger insertStart = [self.menuItems count];
+                                                            [self.menuItems addObjectsFromArray:listOfModelObjects];
+                                                            //插入新增加的列表数据
+                                                            NSMutableArray *insertIndexPaths = [NSMutableArray arrayWithCapacity:listOfModelObjects.count];
+                                                            
+                                                            for (NSUInteger ind = insertStart; ind < insertStart + [listOfModelObjects count]; ind++)
+                                                            {
+                                                                NSIndexPath *newPath = [NSIndexPath indexPathForRow:ind inSection:0];
+                                                                [insertIndexPaths addObject:newPath];
+                                                            }
+                                                            //insertPaths时 自动会 reloadTableData, 从menusItems中
+                                                            [self.tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationFade];
+                                                            
+                                                        }
+                                                    } onError:^(NSError *engineError) {
+                                                        [UIAlertView showWithError:engineError];
+                                                    }];
+    }
+   
 }
 
 #pragma mark - Table view data source
