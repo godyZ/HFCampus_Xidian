@@ -63,6 +63,10 @@
 		01523A081870088E000C729C /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 015239FD1870088E000C729C /* UIButton+WebCache.m */; };
 		01523A091870088E000C729C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 015239FF1870088E000C729C /* UIImageView+WebCache.m */; };
 		01523A0C18713E47000C729C /* NewsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01523A0B18713E47000C729C /* NewsContentViewController.m */; };
+		01D956661879390D00E3948C /* PeronContentImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D956651879390D00E3948C /* PeronContentImageCell.m */; };
+		01D956691879392E00E3948C /* PersonIntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D956681879392E00E3948C /* PersonIntroductionCell.m */; };
+		01D9566F187A96F600E3948C /* DRNRealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9566C187A96F600E3948C /* DRNRealTimeBlurView.m */; };
+		01D95670187A96F600E3948C /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9566E187A96F600E3948C /* UIImage+BoxBlur.m */; };
 		01DCE53418714D52006AD3FE /* AMScrollingNavbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DCE53318714D52006AD3FE /* AMScrollingNavbarViewController.m */; };
 		01DCE5381871518F006AD3FE /* person.html in Resources */ = {isa = PBXBuildFile; fileRef = 01DCE5351871518F006AD3FE /* person.html */; };
 		01DCE5391871518F006AD3FE /* activity.html in Resources */ = {isa = PBXBuildFile; fileRef = 01DCE5361871518F006AD3FE /* activity.html */; };
@@ -71,6 +75,8 @@
 		01DCE54718716356006AD3FE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01DCE54418716356006AD3FE /* SVProgressHUD.bundle */; };
 		01DCE54818716356006AD3FE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DCE54618716356006AD3FE /* SVProgressHUD.m */; };
 		01DCE54E187561D3006AD3FE /* PersonListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DCE54D187561D3006AD3FE /* PersonListCell.m */; };
+		01DCE55118769806006AD3FE /* IndicatorPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DCE55018769806006AD3FE /* IndicatorPersonCell.m */; };
+		01DCE5541876F1C4006AD3FE /* PersonContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DCE5531876F1C4006AD3FE /* PersonContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +195,14 @@
 		015239FF1870088E000C729C /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		01523A0A18713E47000C729C /* NewsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsContentViewController.h; sourceTree = "<group>"; };
 		01523A0B18713E47000C729C /* NewsContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsContentViewController.m; sourceTree = "<group>"; };
+		01D956641879390D00E3948C /* PeronContentImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeronContentImageCell.h; sourceTree = "<group>"; };
+		01D956651879390D00E3948C /* PeronContentImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeronContentImageCell.m; sourceTree = "<group>"; };
+		01D956671879392E00E3948C /* PersonIntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonIntroductionCell.h; sourceTree = "<group>"; };
+		01D956681879392E00E3948C /* PersonIntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonIntroductionCell.m; sourceTree = "<group>"; };
+		01D9566B187A96F600E3948C /* DRNRealTimeBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRNRealTimeBlurView.h; path = realTimeBlurEffect/DRNRealTimeBlurView.h; sourceTree = "<group>"; };
+		01D9566C187A96F600E3948C /* DRNRealTimeBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRNRealTimeBlurView.m; path = realTimeBlurEffect/DRNRealTimeBlurView.m; sourceTree = "<group>"; };
+		01D9566D187A96F600E3948C /* UIImage+BoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+BoxBlur.h"; path = "realTimeBlurEffect/UIImage+BoxBlur.h"; sourceTree = "<group>"; };
+		01D9566E187A96F600E3948C /* UIImage+BoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+BoxBlur.m"; path = "realTimeBlurEffect/UIImage+BoxBlur.m"; sourceTree = "<group>"; };
 		01DCE53218714D52006AD3FE /* AMScrollingNavbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMScrollingNavbarViewController.h; sourceTree = "<group>"; };
 		01DCE53318714D52006AD3FE /* AMScrollingNavbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMScrollingNavbarViewController.m; sourceTree = "<group>"; };
 		01DCE5351871518F006AD3FE /* person.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = person.html; sourceTree = "<group>"; };
@@ -201,6 +215,10 @@
 		01DCE54618716356006AD3FE /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		01DCE54C187561D3006AD3FE /* PersonListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListCell.h; sourceTree = "<group>"; };
 		01DCE54D187561D3006AD3FE /* PersonListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListCell.m; sourceTree = "<group>"; };
+		01DCE54F18769806006AD3FE /* IndicatorPersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorPersonCell.h; sourceTree = "<group>"; };
+		01DCE55018769806006AD3FE /* IndicatorPersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorPersonCell.m; sourceTree = "<group>"; };
+		01DCE5521876F1C4006AD3FE /* PersonContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonContentViewController.h; sourceTree = "<group>"; };
+		01DCE5531876F1C4006AD3FE /* PersonContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +341,7 @@
 		0145495E186C19D2007E8C25 /* 框架布局工具 */ = {
 			isa = PBXGroup;
 			children = (
+				01D9566A187A969400E3948C /* realTimeBlurEffect */,
 				01DCE53118714D25006AD3FE /* AMScrollingNavbar */,
 				0145499F186D6ECD007E8C25 /* 滚动图片框 */,
 				0145498D186C754E007E8C25 /* 滚动新闻栏 */,
@@ -379,8 +398,6 @@
 				01DCE54B187554DC006AD3FE /* 人物Cell */,
 				01DCE54A187554CE006AD3FE /* 人物内容 */,
 				01DCE549187554B3006AD3FE /* 人物列表 */,
-				01454981186C6A8B007E8C25 /* PersonsTableViewController.h */,
-				01454982186C6A8B007E8C25 /* PersonsTableViewController.m */,
 			);
 			name = "人物类";
 			sourceTree = "<group>";
@@ -574,6 +591,28 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		01D95663187938BE00E3948C /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				01D956641879390D00E3948C /* PeronContentImageCell.h */,
+				01D956651879390D00E3948C /* PeronContentImageCell.m */,
+				01D956671879392E00E3948C /* PersonIntroductionCell.h */,
+				01D956681879392E00E3948C /* PersonIntroductionCell.m */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		01D9566A187A969400E3948C /* realTimeBlurEffect */ = {
+			isa = PBXGroup;
+			children = (
+				01D9566B187A96F600E3948C /* DRNRealTimeBlurView.h */,
+				01D9566C187A96F600E3948C /* DRNRealTimeBlurView.m */,
+				01D9566D187A96F600E3948C /* UIImage+BoxBlur.h */,
+				01D9566E187A96F600E3948C /* UIImage+BoxBlur.m */,
+			);
+			name = realTimeBlurEffect;
+			sourceTree = "<group>";
+		};
 		01DCE53118714D25006AD3FE /* AMScrollingNavbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +644,8 @@
 		01DCE549187554B3006AD3FE /* 人物列表 */ = {
 			isa = PBXGroup;
 			children = (
+				01454982186C6A8B007E8C25 /* PersonsTableViewController.m */,
+				01454981186C6A8B007E8C25 /* PersonsTableViewController.h */,
 			);
 			name = "人物列表";
 			sourceTree = "<group>";
@@ -612,6 +653,9 @@
 		01DCE54A187554CE006AD3FE /* 人物内容 */ = {
 			isa = PBXGroup;
 			children = (
+				01D95663187938BE00E3948C /* cell */,
+				01DCE5521876F1C4006AD3FE /* PersonContentViewController.h */,
+				01DCE5531876F1C4006AD3FE /* PersonContentViewController.m */,
 			);
 			name = "人物内容";
 			sourceTree = "<group>";
@@ -621,6 +665,8 @@
 			children = (
 				01DCE54C187561D3006AD3FE /* PersonListCell.h */,
 				01DCE54D187561D3006AD3FE /* PersonListCell.m */,
+				01DCE54F18769806006AD3FE /* IndicatorPersonCell.h */,
+				01DCE55018769806006AD3FE /* IndicatorPersonCell.m */,
 			);
 			name = "人物Cell";
 			sourceTree = "<group>";
@@ -732,12 +778,14 @@
 				01DCE54818716356006AD3FE /* SVProgressHUD.m in Sources */,
 				01DCE54118715599006AD3FE /* FileHelper.m in Sources */,
 				015239E3186EAFB2000C729C /* RESTfulOperation.m in Sources */,
+				01D956661879390D00E3948C /* PeronContentImageCell.m in Sources */,
 				01DCE53418714D52006AD3FE /* AMScrollingNavbarViewController.m in Sources */,
 				0152399A186EA8CF000C729C /* MenuItem.m in Sources */,
 				015239DB186EAE9C000C729C /* Reachability.m in Sources */,
 				015239D7186EADE4000C729C /* MKNetworkEngine.m in Sources */,
 				01523A081870088E000C729C /* UIButton+WebCache.m in Sources */,
 				01454972186C22B9007E8C25 /* REBackgroundView.m in Sources */,
+				01D9566F187A96F600E3948C /* DRNRealTimeBlurView.m in Sources */,
 				01454965186C228F007E8C25 /* AccelerationAnimation.m in Sources */,
 				01454975186C22B9007E8C25 /* RESideMenuItem.m in Sources */,
 				01523A071870088E000C729C /* SDWebImagePrefetcher.m in Sources */,
@@ -749,9 +797,12 @@
 				01523A051870088E000C729C /* SDWebImageDownloaderOperation.m in Sources */,
 				01523A031870088E000C729C /* SDWebImageDecoder.m in Sources */,
 				01523A061870088E000C729C /* SDWebImageManager.m in Sources */,
+				01DCE55118769806006AD3FE /* IndicatorPersonCell.m in Sources */,
 				01454969186C22A1007E8C25 /* UIWindow+RESideMenuExtensions.m in Sources */,
 				015239BD186EAB70000C729C /* NSDictionary+RequestEncoding.m in Sources */,
 				01454983186C6A8B007E8C25 /* PersonsTableViewController.m in Sources */,
+				01D956691879392E00E3948C /* PersonIntroductionCell.m in Sources */,
+				01DCE5541876F1C4006AD3FE /* PersonContentViewController.m in Sources */,
 				015239BE186EAB70000C729C /* NSString+MKNetworkKitAdditions.m in Sources */,
 				01523A091870088E000C729C /* UIImageView+WebCache.m in Sources */,
 				01454939186C19A2007E8C25 /* AppDelegate.m in Sources */,
@@ -763,6 +814,7 @@
 				01454989186C7100007E8C25 /* TopicsTableViewController.m in Sources */,
 				0152399B186EA8CF000C729C /* PeopleItem.m in Sources */,
 				015239BB186EAB70000C729C /* NSData+Base64.m in Sources */,
+				01D95670187A96F600E3948C /* UIImage+BoxBlur.m in Sources */,
 				0145499E186D6529007E8C25 /* NewsLineCell.m in Sources */,
 				015239E9186F07A9000C729C /* IndicatorTableViewCell.m in Sources */,
 				01523999186EA8CF000C729C /* DetailItem.m in Sources */,

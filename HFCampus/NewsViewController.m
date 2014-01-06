@@ -8,6 +8,7 @@
 
 #import "NewsViewController.h"
 #import "newsContentTableViewController.h"
+#import "DRNRealTimeBlurView.h"
 
 
 
@@ -16,6 +17,7 @@
 @property (copy, nonatomic)NSArray *typeArr;  //新闻类别
 @property (copy, nonatomic)NSArray *engTypes; //英文类别  用于填补url地址
 @property (strong, nonatomic)NSMutableArray *menuItems;
+@property (strong, nonatomic)DRNRealTimeBlurView *blurView;
 //-(void)getInforForCell:(NSIndexPath *)indexPath;
 
 @end
@@ -61,8 +63,6 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenu"] style:UIBarButtonItemStylePlain target:self action:@selector(showLeftMenu)];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Set"] style:UIBarButtonItemStylePlain target:self action:@selector(showRightMenu)];
-   
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated

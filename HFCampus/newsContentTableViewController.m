@@ -11,7 +11,6 @@
 #import "NewsLineCell.h"
 #import "TopLineCell.h"
 #import "IndicatorTableViewCell.h"
-#import "UIImageView+WebCache.h"
 #import "NewsContentViewController.h"
 
 @interface newsContentTableViewController () <UIScrollViewDelegate>

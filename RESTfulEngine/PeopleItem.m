@@ -31,6 +31,7 @@
     [aCoder encodeObject:self.person_name forKey:@"person_name"];
     [aCoder encodeObject:self.words forKey:@"words"];
     [aCoder encodeObject:self.time forKey:@"time"];
+    [aCoder encodeObject:self.thumbnail1 forKey:@"thumbnail1"];
     [aCoder encodeObject:self.thumbnail2 forKey:@"thumbnail2"];
      
 }
@@ -41,6 +42,7 @@
              self.person_name = [aDecoder decodeObjectForKey:@"person_name"];
              self.words = [aDecoder decodeObjectForKey:@"words"];
              self.time = [aDecoder decodeObjectForKey:@"time"];
+             self.time = [aDecoder decodeObjectForKey:@"thumbnail1"];
              self.thumbnail2 = [aDecoder decodeObjectForKey:@"thumbnail2"];
          }
     return self;

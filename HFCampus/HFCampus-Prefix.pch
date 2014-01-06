@@ -16,4 +16,5 @@
     #import <Foundation/Foundation.h>
     #import "constVar.h"
     #import "SVProgressHUD.h"
+    #import "UIImageView+WebCache.h"
 #endif

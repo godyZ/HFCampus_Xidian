@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface PersonListCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *personName;
+@property (weak, nonatomic) IBOutlet UILabel *personQuotation;
+@property (weak, nonatomic) IBOutlet UILabel *personPeriod;
+@property (weak, nonatomic) IBOutlet UIImageView *personThumbnail;
+
+
 
 @end

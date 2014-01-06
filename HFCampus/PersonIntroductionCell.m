@@ -1,21 +1,20 @@
 //
-//  PersonListCell.m
+//  PersonIntroductionCell.m
 //  HFCampus
 //
-//  Created by zhangrongjian on 14-1-2.
+//  Created by zhangrongjian on 14-1-5.
 //  Copyright (c) 2014年 zgy. All rights reserved.
 //
 
-#import "PersonListCell.h"
+#import "PersonIntroductionCell.h"
 
-@implementation PersonListCell
+@implementation PersonIntroductionCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.personThumbnail.layer.cornerRadius = 20.0f;
-        self.personThumbnail.layer.masksToBounds = YES;
+        // Initialization code
     }
     return self;
 }
