@@ -10,7 +10,7 @@
 #import "AMScrollingNavbarViewController.h"
 
 
-@interface PersonContentViewController : AMScrollingNavbarViewController<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate>
+@interface PersonContentViewController : AMScrollingNavbarViewController<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *personContentTableView;
 @property (strong, nonatomic) UIImage *personLargeThumbnail;
 @property (copy, nonatomic) NSString *personName;

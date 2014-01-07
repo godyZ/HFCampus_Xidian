@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "AMScrollingNavbarViewController.h"
 
-@interface NewsContentViewController : AMScrollingNavbarViewController
+@interface NewsContentViewController : AMScrollingNavbarViewController<UINavigationControllerDelegate>
 
 @property (strong, nonatomic) MenuItem *item;
 @property (assign, nonatomic) int contentType;  //1.新闻 2.讲座

@@ -7,6 +7,7 @@
 //
 
 #import "EScrollerView.h"
+#import  "DRNRealTimeBlurView.h"
 @implementation EScrollerView
 @synthesize delegate;
 
@@ -65,7 +66,8 @@
         
         
         //说明文字层 page
-        UIView *noteView=[[UIView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - 25,self.bounds.size.width,25)];
+#warning DRNRealTimeBlurView CPU 使用率极高
+        DRNRealTimeBlurView *noteView=[[DRNRealTimeBlurView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - 25,self.bounds.size.width,25)];
         [noteView setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.7]];
         
         float pageControlWidth=(pageCount-2)*10.0f+40.f;
@@ -74,7 +76,7 @@
         pageControl.currentPage=0;
         pageControl.numberOfPages=(pageCount-2);
         pageControl.pageIndicatorTintColor = [UIColor grayColor];
-        pageControl.currentPageIndicatorTintColor = [UIColor darkGrayColor];
+        pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
         [noteView addSubview:pageControl];
         
         //说明文字层 noteTag
@@ -90,7 +92,8 @@
         noteTitle=[[UILabel alloc] initWithFrame:CGRectMake(50, 3, self.frame.size.width-pageControlWidth-15, 20)];
         [noteTitle setText:[titleArray objectAtIndex:0]];
         [noteTitle setBackgroundColor:[UIColor clearColor]];
-        [noteTitle setFont:[UIFont systemFontOfSize:14]];
+        [noteTitle setFont:[UIFont systemFontOfSize:13]];
+        noteTitle.textColor = [UIColor whiteColor];
         [noteView addSubview:noteTitle];
         
         [self addSubview:noteView];

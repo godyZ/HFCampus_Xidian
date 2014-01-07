@@ -10,7 +10,6 @@
 
 @interface AMScrollingNavbarViewController () <UIGestureRecognizerDelegate>
 
-@property (nonatomic, weak)	UIView* scrollableView;
 @property (assign, nonatomic) float lastContentOffset;
 @property (strong, nonatomic) UIPanGestureRecognizer* panGesture;
 @property (strong, nonatomic) UIView* overlay;

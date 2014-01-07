@@ -8,8 +8,12 @@
 
 #import "NewsContentViewController.h"
 #import "FileHelper.h"
+#import "ViewPagerController.h"
 
 @interface NewsContentViewController ()
+
+@property (strong, nonatomic) UINavigationBar *originalBar;
+@property (strong, nonatomic) UINavigationItem *originalItem;
 
 @end
 
@@ -29,6 +33,7 @@
     if (self) {
         self.contentType = 1;
         self.navigationController.navigationBar.tintColor = colorNavBarTint;
+       
     }
     return self;
 }
@@ -48,11 +53,14 @@
             break;
     }
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跟帖" style:UIBarButtonItemStylePlain target:self action:@selector(gentie)];
-    
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.contentWebView];
+    self.originalBar = self.navigationController.navigationBar;
+    self.originalItem = self.navigationItem;
+     self.navigationController.delegate = self;
     [SVProgressHUD showWithStatus:@"加载中..."];
 }
+
 - (void)gentie
 {
     
@@ -154,5 +162,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UINavigationControllerDelegate
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+
+    if ([viewController isKindOfClass:[ViewPagerController class]]) {
+            [SVProgressHUD dismiss];
+        self.navigationController.navigationBar.frame = CGRectMake(0,20, 320, 44);
+          [self checkForPartialScroll];
+
+    
+    }
+}
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+  
+}
+
+
+
+
+
+
 
 @end

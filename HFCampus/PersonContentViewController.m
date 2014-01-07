@@ -54,6 +54,7 @@
     //follow view
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.contentTableView];
+    self.navigationController.delegate = self;
     
     [SVProgressHUD showWithStatus:@"加载中..."];
 }
@@ -164,6 +165,18 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [SVProgressHUD dismiss];
+}
+
+#pragma mark - UINavigationControllerDelegate
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    
+    if ([viewController isKindOfClass:[UITableViewController class]])
+    {
+        self.navigationController.navigationBar.frame = CGRectMake(0, 20, 320, 44);
+        [self checkForPartialScroll];
+    }
+    
 }
 
 @end

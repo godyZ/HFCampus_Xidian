@@ -21,6 +21,11 @@
  *
  * @param scrollableView The UIView where the scrolling is performed.
  */
+
+@property (nonatomic, weak)	UIView* scrollableView;
+
 - (void)followScrollView:(UIView*)scrollableView;
+- (void)checkForPartialScroll;
+
 
 @end
