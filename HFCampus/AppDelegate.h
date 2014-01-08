@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) RESTfulEngine *restfulEngine;
+@property (strong, nonatomic) UINavigationController *globalNewsNavigationController;
+@property (strong, nonatomic) UINavigationController *globalPersonsNavigationController;
 
 + (NSInteger)OSVersion;
 @end

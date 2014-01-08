@@ -134,6 +134,7 @@ const int INTERSTITIAL_STEPS = 99;
     [self hide];
     
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    //window.rootViewController = NULL;
     window.rootViewController = viewController;
    _screenshotView.image = [window re_snapshotWithStatusBar:YES];  //返回过程中就更新下一controller中的view信息
     [window bringSubviewToFront:_backgroundView];

@@ -60,6 +60,10 @@
      self.navigationController.delegate = self;
     [SVProgressHUD showWithStatus:@"加载中..."];
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+}
 
 - (void)gentie
 {
@@ -166,13 +170,12 @@
 #pragma mark - UINavigationControllerDelegate
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-
-    if ([viewController isKindOfClass:[ViewPagerController class]]) {
-            [SVProgressHUD dismiss];
+    //防止回退bug
+    if ([viewController isKindOfClass:[ViewPagerController class]])
+    {
+        [SVProgressHUD dismiss];
         self.navigationController.navigationBar.frame = CGRectMake(0,20, 320, 44);
-          [self checkForPartialScroll];
-
-    
+        [self checkForPartialScroll];
     }
 }
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated

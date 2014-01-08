@@ -229,21 +229,24 @@
 #pragma mark - 显示左边栏
 -(void)showLeftMenu
 {
-    __block UINavigationController *tempNavigationController = NULL;
+//    __block UINavigationController *tempNavigationController = NULL;
     
     if (!_sideMenu) {
         RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"新闻" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            tempNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"newsNavigationController"];
-            [menu setRootViewController:tempNavigationController];
+            if (!HFcampusDelegate.globalNewsNavigationController) {
+                HFcampusDelegate.globalNewsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"newsNavigationController"];
+            }
+            [menu setRootViewController:HFcampusDelegate.globalNewsNavigationController];
         }];
         RESideMenuItem *personsItem = [[RESideMenuItem alloc] initWithTitle:@"人物" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            tempNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"personsNavigationController"];
-            [menu setRootViewController:tempNavigationController];
+            if (!HFcampusDelegate.globalPersonsNavigationController) {
+                HFcampusDelegate.globalPersonsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"personsNavigationController"];
+            }
+            [menu setRootViewController:HFcampusDelegate.globalPersonsNavigationController];
         }];
         RESideMenuItem *topicsItem = [[RESideMenuItem alloc] initWithTitle:@"话题" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            tempNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"topicsNavigationController"];
-            [menu setRootViewController:tempNavigationController];
-            
+            NSLog(@"Item %@", item);
+
         }];
         RESideMenuItem *picturesItem = [[RESideMenuItem alloc] initWithTitle:@"图说" action:^(RESideMenu *menu, RESideMenuItem *item) {
             [menu hide];
