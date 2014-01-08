@@ -215,7 +215,7 @@
     
 #warning this is the wrong time
         NSTimeInterval dateInt = [[item.create_time objectForKey:@"$date"] doubleValue];
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:dateInt];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:dateInt/1000];  //获取的数据多了3个000
         NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
         dateFormater.dateFormat = @"MM-dd";
     

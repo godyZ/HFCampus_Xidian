@@ -85,7 +85,7 @@
     htmlStr = [htmlStr stringByReplacingOccurrencesOfString:@"#title#" withString:contentTitle];
     
     NSTimeInterval dateInt = [[self.item.create_time objectForKey:@"$date"] doubleValue];
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:dateInt];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:dateInt/1000];
     NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
     dateFormater.dateFormat = @"MM月dd日 hh:mm";
     
