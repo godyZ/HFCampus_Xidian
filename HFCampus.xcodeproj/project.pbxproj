@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01010F5D18842A010004D0CE /* FTWCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F5C18842A010004D0CE /* FTWCache.m */; };
 		01454929186C19A2007E8C25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01454928186C19A2007E8C25 /* Foundation.framework */; };
 		0145492B186C19A2007E8C25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0145492A186C19A2007E8C25 /* CoreGraphics.framework */; };
 		0145492D186C19A2007E8C25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0145492C186C19A2007E8C25 /* UIKit.framework */; };
@@ -90,6 +91,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01010F5B18842A010004D0CE /* FTWCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTWCache.h; path = FTWCache/FTWCache.h; sourceTree = "<group>"; };
+		01010F5C18842A010004D0CE /* FTWCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTWCache.m; path = FTWCache/FTWCache.m; sourceTree = "<group>"; };
 		01454925186C19A2007E8C25 /* HFCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HFCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01454928186C19A2007E8C25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0145492A186C19A2007E8C25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -246,6 +249,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01010F5A188429E80004D0CE /* FTWCache */ = {
+			isa = PBXGroup;
+			children = (
+				01010F5B18842A010004D0CE /* FTWCache.h */,
+				01010F5C18842A010004D0CE /* FTWCache.m */,
+			);
+			name = FTWCache;
+			sourceTree = "<group>";
+		};
+		01010F5E18850C1C0004D0CE /* 新闻列表 */ = {
+			isa = PBXGroup;
+			children = (
+				01454992186C7DB1007E8C25 /* newsContentTableViewController.h */,
+				01454993186C7DB1007E8C25 /* newsContentTableViewController.m */,
+			);
+			name = "新闻列表";
+			sourceTree = "<group>";
+		};
 		0145491C186C19A2007E8C25 = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +374,7 @@
 		0145495F186C19E7007E8C25 /* 通用工具 */ = {
 			isa = PBXGroup;
 			children = (
+				01010F5A188429E80004D0CE /* FTWCache */,
 				01DCE54318716356006AD3FE /* SVProgressHUD */,
 				01DCE53B187153B2006AD3FE /* FileHelper */,
 				01454961186C228F007E8C25 /* AccelerationAnimation.h */,
@@ -451,10 +473,9 @@
 		01454991186C7CB8007E8C25 /* 新闻内容 */ = {
 			isa = PBXGroup;
 			children = (
+				01010F5E18850C1C0004D0CE /* 新闻列表 */,
 				015239E4186EAFF9000C729C /* contents(内容View) */,
 				01454998186D64E1007E8C25 /* cells(标题cell) */,
-				01454992186C7DB1007E8C25 /* newsContentTableViewController.h */,
-				01454993186C7DB1007E8C25 /* newsContentTableViewController.m */,
 			);
 			name = "新闻内容";
 			sourceTree = "<group>";
@@ -802,6 +823,7 @@
 				015239BD186EAB70000C729C /* NSDictionary+RequestEncoding.m in Sources */,
 				01454983186C6A8B007E8C25 /* PersonsTableViewController.m in Sources */,
 				01D956691879392E00E3948C /* PersonIntroductionCell.m in Sources */,
+				01010F5D18842A010004D0CE /* FTWCache.m in Sources */,
 				01DCE5541876F1C4006AD3FE /* PersonContentViewController.m in Sources */,
 				015239BE186EAB70000C729C /* NSString+MKNetworkKitAdditions.m in Sources */,
 				01523A091870088E000C729C /* UIImageView+WebCache.m in Sources */,

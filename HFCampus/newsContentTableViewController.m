@@ -49,10 +49,64 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.tintColor = [UIColor redColor];
     [self.refreshControl addTarget:self action:@selector(RefreshViewControlEventValueChanged) forControlEvents:UIControlEventValueChanged];
+    //调用缓存
+    NSData *tableViewCacheData = NULL;
+   
+    //*********根据不同类型咨询读取缓存****************
+    if ([self.newsType isEqualToString: @"news"])
+    {
+        tableViewCacheData = [FTWCache objectForKey:@"新闻缓存"];
+        if (tableViewCacheData)
+        {
+            self.menuItems = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
+        }
+
+    }
+    else if ([self.newsType isEqualToString: @"activity"])
+    {
+        tableViewCacheData = [FTWCache objectForKey:@"活动缓存"];
+        if (tableViewCacheData)
+        {
+            self.menuItems = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
+        }
+    }
+    else if ([self.newsType isEqualToString: @"job"])
+    {
+        tableViewCacheData = [FTWCache objectForKey:@"招聘缓存"];
+        if (tableViewCacheData)
+        {
+            self.menuItems = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
+        }
+    }
+    else if ([self.newsType isEqualToString: @"lecture"])
+    {
+        tableViewCacheData = [FTWCache objectForKey:@"讲座缓存"];
+        if (tableViewCacheData)
+        {
+            self.menuItems = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
+        }
+    }
+    else if ([self.newsType isEqualToString: @"grapevane"])
+    {
+        tableViewCacheData = [FTWCache objectForKey:@"八卦缓存"];
+        if (tableViewCacheData)
+        {
+            self.menuItems = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
+        }
+    }
+    //***********************************************
+   
     [self.tableView reloadData];
     
     [self GetMenuItems];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+
+//    NSData *dataTest = [FTWCache objectForKey:@"新闻测试"];
+//    if (dataTest) {
+//        NSMutableArray *tempArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataTest ];
+//    }
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -70,7 +124,7 @@
 - (void)RefreshViewControlEventValueChanged
 {
     [self GetMenuItems];
-    [self performSelector:@selector(handleData) withObject:nil afterDelay:3];
+    [self performSelector:@selector(handleData) withObject:nil afterDelay:1];
 }
 - (void)handleData
 {
@@ -91,9 +145,45 @@
                                                     self.menuItems = listOfModelBaseObjects;
                                                     if([self.menuItems count] > 0){
                                                         self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+                                                        
                                                         [self.tableView reloadData];
+                                                        
+                                                        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+                                                        dispatch_async(queue, ^{
+                                                            NSData *tableViewCacheData = NULL;
+                                                            //*********根据不同类型写入缓存****************
+                                                            if ([self.newsType isEqualToString: @"news"])
+                                                            {
+                                                                 tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+                                                                [FTWCache setObject:tableViewCacheData forKey:@"新闻缓存"];
+                                                            }
+                                                            else if ([self.newsType isEqualToString: @"activity"])
+                                                            {
+                                                                tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+                                                                [FTWCache setObject:tableViewCacheData forKey:@"活动缓存"];
+                                                            }
+                                                            else if ([self.newsType isEqualToString: @"job"])
+                                                            {
+                                                                tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+                                                                [FTWCache setObject:tableViewCacheData forKey:@"招聘缓存"];
+                                                            }
+                                                            else if ([self.newsType isEqualToString: @"lecture"])
+                                                            {
+                                                                tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+                                                                [FTWCache setObject:tableViewCacheData forKey:@"讲座缓存"];
+                                                            }
+                                                            else if ([self.newsType isEqualToString: @"grapevane"])
+                                                            {
+                                                                tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+                                                                [FTWCache setObject:tableViewCacheData forKey:@"八卦缓存"];
+                                                            }
+                                                            //***********************************************
+
+                                                            
+                                                        });
                                                     }
-                                                } onError:^(NSError *engineError) {
+                                                }
+                                                onError:^(NSError *engineError) {
                                                     
                                                     [UIAlertView showWithError:engineError];
     
@@ -212,8 +302,7 @@
         
         MenuItem *item  = [self.menuItems objectAtIndex:indexPath.row -1 ];
         cell.newsTitle.text = item.title;
-    
-#warning this is the wrong time
+
         NSTimeInterval dateInt = [[item.create_time objectForKey:@"$date"] doubleValue];
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:dateInt/1000];  //获取的数据多了3个000
         NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];

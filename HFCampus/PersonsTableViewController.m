@@ -55,7 +55,12 @@
     self.refreshControl.tintColor = [UIColor redColor];
     [self.refreshControl addTarget:self action:@selector(RefreshViewControlEventValueChanged) forControlEvents:UIControlEventValueChanged];
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;   //无分割线
+    
+    NSData *personTableViewCacheData = [FTWCache objectForKey:@"人物缓存"];   //前十条
+    if (personTableViewCacheData) {
+        self.peopleItems = [NSKeyedUnarchiver unarchiveObjectWithData:personTableViewCacheData];
+    }
     
     [self.tableView reloadData];
     [self GetPersonItems];
@@ -70,7 +75,7 @@
 - (void)RefreshViewControlEventValueChanged
 {
     [self GetPersonItems];
-    [self performSelector:@selector(handleData) withObject:nil afterDelay:3];
+    [self performSelector:@selector(handleData) withObject:nil afterDelay:1];
 }
 - (void)handleData
 {
@@ -92,6 +97,17 @@
                                                           self.peopleItems = [NSMutableArray arrayWithArray:listOfModelObjects];
                                                           self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
                                                           [self.tableView reloadData];   //刷新tableViews
+                                                          
+                                                          //写入缓存
+                                                          dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+                                                          dispatch_async(queue, ^{
+                                                              
+                                                              NSData *personTableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.peopleItems];
+                                                              
+                                                              [FTWCache setObject:personTableViewCacheData forKey:@"人物缓存"];
+                                                          });
+
+                                                          
                                                       }
                                                   } onError:^(NSError *engineError) {
                                                       [UIAlertView showWithError:engineError];

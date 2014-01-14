@@ -17,4 +17,5 @@
     #import "constVar.h"
     #import "SVProgressHUD.h"
     #import "UIImageView+WebCache.h"
+    #import "FTWCache.h"                //缓存
 #endif

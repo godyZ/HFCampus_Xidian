@@ -11,6 +11,10 @@
 #import "DRNRealTimeBlurView.h"
 #import "AppDelegate.h"
 
+typedef enum  //枚举新闻类型
+{
+	NEWS, ACTIVITY, JOB, LECTURE, GRAPEVANE
+} NewsType;
 
 
 @interface NewsViewController () <ViewPagerDataSource, ViewPagerDelegate>  //多个controll控制
@@ -144,7 +148,6 @@
 
 -(void)showLeftMenu
 {
-    __block UINavigationController *tempNavigationController = NULL;
     
     if (!_sideMenu) {
         RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"资讯" action:^(RESideMenu *menu, RESideMenuItem *item) {

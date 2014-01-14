@@ -39,7 +39,7 @@
 
 -(void)EScrollerViewDidClicked:(NSUInteger)index
 {
-    NSLog(@"index--%ld",index);
+    NSLog(@"index--%ld",(unsigned long)index);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
