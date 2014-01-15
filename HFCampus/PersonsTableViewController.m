@@ -269,8 +269,10 @@
             NSLog(@"Item %@", item);
         }];
         RESideMenuItem *algorithmsItem = [[RESideMenuItem alloc] initWithTitle:@"算法" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            [menu hide];
-            NSLog(@"Item %@", item);
+            if (!HFcampusDelegate.globalAlgorithmNavigationController){
+                HFcampusDelegate.globalAlgorithmNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AlgorithmNavigationController"];
+            }
+            [menu setRootViewController:HFcampusDelegate.globalAlgorithmNavigationController];
         }];
         
         RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" action:^(RESideMenu *menu, RESideMenuItem *item) {

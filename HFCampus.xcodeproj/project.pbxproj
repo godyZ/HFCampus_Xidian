@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		01010F5D18842A010004D0CE /* FTWCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F5C18842A010004D0CE /* FTWCache.m */; };
+		01010F691885890D0004D0CE /* STRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F681885890D0004D0CE /* STRootViewController.m */; };
+		01010F711885893A0004D0CE /* STHanoiOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F6C1885893A0004D0CE /* STHanoiOperation.m */; };
+		01010F721885893A0004D0CE /* STHanoiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F6E1885893A0004D0CE /* STHanoiView.m */; };
+		01010F731885893A0004D0CE /* STHanoiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F701885893A0004D0CE /* STHanoiViewController.m */; };
+		01010F7A188589470004D0CE /* STSortOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F75188589470004D0CE /* STSortOperation.m */; };
+		01010F7B188589470004D0CE /* STSortView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F77188589470004D0CE /* STSortView.m */; };
+		01010F7C188589470004D0CE /* STSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F79188589470004D0CE /* STSortViewController.m */; };
+		01010F7F188589510004D0CE /* STCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F7E188589510004D0CE /* STCodeViewController.m */; };
 		01454929186C19A2007E8C25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01454928186C19A2007E8C25 /* Foundation.framework */; };
 		0145492B186C19A2007E8C25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0145492A186C19A2007E8C25 /* CoreGraphics.framework */; };
 		0145492D186C19A2007E8C25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0145492C186C19A2007E8C25 /* UIKit.framework */; };
@@ -93,6 +101,22 @@
 /* Begin PBXFileReference section */
 		01010F5B18842A010004D0CE /* FTWCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTWCache.h; path = FTWCache/FTWCache.h; sourceTree = "<group>"; };
 		01010F5C18842A010004D0CE /* FTWCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTWCache.m; path = FTWCache/FTWCache.m; sourceTree = "<group>"; };
+		01010F671885890D0004D0CE /* STRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STRootViewController.h; path = "算法/STRootViewController.h"; sourceTree = "<group>"; };
+		01010F681885890D0004D0CE /* STRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STRootViewController.m; path = "算法/STRootViewController.m"; sourceTree = "<group>"; };
+		01010F6B1885893A0004D0CE /* STHanoiOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STHanoiOperation.h; path = "算法/STHanoiOperation.h"; sourceTree = "<group>"; };
+		01010F6C1885893A0004D0CE /* STHanoiOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STHanoiOperation.m; path = "算法/STHanoiOperation.m"; sourceTree = "<group>"; };
+		01010F6D1885893A0004D0CE /* STHanoiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STHanoiView.h; path = "算法/STHanoiView.h"; sourceTree = "<group>"; };
+		01010F6E1885893A0004D0CE /* STHanoiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STHanoiView.m; path = "算法/STHanoiView.m"; sourceTree = "<group>"; };
+		01010F6F1885893A0004D0CE /* STHanoiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STHanoiViewController.h; path = "算法/STHanoiViewController.h"; sourceTree = "<group>"; };
+		01010F701885893A0004D0CE /* STHanoiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STHanoiViewController.m; path = "算法/STHanoiViewController.m"; sourceTree = "<group>"; };
+		01010F74188589470004D0CE /* STSortOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STSortOperation.h; path = "算法/STSortOperation.h"; sourceTree = "<group>"; };
+		01010F75188589470004D0CE /* STSortOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STSortOperation.m; path = "算法/STSortOperation.m"; sourceTree = "<group>"; };
+		01010F76188589470004D0CE /* STSortView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STSortView.h; path = "算法/STSortView.h"; sourceTree = "<group>"; };
+		01010F77188589470004D0CE /* STSortView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STSortView.m; path = "算法/STSortView.m"; sourceTree = "<group>"; };
+		01010F78188589470004D0CE /* STSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STSortViewController.h; path = "算法/STSortViewController.h"; sourceTree = "<group>"; };
+		01010F79188589470004D0CE /* STSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STSortViewController.m; path = "算法/STSortViewController.m"; sourceTree = "<group>"; };
+		01010F7D188589510004D0CE /* STCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STCodeViewController.h; path = "算法/STCodeViewController.h"; sourceTree = "<group>"; };
+		01010F7E188589510004D0CE /* STCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STCodeViewController.m; path = "算法/STCodeViewController.m"; sourceTree = "<group>"; };
 		01454925186C19A2007E8C25 /* HFCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HFCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01454928186C19A2007E8C25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0145492A186C19A2007E8C25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -265,6 +289,86 @@
 				01454993186C7DB1007E8C25 /* newsContentTableViewController.m */,
 			);
 			name = "新闻列表";
+			sourceTree = "<group>";
+		};
+		01010F5F1885889E0004D0CE /* 算法列表 */ = {
+			isa = PBXGroup;
+			children = (
+				01010F671885890D0004D0CE /* STRootViewController.h */,
+				01010F681885890D0004D0CE /* STRootViewController.m */,
+			);
+			name = "算法列表";
+			sourceTree = "<group>";
+		};
+		01010F60188588A90004D0CE /* 递归 */ = {
+			isa = PBXGroup;
+			children = (
+				01010F6A188589270004D0CE /* 汉诺塔 */,
+			);
+			name = "递归";
+			sourceTree = "<group>";
+		};
+		01010F61188588B00004D0CE /* 排序 */ = {
+			isa = PBXGroup;
+			children = (
+				01010F74188589470004D0CE /* STSortOperation.h */,
+				01010F75188589470004D0CE /* STSortOperation.m */,
+				01010F76188589470004D0CE /* STSortView.h */,
+				01010F77188589470004D0CE /* STSortView.m */,
+				01010F78188589470004D0CE /* STSortViewController.h */,
+				01010F79188589470004D0CE /* STSortViewController.m */,
+			);
+			name = "排序";
+			sourceTree = "<group>";
+		};
+		01010F62188588B70004D0CE /* 树 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "树";
+			sourceTree = "<group>";
+		};
+		01010F63188588BD0004D0CE /* 图 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "图";
+			sourceTree = "<group>";
+		};
+		01010F64188588C30004D0CE /* 查找 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "查找";
+			sourceTree = "<group>";
+		};
+		01010F65188588CB0004D0CE /* 动态规划 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "动态规划";
+			sourceTree = "<group>";
+		};
+		01010F66188588F40004D0CE /* 代码 */ = {
+			isa = PBXGroup;
+			children = (
+				01010F7D188589510004D0CE /* STCodeViewController.h */,
+				01010F7E188589510004D0CE /* STCodeViewController.m */,
+			);
+			name = "代码";
+			sourceTree = "<group>";
+		};
+		01010F6A188589270004D0CE /* 汉诺塔 */ = {
+			isa = PBXGroup;
+			children = (
+				01010F6B1885893A0004D0CE /* STHanoiOperation.h */,
+				01010F6C1885893A0004D0CE /* STHanoiOperation.m */,
+				01010F6D1885893A0004D0CE /* STHanoiView.h */,
+				01010F6E1885893A0004D0CE /* STHanoiView.m */,
+				01010F6F1885893A0004D0CE /* STHanoiViewController.h */,
+				01010F701885893A0004D0CE /* STHanoiViewController.m */,
+			);
+			name = "汉诺塔";
 			sourceTree = "<group>";
 		};
 		0145491C186C19A2007E8C25 = {
@@ -443,6 +547,14 @@
 		0145497E186C5C6D007E8C25 /* 算法类 */ = {
 			isa = PBXGroup;
 			children = (
+				01010F66188588F40004D0CE /* 代码 */,
+				01010F65188588CB0004D0CE /* 动态规划 */,
+				01010F64188588C30004D0CE /* 查找 */,
+				01010F63188588BD0004D0CE /* 图 */,
+				01010F62188588B70004D0CE /* 树 */,
+				01010F61188588B00004D0CE /* 排序 */,
+				01010F60188588A90004D0CE /* 递归 */,
+				01010F5F1885889E0004D0CE /* 算法列表 */,
 			);
 			name = "算法类";
 			sourceTree = "<group>";
@@ -820,22 +932,28 @@
 				01523A061870088E000C729C /* SDWebImageManager.m in Sources */,
 				01DCE55118769806006AD3FE /* IndicatorPersonCell.m in Sources */,
 				01454969186C22A1007E8C25 /* UIWindow+RESideMenuExtensions.m in Sources */,
+				01010F731885893A0004D0CE /* STHanoiViewController.m in Sources */,
+				01010F7B188589470004D0CE /* STSortView.m in Sources */,
 				015239BD186EAB70000C729C /* NSDictionary+RequestEncoding.m in Sources */,
 				01454983186C6A8B007E8C25 /* PersonsTableViewController.m in Sources */,
 				01D956691879392E00E3948C /* PersonIntroductionCell.m in Sources */,
 				01010F5D18842A010004D0CE /* FTWCache.m in Sources */,
 				01DCE5541876F1C4006AD3FE /* PersonContentViewController.m in Sources */,
 				015239BE186EAB70000C729C /* NSString+MKNetworkKitAdditions.m in Sources */,
+				01010F711885893A0004D0CE /* STHanoiOperation.m in Sources */,
 				01523A091870088E000C729C /* UIImageView+WebCache.m in Sources */,
 				01454939186C19A2007E8C25 /* AppDelegate.m in Sources */,
 				0145499B186D6500007E8C25 /* TopLineCell.m in Sources */,
 				015239E0186EAFA9000C729C /* RESTfulEngine.m in Sources */,
 				01454978186C23CE007E8C25 /* NewsViewController.m in Sources */,
+				01010F7A188589470004D0CE /* STSortOperation.m in Sources */,
 				01454935186C19A2007E8C25 /* main.m in Sources */,
 				0152399C186EA8CF000C729C /* UserItem.m in Sources */,
 				01454989186C7100007E8C25 /* TopicsTableViewController.m in Sources */,
 				0152399B186EA8CF000C729C /* PeopleItem.m in Sources */,
 				015239BB186EAB70000C729C /* NSData+Base64.m in Sources */,
+				01010F7F188589510004D0CE /* STCodeViewController.m in Sources */,
+				01010F691885890D0004D0CE /* STRootViewController.m in Sources */,
 				01D95670187A96F600E3948C /* UIImage+BoxBlur.m in Sources */,
 				0145499E186D6529007E8C25 /* NewsLineCell.m in Sources */,
 				015239E9186F07A9000C729C /* IndicatorTableViewCell.m in Sources */,
@@ -846,8 +964,10 @@
 				01523A001870088E000C729C /* MKAnnotationView+WebCache.m in Sources */,
 				014549A2186D6EF0007E8C25 /* EScrollerView.m in Sources */,
 				015239BC186EAB70000C729C /* NSDate+RFC1123.m in Sources */,
+				01010F721885893A0004D0CE /* STHanoiView.m in Sources */,
 				01DCE54E187561D3006AD3FE /* PersonListCell.m in Sources */,
 				01523A011870088E000C729C /* SDImageCache.m in Sources */,
+				01010F7C188589470004D0CE /* STSortViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

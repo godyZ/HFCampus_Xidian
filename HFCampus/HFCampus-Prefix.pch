@@ -18,4 +18,17 @@
     #import "SVProgressHUD.h"
     #import "UIImageView+WebCache.h"
     #import "FTWCache.h"                //缓存
+
+
+typedef enum STAlgorithmType {
+    
+    STAlgorithmTypeBubbleSort = 1,
+    STAlgorithmTypeSelectSort = 2,
+    STAlgorithmTypeInsertSort = 3,
+    STAlgorithmTypeQuickSort  = 5,
+    
+    STAlgorithmTypeHanoi      = 11,
+    
+} STAlgorithmType;
+
 #endif
