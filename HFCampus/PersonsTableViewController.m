@@ -285,8 +285,11 @@
             [menu hide];
         }];
         RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            NSLog(@"Item %@", item);
-            [menu hide];
+            if (!HFcampusDelegate.globalPhoneSearchNavigationController) {
+                HFcampusDelegate.globalPhoneSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PhoneSearchNavigationController"];
+            }
+            [menu setRootViewController:HFcampusDelegate.globalPhoneSearchNavigationController];
+
         }];
         
         RESideMenuItem *toolsItem = [[RESideMenuItem alloc] initWithTitle:@"工具" action:^(RESideMenu *menu, RESideMenuItem *item) {

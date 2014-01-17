@@ -17,5 +17,11 @@
 @property (strong, nonatomic) UINavigationController *globalPersonsNavigationController; //人物
 @property (strong, nonatomic) UINavigationController *globalAlgorithmNavigationController; //算法
 
+
+//****工具*****
+@property (strong, nonatomic) UINavigationController *globalPhoneSearchNavigationController;
+@property (strong, nonatomic) UINavigationController *globalBooksSearchNavigationController;
+@property (strong, nonatomic) UINavigationController *globalExpressSearchNavigationController;
+
 + (NSInteger)OSVersion;
 @end

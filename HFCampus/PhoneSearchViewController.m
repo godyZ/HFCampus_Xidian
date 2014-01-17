@@ -1,40 +1,26 @@
 //
-//  NewsViewController.m
+//  PhoneSearchViewController.m
 //  HFCampus
 //
-//  Created by zhangrongjian on 13-12-26.
-//  Copyright (c) 2013年 zgy. All rights reserved.
+//  Created by zhangrongjian on 14-1-17.
+//  Copyright (c) 2014年 zgy. All rights reserved.
 //
 
-#import "NewsViewController.h"
-#import "newsContentTableViewController.h"
-#import "DRNRealTimeBlurView.h"
 #import "AppDelegate.h"
+#import "PhoneSearchViewController.h"
+#import "XMLDictionary.h"
 
-typedef enum  //枚举新闻类型
-{
-	NEWS, ACTIVITY, JOB, LECTURE, GRAPEVANE
-} NewsType;
-
-
-@interface NewsViewController () <ViewPagerDataSource, ViewPagerDelegate>  //多个controll控制
-
-@property (copy, nonatomic)NSArray *typeArr;  //新闻类别
-@property (copy, nonatomic)NSArray *engTypes; //英文类别  用于填补url地址
-@property (strong, nonatomic)NSMutableArray *menuItems;
-@property (strong, nonatomic)DRNRealTimeBlurView *blurView;
-//-(void)getInforForCell:(NSIndexPath *)indexPath;
+@interface PhoneSearchViewController ()
 
 @end
 
-@implementation NewsViewController
+@implementation PhoneSearchViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.dataSource = self;
-        self.delegate = self;
+        // Custom initialization
     }
     return self;
 }
@@ -42,38 +28,31 @@ typedef enum  //枚举新闻类型
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.dataSource = self;
-        self.delegate = self;
-        self.typeArr = [NSArray arrayWithObjects:@"新闻",@"活动",@"招聘",@"讲座",@"八卦",nil];
-        self.engTypes = [[NSArray alloc]initWithObjects:@"news",@"activity",@"job",@"lecture",@"grapevane",nil];
-        HFcampusDelegate.globalNewsNavigationController = self.navigationController;
+
     }
     return self;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
+	
     self.navigationController.navigationBar.barTintColor = colorNavBarTint;
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,200,100)];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:24];
-    titleLabel.text = @" 资讯";
+    titleLabel.text = @"电话查询";
     self.navigationItem.titleView = titleLabel;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenu"] style:UIBarButtonItemStylePlain target:self action:@selector(showLeftMenu)];
-
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"general"] style:UIBarButtonItemStylePlain target:self action:@selector(showRightMenu)];
-}
+    
+    [self.phoneTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self SchoolPhone:nil];
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self.navigationController.navigationBar setTranslucent:YES];  //与AMScrollingNavbar相关
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,67 +60,113 @@ typedef enum  //枚举新闻类型
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark - ViewPagerDataSource 填充页面数据
 
-- (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
-    return self.typeArr.count;
-}
-- (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index {
+#pragma mark 功能函数
+-(NSArray *) dataArrayFromType:(NSInteger) type
+{
+    NSString *path =[[NSBundle mainBundle] pathForResource:@"phone_number" ofType:@"xml"];
+    NSDictionary * phoneDic = [NSDictionary dictionaryWithXMLFile:path];
+    NSLog(@"phone_number : %@", phoneDic);
     
-    UILabel *label = [UILabel new];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:15.0];
-    label.text = self.typeArr[index];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor blackColor];
-    [label sizeToFit];
+    NSArray *allArray = [phoneDic objectForKey:@"num"];
+    NSMutableArray *rArray = [[NSMutableArray alloc] initWithCapacity:allArray.count];
     
-    return label;
-}
-
-- (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
-    
-    newsContentTableViewController *newsTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"newsContentTVB"];
-    newsTVC.newsType = self.engTypes[index];
-    newsTVC.originalNavigationController = self.navigationController;
-    return newsTVC;
+    for (int i = 0; i < allArray.count; i++) {
+        if ([[[allArray objectAtIndex:i] objectForKey:@"_type"] integerValue] == type) {
+            [rArray addObject:[allArray objectAtIndex:i]];
+        }
+    }
+    return rArray;
 }
 
-
-#pragma mark - ViewPagerDelegate 修改页面各方面颜色
-
-- (CGFloat)viewPager:(ViewPagerController *)viewPager valueForOption:(ViewPagerOption)option withDefault:(CGFloat)value {//值
-    
-    switch (option) {
-        case ViewPagerOptionStartFromSecondTab:
-            return 0.0;
-            break;
-        case ViewPagerOptionCenterCurrentTab:
-            return 0.0;
-            break;
-        case ViewPagerOptionTabHeight:
-            return 30;
-            break;
-        case ViewPagerOptionTabWidth:
-            return 65;
-            break;
-        default:
-            break;
+-(void)allBtnNoCheck
+{
+    for (int i = 100; i <= 104; i++) {
+        UIButton *btn = (UIButton *)[self.view viewWithTag:i];
+        //[btn setBackgroundImage:[UIImage imageNamed:@"hi_phone_nocheck.png"] forState:UIControlStateNormal];
+        [btn setTintColor:PhoneNoSelectedColor];
     }
     
-    return value;
 }
-- (UIColor *)viewPager:(ViewPagerController *)viewPager colorForComponent:(ViewPagerComponent)component withDefault:(UIColor *)color {//颜色
+
+-(void)btnCheckedWithTag:(NSInteger)tag
+{
+    UIButton *btn = (UIButton *)[self.view viewWithTag:tag];
+    //[btn setBackgroundImage:[UIImage imageNamed:@"hi_phone_checked.png"] forState:UIControlStateNormal];
+    [btn setTintColor:[UIColor redColor]];
+}
+
+- (IBAction)SchoolPhone:(id)sender
+{
+    [self allBtnNoCheck];
+    [self btnCheckedWithTag:100];
+    self.dataArray = [self dataArrayFromType:1];//[HiUserHelper getUserSchool]];
     
-    switch (component) {
-        case ViewPagerIndicator:
-            return colorChinaRed;
-            break;
-        default:
-            break;
+    [self.phoneTableView reloadData];
+}
+
+
+
+- (IBAction)OtherPhoneTouch:(id)sender
+{
+    NSInteger tag = ((UIButton *)sender).tag;
+    
+    [self allBtnNoCheck];
+    [self btnCheckedWithTag:tag];
+    
+    self.dataArray = [self dataArrayFromType:tag];
+    [self.phoneTableView reloadData];
+    
+    //将scrollview 移动到顶部
+    [self.phoneTableView setContentOffset:CGPointMake(0, 0) animated:NO];
+}
+
+
+
+# pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataArray.count;
+}
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellID = @"phoneCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if(!cell)
+    {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        //字体相关
+        //cell.textLabel.highlightedTextColor = [UIColor blackColor];
+        cell.imageView.image = [UIImage imageNamed:@"hiphone.png"];
+        //选择后的背景
+        cell.selectedBackgroundView = [[UIView alloc]initWithFrame:cell.frame];
+        cell.selectedBackgroundView.backgroundColor = kLeftSelectColor;
     }
     
-    return color;
+    cell.textLabel.text = [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"_name"];
+    cell.detailTextLabel.text = [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"__text"];
+    cell.detailTextLabel.textColor = [UIColor grayColor];
+    
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
+}
+
+# pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSString *num = [[NSString alloc] initWithFormat:@"tel://%@", [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"__text"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]];
 }
 
 #pragma mark - 显示左边栏
@@ -164,7 +189,7 @@ typedef enum  //枚举新闻类型
         }];
         RESideMenuItem *topicsItem = [[RESideMenuItem alloc] initWithTitle:@"话题" action:^(RESideMenu *menu, RESideMenuItem *item) {
             NSLog(@"Item %@", item);
-          
+            
         }];
         RESideMenuItem *picturesItem = [[RESideMenuItem alloc] initWithTitle:@"图说" action:^(RESideMenu *menu, RESideMenuItem *item) {
             [menu hide];
@@ -198,7 +223,7 @@ typedef enum  //枚举新闻类型
             NSLog(@"Item %@", item);
         }];
         toolsItem.subItems  = @[booksSearcher, expressSearcher, phonesSearcher];
-     
+        
         RESideMenuItem *aboutItem = [[RESideMenuItem alloc] initWithTitle:@"关于" action:^(RESideMenu *menu, RESideMenuItem *item) {
             
         }];
@@ -215,4 +240,5 @@ typedef enum  //枚举新闻类型
 {
     
 }
+
 @end

@@ -72,6 +72,9 @@
 		01523A081870088E000C729C /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 015239FD1870088E000C729C /* UIButton+WebCache.m */; };
 		01523A091870088E000C729C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 015239FF1870088E000C729C /* UIImageView+WebCache.m */; };
 		01523A0C18713E47000C729C /* NewsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01523A0B18713E47000C729C /* NewsContentViewController.m */; };
+		017968A81888E70C0015B254 /* PhoneSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017968A71888E70C0015B254 /* PhoneSearchViewController.m */; };
+		017968AA1889001C0015B254 /* phone_number.xml in Resources */ = {isa = PBXBuildFile; fileRef = 017968A91889001C0015B254 /* phone_number.xml */; };
+		017968AE188903D00015B254 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 017968AD188903D00015B254 /* XMLDictionary.m */; };
 		01D956661879390D00E3948C /* PeronContentImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D956651879390D00E3948C /* PeronContentImageCell.m */; };
 		01D956691879392E00E3948C /* PersonIntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D956681879392E00E3948C /* PersonIntroductionCell.m */; };
 		01D9566F187A96F600E3948C /* DRNRealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9566C187A96F600E3948C /* DRNRealTimeBlurView.m */; };
@@ -222,6 +225,11 @@
 		015239FF1870088E000C729C /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		01523A0A18713E47000C729C /* NewsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsContentViewController.h; sourceTree = "<group>"; };
 		01523A0B18713E47000C729C /* NewsContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsContentViewController.m; sourceTree = "<group>"; };
+		017968A61888E70C0015B254 /* PhoneSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneSearchViewController.h; sourceTree = "<group>"; };
+		017968A71888E70C0015B254 /* PhoneSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneSearchViewController.m; sourceTree = "<group>"; };
+		017968A91889001C0015B254 /* phone_number.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = phone_number.xml; sourceTree = "<group>"; };
+		017968AC188903D00015B254 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLDictionary.h; path = XMLDictionary/XMLDictionary.h; sourceTree = "<group>"; };
+		017968AD188903D00015B254 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLDictionary.m; path = XMLDictionary/XMLDictionary.m; sourceTree = "<group>"; };
 		01D956641879390D00E3948C /* PeronContentImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeronContentImageCell.h; sourceTree = "<group>"; };
 		01D956651879390D00E3948C /* PeronContentImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeronContentImageCell.m; sourceTree = "<group>"; };
 		01D956671879392E00E3948C /* PersonIntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonIntroductionCell.h; sourceTree = "<group>"; };
@@ -478,6 +486,7 @@
 		0145495F186C19E7007E8C25 /* 通用工具 */ = {
 			isa = PBXGroup;
 			children = (
+				017968AB188903C60015B254 /* XMLDictionary */,
 				01010F5A188429E80004D0CE /* FTWCache */,
 				01DCE54318716356006AD3FE /* SVProgressHUD */,
 				01DCE53B187153B2006AD3FE /* FileHelper */,
@@ -531,6 +540,9 @@
 		0145497C186C5C40007E8C25 /* 工具类 */ = {
 			isa = PBXGroup;
 			children = (
+				017968A21888DF890015B254 /* 查询书籍 */,
+				017968A11888DF7D0015B254 /* 查询快递 */,
+				017968A01888DF6D0015B254 /* 查询电话 */,
 			);
 			name = "工具类";
 			sourceTree = "<group>";
@@ -724,6 +736,39 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		017968A01888DF6D0015B254 /* 查询电话 */ = {
+			isa = PBXGroup;
+			children = (
+				017968A91889001C0015B254 /* phone_number.xml */,
+				017968A61888E70C0015B254 /* PhoneSearchViewController.h */,
+				017968A71888E70C0015B254 /* PhoneSearchViewController.m */,
+			);
+			name = "查询电话";
+			sourceTree = "<group>";
+		};
+		017968A11888DF7D0015B254 /* 查询快递 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "查询快递";
+			sourceTree = "<group>";
+		};
+		017968A21888DF890015B254 /* 查询书籍 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "查询书籍";
+			sourceTree = "<group>";
+		};
+		017968AB188903C60015B254 /* XMLDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				017968AC188903D00015B254 /* XMLDictionary.h */,
+				017968AD188903D00015B254 /* XMLDictionary.m */,
+			);
+			name = XMLDictionary;
+			sourceTree = "<group>";
+		};
 		01D95663187938BE00E3948C /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +926,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01DCE54718716356006AD3FE /* SVProgressHUD.bundle in Resources */,
+				017968AA1889001C0015B254 /* phone_number.xml in Resources */,
 				015239E6186EB9B2000C729C /* Images.xcassets in Resources */,
 				01DCE5391871518F006AD3FE /* activity.html in Resources */,
 				01DCE5381871518F006AD3FE /* person.html in Resources */,
@@ -905,11 +951,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017968AE188903D00015B254 /* XMLDictionary.m in Sources */,
 				01454994186C7DB1007E8C25 /* newsContentTableViewController.m in Sources */,
 				01454973186C22B9007E8C25 /* RESideMenu.m in Sources */,
 				01454974186C22B9007E8C25 /* RESideMenuCell.m in Sources */,
 				01DCE54818716356006AD3FE /* SVProgressHUD.m in Sources */,
 				01DCE54118715599006AD3FE /* FileHelper.m in Sources */,
+				017968A81888E70C0015B254 /* PhoneSearchViewController.m in Sources */,
 				015239E3186EAFB2000C729C /* RESTfulOperation.m in Sources */,
 				01D956661879390D00E3948C /* PeronContentImageCell.m in Sources */,
 				01DCE53418714D52006AD3FE /* AMScrollingNavbarViewController.m in Sources */,
