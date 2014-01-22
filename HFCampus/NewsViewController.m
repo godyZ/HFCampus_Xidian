@@ -178,8 +178,10 @@ typedef enum  //枚举新闻类型
         }];
         
         RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            NSLog(@"Item %@", item);
-            [menu hide];
+            if (!HFcampusDelegate.globalBooksSearchNavigationController) {
+                HFcampusDelegate.globalBooksSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BookSearchNavigationController"];
+            }
+            [menu setRootViewController:HFcampusDelegate.globalBooksSearchNavigationController];
         }];
         
         RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" action:^(RESideMenu *menu, RESideMenuItem *item) {

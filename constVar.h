@@ -15,6 +15,8 @@
 
 //常用颜色表
 #define colorNavBarTint [UIColor colorWithRed:219.0f/255.0f green:112.0f/255.0f blue:147.0f/255.0f alpha:1.0f]
+//#define colorNavBarTint [UIColor colorWithRed:128.0f/255.0f green:42.0f/255.0f blue:47.0f/255.0f alpha:1.0f]
+//#define colorNavBarTint [UIColor colorWithRed:138.0/255.0f green:43.0/255.0f blue:226.0/255.0f alpha:1.0f]  //亮紫色
 //#define colorNavBarTint [UIColor colorWithRed:0.97f green:0.37f blue:0.38f alpha:1.0f]
 //#define colorNavBarTint [UIColor colorWithRed:.927f green:.264f blue:.03f alpha:1]
 #define colorChinaRed   [UIColor colorWithRed:206.0/255.0 green:16.0/255.0 blue:37.0/255.0 alpha:1.0f]

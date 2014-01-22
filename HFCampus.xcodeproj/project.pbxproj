@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01002CEA188E349E0041451D /* bookinfo.html in Resources */ = {isa = PBXBuildFile; fileRef = 01002CE9188E349E0041451D /* bookinfo.html */; };
+		01002CEC188EAD670041451D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01002CEB188EAD670041451D /* AVFoundation.framework */; };
 		01010F5D18842A010004D0CE /* FTWCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F5C18842A010004D0CE /* FTWCache.m */; };
 		01010F691885890D0004D0CE /* STRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F681885890D0004D0CE /* STRootViewController.m */; };
 		01010F711885893A0004D0CE /* STHanoiOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F6C1885893A0004D0CE /* STHanoiOperation.m */; };
@@ -75,6 +77,10 @@
 		017968A81888E70C0015B254 /* PhoneSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017968A71888E70C0015B254 /* PhoneSearchViewController.m */; };
 		017968AA1889001C0015B254 /* phone_number.xml in Resources */ = {isa = PBXBuildFile; fileRef = 017968A91889001C0015B254 /* phone_number.xml */; };
 		017968AE188903D00015B254 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 017968AD188903D00015B254 /* XMLDictionary.m */; };
+		017968B2188AC8F20015B254 /* BookSearchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 017968B1188AC8F20015B254 /* BookSearchHelper.m */; };
+		017968B6188ACA810015B254 /* BookSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017968B5188ACA810015B254 /* BookSearchViewController.m */; };
+		017968BA188AD07D0015B254 /* BookSearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017968B9188AD07D0015B254 /* BookSearchResultTableViewController.m */; };
+		017968BE188AD4590015B254 /* HiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 017968BD188AD4590015B254 /* HiHelper.m */; };
 		01D956661879390D00E3948C /* PeronContentImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D956651879390D00E3948C /* PeronContentImageCell.m */; };
 		01D956691879392E00E3948C /* PersonIntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D956681879392E00E3948C /* PersonIntroductionCell.m */; };
 		01D9566F187A96F600E3948C /* DRNRealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9566C187A96F600E3948C /* DRNRealTimeBlurView.m */; };
@@ -102,6 +108,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01002CE9188E349E0041451D /* bookinfo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = bookinfo.html; sourceTree = "<group>"; };
+		01002CEB188EAD670041451D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		01010F5B18842A010004D0CE /* FTWCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTWCache.h; path = FTWCache/FTWCache.h; sourceTree = "<group>"; };
 		01010F5C18842A010004D0CE /* FTWCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTWCache.m; path = FTWCache/FTWCache.m; sourceTree = "<group>"; };
 		01010F671885890D0004D0CE /* STRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STRootViewController.h; path = "算法/STRootViewController.h"; sourceTree = "<group>"; };
@@ -230,6 +238,14 @@
 		017968A91889001C0015B254 /* phone_number.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = phone_number.xml; sourceTree = "<group>"; };
 		017968AC188903D00015B254 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLDictionary.h; path = XMLDictionary/XMLDictionary.h; sourceTree = "<group>"; };
 		017968AD188903D00015B254 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLDictionary.m; path = XMLDictionary/XMLDictionary.m; sourceTree = "<group>"; };
+		017968B0188AC8F20015B254 /* BookSearchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSearchHelper.h; sourceTree = "<group>"; };
+		017968B1188AC8F20015B254 /* BookSearchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSearchHelper.m; sourceTree = "<group>"; };
+		017968B4188ACA810015B254 /* BookSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSearchViewController.h; sourceTree = "<group>"; };
+		017968B5188ACA810015B254 /* BookSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSearchViewController.m; sourceTree = "<group>"; };
+		017968B8188AD07D0015B254 /* BookSearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSearchResultTableViewController.h; sourceTree = "<group>"; };
+		017968B9188AD07D0015B254 /* BookSearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSearchResultTableViewController.m; sourceTree = "<group>"; };
+		017968BC188AD4590015B254 /* HiHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HiHelper.h; path = HFCampus/HiHelper.h; sourceTree = "<group>"; };
+		017968BD188AD4590015B254 /* HiHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HiHelper.m; path = HFCampus/HiHelper.m; sourceTree = "<group>"; };
 		01D956641879390D00E3948C /* PeronContentImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeronContentImageCell.h; sourceTree = "<group>"; };
 		01D956651879390D00E3948C /* PeronContentImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeronContentImageCell.m; sourceTree = "<group>"; };
 		01D956671879392E00E3948C /* PersonIntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonIntroductionCell.h; sourceTree = "<group>"; };
@@ -261,6 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01002CEC188EAD670041451D /* AVFoundation.framework in Frameworks */,
 				015239DD186EAF80000C729C /* SystemConfiguration.framework in Frameworks */,
 				0145492B186C19A2007E8C25 /* CoreGraphics.framework in Frameworks */,
 				0145492D186C19A2007E8C25 /* UIKit.framework in Frameworks */,
@@ -281,6 +298,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01002CE5188E312C0041451D /* 书籍内容 */ = {
+			isa = PBXGroup;
+			children = (
+				01002CE9188E349E0041451D /* bookinfo.html */,
+			);
+			name = "书籍内容";
+			sourceTree = "<group>";
+		};
 		01010F5A188429E80004D0CE /* FTWCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +429,7 @@
 		01454927186C19A2007E8C25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01002CEB188EAD670041451D /* AVFoundation.framework */,
 				015239DC186EAF80000C729C /* SystemConfiguration.framework */,
 				01454928186C19A2007E8C25 /* Foundation.framework */,
 				0145492A186C19A2007E8C25 /* CoreGraphics.framework */,
@@ -486,6 +512,7 @@
 		0145495F186C19E7007E8C25 /* 通用工具 */ = {
 			isa = PBXGroup;
 			children = (
+				017968BB188AD4450015B254 /* HiHelper */,
 				017968AB188903C60015B254 /* XMLDictionary */,
 				01010F5A188429E80004D0CE /* FTWCache */,
 				01DCE54318716356006AD3FE /* SVProgressHUD */,
@@ -756,6 +783,9 @@
 		017968A21888DF890015B254 /* 查询书籍 */ = {
 			isa = PBXGroup;
 			children = (
+				017968B7188AD0500015B254 /* 书籍查询结果 */,
+				017968B3188ACA550015B254 /* 查询书籍接入 */,
+				017968AF188AC8D90015B254 /* 辅助类 */,
 			);
 			name = "查询书籍";
 			sourceTree = "<group>";
@@ -767,6 +797,43 @@
 				017968AD188903D00015B254 /* XMLDictionary.m */,
 			);
 			name = XMLDictionary;
+			sourceTree = "<group>";
+		};
+		017968AF188AC8D90015B254 /* 辅助类 */ = {
+			isa = PBXGroup;
+			children = (
+				017968B0188AC8F20015B254 /* BookSearchHelper.h */,
+				017968B1188AC8F20015B254 /* BookSearchHelper.m */,
+			);
+			name = "辅助类";
+			sourceTree = "<group>";
+		};
+		017968B3188ACA550015B254 /* 查询书籍接入 */ = {
+			isa = PBXGroup;
+			children = (
+				017968B4188ACA810015B254 /* BookSearchViewController.h */,
+				017968B5188ACA810015B254 /* BookSearchViewController.m */,
+			);
+			name = "查询书籍接入";
+			sourceTree = "<group>";
+		};
+		017968B7188AD0500015B254 /* 书籍查询结果 */ = {
+			isa = PBXGroup;
+			children = (
+				01002CE5188E312C0041451D /* 书籍内容 */,
+				017968B8188AD07D0015B254 /* BookSearchResultTableViewController.h */,
+				017968B9188AD07D0015B254 /* BookSearchResultTableViewController.m */,
+			);
+			name = "书籍查询结果";
+			sourceTree = "<group>";
+		};
+		017968BB188AD4450015B254 /* HiHelper */ = {
+			isa = PBXGroup;
+			children = (
+				017968BC188AD4590015B254 /* HiHelper.h */,
+				017968BD188AD4590015B254 /* HiHelper.m */,
+			);
+			name = HiHelper;
 			sourceTree = "<group>";
 		};
 		01D95663187938BE00E3948C /* cell */ = {
@@ -927,6 +994,7 @@
 			files = (
 				01DCE54718716356006AD3FE /* SVProgressHUD.bundle in Resources */,
 				017968AA1889001C0015B254 /* phone_number.xml in Resources */,
+				01002CEA188E349E0041451D /* bookinfo.html in Resources */,
 				015239E6186EB9B2000C729C /* Images.xcassets in Resources */,
 				01DCE5391871518F006AD3FE /* activity.html in Resources */,
 				01DCE5381871518F006AD3FE /* person.html in Resources */,
@@ -951,11 +1019,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017968B6188ACA810015B254 /* BookSearchViewController.m in Sources */,
 				017968AE188903D00015B254 /* XMLDictionary.m in Sources */,
 				01454994186C7DB1007E8C25 /* newsContentTableViewController.m in Sources */,
 				01454973186C22B9007E8C25 /* RESideMenu.m in Sources */,
 				01454974186C22B9007E8C25 /* RESideMenuCell.m in Sources */,
 				01DCE54818716356006AD3FE /* SVProgressHUD.m in Sources */,
+				017968BE188AD4590015B254 /* HiHelper.m in Sources */,
 				01DCE54118715599006AD3FE /* FileHelper.m in Sources */,
 				017968A81888E70C0015B254 /* PhoneSearchViewController.m in Sources */,
 				015239E3186EAFB2000C729C /* RESTfulOperation.m in Sources */,
@@ -993,6 +1063,7 @@
 				01454939186C19A2007E8C25 /* AppDelegate.m in Sources */,
 				0145499B186D6500007E8C25 /* TopLineCell.m in Sources */,
 				015239E0186EAFA9000C729C /* RESTfulEngine.m in Sources */,
+				017968BA188AD07D0015B254 /* BookSearchResultTableViewController.m in Sources */,
 				01454978186C23CE007E8C25 /* NewsViewController.m in Sources */,
 				01010F7A188589470004D0CE /* STSortOperation.m in Sources */,
 				01454935186C19A2007E8C25 /* main.m in Sources */,
@@ -1009,6 +1080,7 @@
 				01523A0C18713E47000C729C /* NewsContentViewController.m in Sources */,
 				015239BF186EAB70000C729C /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				01454966186C228F007E8C25 /* Evaluate.m in Sources */,
+				017968B2188AC8F20015B254 /* BookSearchHelper.m in Sources */,
 				01523A001870088E000C729C /* MKAnnotationView+WebCache.m in Sources */,
 				014549A2186D6EF0007E8C25 /* EScrollerView.m in Sources */,
 				015239BC186EAB70000C729C /* NSDate+RFC1123.m in Sources */,
