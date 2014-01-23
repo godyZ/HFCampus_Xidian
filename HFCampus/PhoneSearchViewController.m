@@ -203,13 +203,19 @@
         }];
         
         RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            NSLog(@"Item %@", item);
-            [menu hide];
+            if (!HFcampusDelegate.globalBooksSearchNavigationController) {
+                HFcampusDelegate.globalBooksSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BookSearchNavigationController"];
+            }
+            [menu setRootViewController:HFcampusDelegate.globalBooksSearchNavigationController];
         }];
         
         RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            NSLog(@"Item %@", item);
-            [menu hide];
+            if (!HFcampusDelegate.globalExpressSearchNavigationController)
+            {
+                HFcampusDelegate.globalExpressSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ExpressSearchNavigationControllerID"];
+            }
+            [menu setRootViewController:HFcampusDelegate.globalExpressSearchNavigationController];
+            
         }];
         RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
             if (!HFcampusDelegate.globalPhoneSearchNavigationController) {
@@ -220,7 +226,7 @@
         }];
         
         RESideMenuItem *toolsItem = [[RESideMenuItem alloc] initWithTitle:@"工具" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            NSLog(@"Item %@", item);
+            
         }];
         toolsItem.subItems  = @[booksSearcher, expressSearcher, phonesSearcher];
         

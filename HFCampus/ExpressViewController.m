@@ -1,23 +1,23 @@
 //
-//  BookSearchViewController.m
+//  ExpressViewController.m
 //  HFCampus
 //
-//  Created by zhangrongjian on 14-1-18.
+//  Created by zhangrongjian on 14-1-23.
 //  Copyright (c) 2014年 zgy. All rights reserved.
 //
 
-#import "BookSearchViewController.h"
+#import "ExpressViewController.h"
 #import "AppDelegate.h"
-#import "BookSearchResultTableViewController.h"
+#import "HiHelper.h"
+#import "UIViewController+MJPopupViewController.h"
 
-#import "BookSearchHelper.h"
 #define offset 250
 
-@interface BookSearchViewController ()
+@interface ExpressViewController ()
 
 @end
 
-@implementation BookSearchViewController
+@implementation ExpressViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,22 +31,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+	
+    
     self.navigationController.navigationBar.barTintColor = colorNavBarTint;
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,200,100)];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:24];
-    titleLabel.text = @"书籍查询";
+    titleLabel.text = @"快递查询";
     self.navigationItem.titleView = titleLabel;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenu"] style:UIBarButtonItemStylePlain target:self action:@selector(showLeftMenu)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"general"] style:UIBarButtonItemStylePlain target:self action:@selector(showRightMenu)];
     
-    
-    [self.CodeBarButton setImage:[UIImage imageNamed:@"barcode"] forState:UIControlStateNormal];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,101 +55,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - 功能按键
-
-- (IBAction)KeyOrISBNChanged:(id)sender
+- (IBAction)CloseKeyBoard:(id)sender
 {
-    [self.KeyOrISBNTextField resignFirstResponder];
-    
-    switch (self.KeyOrISBNSegment.selectedSegmentIndex )
-    {
-        case 0:
-            self.KeyOrISBNTextField.text = @"";
-            self.KeyOrISBNTextField.keyboardType = UIKeyboardTypeDefault;
-            self.KeyOrISBNTextField.placeholder = @"请输入关键字";
-            break;
-        case 1:
-            self.KeyOrISBNTextField.text = @"";
-            self.KeyOrISBNTextField.keyboardType = UIKeyboardTypeNumberPad;
-            self.KeyOrISBNTextField.placeholder = @"请输入ISBN";
-            break;
-            
-        default:
-            break;
-    }
+    [self.numTextField resignFirstResponder];
 }
 
-- (IBAction)SearchButtonPress:(id)sender
+- (IBAction)ScanButton:(id)sender
 {
-    
-    NSString *key = self.KeyOrISBNTextField.text;
-    key = [key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    if (key.length <= 0) {
-        [SVProgressHUD showErrorWithStatus:@"输入点东西吧."];
-        self.KeyOrISBNTextField.text = @"";
-        return;
-    }
-    
-    [SVProgressHUD showWithStatus:@"正在加载..."];
-    [self loadBookHtmlForKey:key];
-    [SVProgressHUD dismiss];
-}
-
--(void)loadBookHtmlForKey:(NSString *)key
-{
-    NSString *webHtmlStr;
-    
-    //加载中
-    [SVProgressHUD showWithStatus:@"查询中"];
-    switch (self.KeyOrISBNSegment.selectedSegmentIndex ) {
-        case 0:
-            //关键字
-            webHtmlStr = [BookSearchHelper bookHtmlFromKeyword:key withPage:0];
-            break;
-        case 1:
-            //ISBN
-            webHtmlStr = [BookSearchHelper bookHtmlFromISBN:key withPage:0];
-            break;
-            
-        default:
-            return;
-            break;
-    }
-    
-    if (webHtmlStr == nil) {
-        [SVProgressHUD setStatus:@"网络错误!"];
-        return;
-    }
-    
-    [SVProgressHUD dismiss];
-    
-    NSString *infoHtml = [BookSearchHelper bookInfoFromHtml:webHtmlStr];
-    
-    if (infoHtml != nil)   //如果可以提取图书介绍信息，那么直接进入页面
-    {
-        UIViewController *content = [BookSearchHelper viewcontrollerFromHtml:infoHtml];
-        [self.navigationController pushViewController:content animated:YES];
-        return;
-    }
-    
-    NSArray *array = [BookSearchHelper bookListFromHtml:webHtmlStr];
-    BookSearchResultTableViewController *bl = [[BookSearchResultTableViewController alloc] init];
-    bl.booklistArray = array;
-    
-    [self.navigationController pushViewController:bl animated:YES];
-    
-    
-}
-
-
-- (IBAction)CodeBarPress:(id)sender    //条码扫描
-{
-    [super viewDidLoad];
-
     self.scanBackGroundView.hidden = NO;
     self.scanBackGroundView.backgroundColor = [UIColor grayColor];
     self.scanBackGroundView.alpha = 0.9f;
-
+    
     
     UIButton * scanButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [scanButton setTitle:@"取消" forState:UIControlStateNormal];
@@ -177,11 +93,12 @@
     _line.image = [UIImage imageNamed:@"line.png"];
     [self.scanBackGroundView addSubview:_line];
     
-   self.timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(animation1) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(animation1) userInfo:nil repeats:YES];
     
     [self setupCamera];
     
 }
+
 - (void)cancelAction
 {
     [_line removeFromSuperview];
@@ -191,7 +108,7 @@
     self.scanBackGroundView.hidden = YES;
 }
 
--(void)animation1
+- (void)animation1
 {
     if (self.upOrdown == NO) {
         self.num ++;
@@ -251,9 +168,14 @@
     [_session startRunning];
 }
 
+- (IBAction)SearchOk:(id)sender
+{
+    [self showExpressView:self.numTextField.text];
 
-# pragma mark - AVCaptureMetadataOutputObjectsDelegate
+}
 
+
+# pragma mark -<AVCaptureMetadataOutputObjectsDelegate>
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
     if (self.scanISBNStringValue) {
@@ -268,32 +190,77 @@
     
     [self cancelAction];
     
-    NSString *webHtmlStr = [BookSearchHelper bookHtmlFromISBN:self.scanISBNStringValue withPage:0];
-    
-    if (webHtmlStr == nil)
-    {
-        [SVProgressHUD showErrorWithStatus:@"网络错误!"];
-        return;
-    }
-    //[SVProgressHUD showWithStatus:[NSString stringWithFormat:@"书号: %@",self.scanISBNStringValue]];
-    NSString *infoHtml = [BookSearchHelper bookInfoFromHtml:webHtmlStr];
-    
-    if (infoHtml != nil)
-    {
-        UIViewController *content = [BookSearchHelper viewcontrollerFromHtml:infoHtml];
-        [self.navigationController pushViewController:content animated:YES];
-        return;
-    }
-    else
-    {
-        [[[UIAlertView alloc] initWithTitle:@"" message:@"图书馆无该图书" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil] show];
-        return;
-    }
+    [self showExpressView:self.scanISBNStringValue];
+
 }
 
 
-#pragma mark - 显示左边栏
+#pragma mark 功能函数
+-(void)showExpressView:(NSString *)num
+{
+    [SVProgressHUD showWithStatus:@"正在加载..." maskType:SVProgressHUDMaskTypeNone];
+    
+    NSString *htmlStr = [self getExpressHtmlFromNum:num];
+    
+    NSString *info = [NSString stringWithFormat:@"<span style=\"color:red\">%@</span><br><hr>%@",
+                      [self getExpressNameFromHtml:htmlStr],[self getExpressInfoFromHtml:htmlStr]];
+    if (!self.infoWeb) {
+        self.infoWeb = [[UIWebView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    }
+    [self.infoWeb loadHTMLString:info baseURL:nil];
+    
+    [self presentPopupView:self.infoWeb animationType:MJPopupViewAnimationSlideBottomTop];
+    
+    [SVProgressHUD dismiss];
+}
 
+-(NSString *)getExpressHtmlFromNum:(NSString *)num
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://m.wochacha.com/express/search?barcode=%@", num]];
+    NSError *error;
+    NSString *htmlStr = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    if (error)
+    {
+        NSLog(@"请求快递信息出现错误, 代码:%ld, 描述:%@", error.code,(NSString *)error.localizedDescription);
+        return @"";
+    }
+    //NSLog(@"%@", htmlStr);
+    return htmlStr;
+}
+
+-(NSString *)getExpressNameFromNum:(NSString*)num  //获得快递名称
+{
+    NSString *htmlStr = [self getExpressHtmlFromNum:num];
+    NSString *regString = @"(?<=<div>您查询的是)\\w+(?=的快递单</div>)";
+    
+    return [HiHelper stringFormString:htmlStr withRegular:regString];
+}
+
+-(NSString *)getExpressInfoFromNum:(NSString*)num  //获得快递物流详情
+{
+    NSString *htmlStr = [self getExpressHtmlFromNum:num];
+    NSString *regString = @"(?<=<div id=\"expr_list\">).+(?=</div>)";
+    
+    return [HiHelper stringFormString:htmlStr withRegular:regString];
+}
+
+-(NSString *)getExpressNameFromHtml:(NSString*)htmlStr  //获得快递名称
+{
+    NSString *regString = @"(?<=<div>您查询的是)\\w+(?=的快递单</div>)";
+    
+    return [HiHelper stringFormString:htmlStr withRegular:regString];
+}
+
+-(NSString *)getExpressInfoFromHtml:(NSString*)htmlStr  //获得快递物流详情
+{
+    NSString *regString = @"(?<=<div id=\"expr_list\">).+(?=</div>)";
+    
+    return [HiHelper stringFormString:htmlStr withRegular:regString];
+}
+
+
+
+#pragma mark - 显示左边栏
 -(void)showLeftMenu
 {
     
@@ -368,9 +335,6 @@
 {
     
 }
-
-
-
 
 
 @end

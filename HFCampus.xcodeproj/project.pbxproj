@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		01002CEA188E349E0041451D /* bookinfo.html in Resources */ = {isa = PBXBuildFile; fileRef = 01002CE9188E349E0041451D /* bookinfo.html */; };
 		01002CEC188EAD670041451D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01002CEB188EAD670041451D /* AVFoundation.framework */; };
+		01002CEF1890F0DB0041451D /* ExpressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CEE1890F0DB0041451D /* ExpressViewController.m */; };
+		01002CF618916F340041451D /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CF318916F340041451D /* MJPopupBackgroundView.m */; };
+		01002CF718916F340041451D /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CF518916F340041451D /* UIViewController+MJPopupViewController.m */; };
 		01010F5D18842A010004D0CE /* FTWCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F5C18842A010004D0CE /* FTWCache.m */; };
 		01010F691885890D0004D0CE /* STRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F681885890D0004D0CE /* STRootViewController.m */; };
 		01010F711885893A0004D0CE /* STHanoiOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F6C1885893A0004D0CE /* STHanoiOperation.m */; };
@@ -110,6 +113,12 @@
 /* Begin PBXFileReference section */
 		01002CE9188E349E0041451D /* bookinfo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = bookinfo.html; sourceTree = "<group>"; };
 		01002CEB188EAD670041451D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		01002CED1890F0DB0041451D /* ExpressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressViewController.h; sourceTree = "<group>"; };
+		01002CEE1890F0DB0041451D /* ExpressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressViewController.m; sourceTree = "<group>"; };
+		01002CF218916F340041451D /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJPopupBackgroundView.h; path = popUp/MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		01002CF318916F340041451D /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJPopupBackgroundView.m; path = popUp/MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		01002CF418916F340041451D /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MJPopupViewController.h"; path = "popUp/UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		01002CF518916F340041451D /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MJPopupViewController.m"; path = "popUp/UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
 		01010F5B18842A010004D0CE /* FTWCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTWCache.h; path = FTWCache/FTWCache.h; sourceTree = "<group>"; };
 		01010F5C18842A010004D0CE /* FTWCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTWCache.m; path = FTWCache/FTWCache.m; sourceTree = "<group>"; };
 		01010F671885890D0004D0CE /* STRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STRootViewController.h; path = "算法/STRootViewController.h"; sourceTree = "<group>"; };
@@ -304,6 +313,24 @@
 				01002CE9188E349E0041451D /* bookinfo.html */,
 			);
 			name = "书籍内容";
+			sourceTree = "<group>";
+		};
+		01002CF01890F58B0041451D /* 豆瓣书评 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "豆瓣书评";
+			sourceTree = "<group>";
+		};
+		01002CF118916F180041451D /* popUp */ = {
+			isa = PBXGroup;
+			children = (
+				01002CF218916F340041451D /* MJPopupBackgroundView.h */,
+				01002CF318916F340041451D /* MJPopupBackgroundView.m */,
+				01002CF418916F340041451D /* UIViewController+MJPopupViewController.h */,
+				01002CF518916F340041451D /* UIViewController+MJPopupViewController.m */,
+			);
+			name = popUp;
 			sourceTree = "<group>";
 		};
 		01010F5A188429E80004D0CE /* FTWCache */ = {
@@ -512,6 +539,7 @@
 		0145495F186C19E7007E8C25 /* 通用工具 */ = {
 			isa = PBXGroup;
 			children = (
+				01002CF118916F180041451D /* popUp */,
 				017968BB188AD4450015B254 /* HiHelper */,
 				017968AB188903C60015B254 /* XMLDictionary */,
 				01010F5A188429E80004D0CE /* FTWCache */,
@@ -776,6 +804,8 @@
 		017968A11888DF7D0015B254 /* 查询快递 */ = {
 			isa = PBXGroup;
 			children = (
+				01002CED1890F0DB0041451D /* ExpressViewController.h */,
+				01002CEE1890F0DB0041451D /* ExpressViewController.m */,
 			);
 			name = "查询快递";
 			sourceTree = "<group>";
@@ -783,6 +813,7 @@
 		017968A21888DF890015B254 /* 查询书籍 */ = {
 			isa = PBXGroup;
 			children = (
+				01002CF01890F58B0041451D /* 豆瓣书评 */,
 				017968B7188AD0500015B254 /* 书籍查询结果 */,
 				017968B3188ACA550015B254 /* 查询书籍接入 */,
 				017968AF188AC8D90015B254 /* 辅助类 */,
@@ -1040,6 +1071,7 @@
 				01454965186C228F007E8C25 /* AccelerationAnimation.m in Sources */,
 				01454975186C22B9007E8C25 /* RESideMenuItem.m in Sources */,
 				01523A071870088E000C729C /* SDWebImagePrefetcher.m in Sources */,
+				01002CF618916F340041451D /* MJPopupBackgroundView.m in Sources */,
 				0152399D186EA8CF000C729C /* JSONModel.m in Sources */,
 				015239D8186EADE4000C729C /* MKNetworkOperation.m in Sources */,
 				01454990186C7A90007E8C25 /* ViewPagerController.m in Sources */,
@@ -1052,6 +1084,7 @@
 				01454969186C22A1007E8C25 /* UIWindow+RESideMenuExtensions.m in Sources */,
 				01010F731885893A0004D0CE /* STHanoiViewController.m in Sources */,
 				01010F7B188589470004D0CE /* STSortView.m in Sources */,
+				01002CEF1890F0DB0041451D /* ExpressViewController.m in Sources */,
 				015239BD186EAB70000C729C /* NSDictionary+RequestEncoding.m in Sources */,
 				01454983186C6A8B007E8C25 /* PersonsTableViewController.m in Sources */,
 				01D956691879392E00E3948C /* PersonIntroductionCell.m in Sources */,
@@ -1070,6 +1103,7 @@
 				0152399C186EA8CF000C729C /* UserItem.m in Sources */,
 				01454989186C7100007E8C25 /* TopicsTableViewController.m in Sources */,
 				0152399B186EA8CF000C729C /* PeopleItem.m in Sources */,
+				01002CF718916F340041451D /* UIViewController+MJPopupViewController.m in Sources */,
 				015239BB186EAB70000C729C /* NSData+Base64.m in Sources */,
 				01010F7F188589510004D0CE /* STCodeViewController.m in Sources */,
 				01010F691885890D0004D0CE /* STRootViewController.m in Sources */,
@@ -1171,7 +1205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "3B5C0B72-93A6-4E29-B6DC-BDAE041DB741";
 				SDKROOT = iphoneos;
@@ -1206,7 +1240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PROVISIONING_PROFILE = "1AE67722-2351-4AEF-AD83-1C3F2AFF8296";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

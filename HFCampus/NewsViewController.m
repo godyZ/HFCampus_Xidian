@@ -185,8 +185,12 @@ typedef enum  //枚举新闻类型
         }];
         
         RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            NSLog(@"Item %@", item);
-            [menu hide];
+            if (!HFcampusDelegate.globalExpressSearchNavigationController)
+            {
+                HFcampusDelegate.globalExpressSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ExpressSearchNavigationControllerID"];
+            }
+            [menu setRootViewController:HFcampusDelegate.globalExpressSearchNavigationController];
+
         }];
         RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
             if (!HFcampusDelegate.globalPhoneSearchNavigationController) {
@@ -197,7 +201,7 @@ typedef enum  //枚举新闻类型
         }];
         
         RESideMenuItem *toolsItem = [[RESideMenuItem alloc] initWithTitle:@"工具" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            NSLog(@"Item %@", item);
+           
         }];
         toolsItem.subItems  = @[booksSearcher, expressSearcher, phonesSearcher];
      
