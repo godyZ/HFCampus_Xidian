@@ -150,41 +150,51 @@ typedef enum  //枚举新闻类型
 {
     
     if (!_sideMenu) {
-        RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"资讯" action:^(RESideMenu *menu, RESideMenuItem *item) {
+        RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"资讯" action:^(RESideMenu *menu, RESideMenuItem *item)
+        {
             if (!HFcampusDelegate.globalNewsNavigationController) {
                 HFcampusDelegate.globalNewsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"newsNavigationController"];
             }
             [menu setRootViewController:HFcampusDelegate.globalNewsNavigationController];
         }];
-        RESideMenuItem *personsItem = [[RESideMenuItem alloc] initWithTitle:@"人物" action:^(RESideMenu *menu, RESideMenuItem *item) {
+        RESideMenuItem *personsItem = [[RESideMenuItem alloc] initWithTitle:@"人物" action:^(RESideMenu *menu, RESideMenuItem *item)
+        {
             if (!HFcampusDelegate.globalPersonsNavigationController) {
                 HFcampusDelegate.globalPersonsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"personsNavigationController"];
             }
             [menu setRootViewController:HFcampusDelegate.globalPersonsNavigationController];
         }];
-        RESideMenuItem *topicsItem = [[RESideMenuItem alloc] initWithTitle:@"话题" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            NSLog(@"Item %@", item);
-          
+        RESideMenuItem *topicsItem = [[RESideMenuItem alloc] initWithTitle:@"话题" action:^(RESideMenu *menu, RESideMenuItem *item)
+        {
+            if (!HFcampusDelegate.globalTopicNavigationController)
+            {
+                HFcampusDelegate.globalTopicNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
+                                                                    instantiateViewControllerWithIdentifier:@"topicsNavigationController"];
+            }
+            [menu setRootViewController:HFcampusDelegate.globalTopicNavigationController];
         }];
         RESideMenuItem *picturesItem = [[RESideMenuItem alloc] initWithTitle:@"图说" action:^(RESideMenu *menu, RESideMenuItem *item) {
             [menu hide];
             NSLog(@"Item %@", item);
         }];
-        RESideMenuItem *algorithmsItem = [[RESideMenuItem alloc] initWithTitle:@"算法" action:^(RESideMenu *menu, RESideMenuItem *item) {
+        RESideMenuItem *algorithmsItem = [[RESideMenuItem alloc] initWithTitle:@"算法" action:^(RESideMenu *menu, RESideMenuItem *item)
+        {
             if (!HFcampusDelegate.globalAlgorithmNavigationController){
                 HFcampusDelegate.globalAlgorithmNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AlgorithmNavigationController"];
             }
             [menu setRootViewController:HFcampusDelegate.globalAlgorithmNavigationController];
         }];
         
-        RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
+        RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" action:^(RESideMenu *menu, RESideMenuItem *item)
+        {
             if (!HFcampusDelegate.globalBooksSearchNavigationController) {
                 HFcampusDelegate.globalBooksSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BookSearchNavigationController"];
             }
             [menu setRootViewController:HFcampusDelegate.globalBooksSearchNavigationController];
         }];
         
-        RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
+        RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" action:^(RESideMenu *menu, RESideMenuItem *item)
+        {
             if (!HFcampusDelegate.globalExpressSearchNavigationController)
             {
                 HFcampusDelegate.globalExpressSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ExpressSearchNavigationControllerID"];
@@ -192,7 +202,8 @@ typedef enum  //枚举新闻类型
             [menu setRootViewController:HFcampusDelegate.globalExpressSearchNavigationController];
 
         }];
-        RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" action:^(RESideMenu *menu, RESideMenuItem *item) {
+        RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" action:^(RESideMenu *menu, RESideMenuItem *item)
+        {
             if (!HFcampusDelegate.globalPhoneSearchNavigationController) {
                 HFcampusDelegate.globalPhoneSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PhoneSearchNavigationController"];
             }
@@ -200,12 +211,14 @@ typedef enum  //枚举新闻类型
             
         }];
         
-        RESideMenuItem *toolsItem = [[RESideMenuItem alloc] initWithTitle:@"工具" action:^(RESideMenu *menu, RESideMenuItem *item) {
+        RESideMenuItem *toolsItem = [[RESideMenuItem alloc] initWithTitle:@"工具" action:^(RESideMenu *menu, RESideMenuItem *item)
+        {
            
         }];
         toolsItem.subItems  = @[booksSearcher, expressSearcher, phonesSearcher];
      
-        RESideMenuItem *aboutItem = [[RESideMenuItem alloc] initWithTitle:@"关于" action:^(RESideMenu *menu, RESideMenuItem *item) {
+        RESideMenuItem *aboutItem = [[RESideMenuItem alloc] initWithTitle:@"关于" action:^(RESideMenu *menu, RESideMenuItem *item)
+        {
             
         }];
         

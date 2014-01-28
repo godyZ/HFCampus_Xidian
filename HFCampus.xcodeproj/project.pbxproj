@@ -12,6 +12,9 @@
 		01002CEF1890F0DB0041451D /* ExpressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CEE1890F0DB0041451D /* ExpressViewController.m */; };
 		01002CF618916F340041451D /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CF318916F340041451D /* MJPopupBackgroundView.m */; };
 		01002CF718916F340041451D /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CF518916F340041451D /* UIViewController+MJPopupViewController.m */; };
+		01002CFD189404950041451D /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CFC189404950041451D /* TopicViewController.m */; };
+		01002D00189408940041451D /* ControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CFF189408940041451D /* ControllerView.m */; };
+		01002D041894B5830041451D /* TopicDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002D031894B5830041451D /* TopicDataModel.m */; };
 		01010F5D18842A010004D0CE /* FTWCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F5C18842A010004D0CE /* FTWCache.m */; };
 		01010F691885890D0004D0CE /* STRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F681885890D0004D0CE /* STRootViewController.m */; };
 		01010F711885893A0004D0CE /* STHanoiOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F6C1885893A0004D0CE /* STHanoiOperation.m */; };
@@ -42,7 +45,6 @@
 		01454975186C22B9007E8C25 /* RESideMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01454971186C22B9007E8C25 /* RESideMenuItem.m */; };
 		01454978186C23CE007E8C25 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01454977186C23CE007E8C25 /* NewsViewController.m */; };
 		01454983186C6A8B007E8C25 /* PersonsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01454982186C6A8B007E8C25 /* PersonsTableViewController.m */; };
-		01454989186C7100007E8C25 /* TopicsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01454988186C7100007E8C25 /* TopicsTableViewController.m */; };
 		01454990186C7A90007E8C25 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145498E186C7A90007E8C25 /* ViewPagerController.m */; };
 		01454994186C7DB1007E8C25 /* newsContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01454993186C7DB1007E8C25 /* newsContentTableViewController.m */; };
 		0145499B186D6500007E8C25 /* TopLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145499A186D6500007E8C25 /* TopLineCell.m */; };
@@ -119,6 +121,12 @@
 		01002CF318916F340041451D /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJPopupBackgroundView.m; path = popUp/MJPopupBackgroundView.m; sourceTree = "<group>"; };
 		01002CF418916F340041451D /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MJPopupViewController.h"; path = "popUp/UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
 		01002CF518916F340041451D /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MJPopupViewController.m"; path = "popUp/UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		01002CFB189404950041451D /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
+		01002CFC189404950041451D /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
+		01002CFE189408940041451D /* ControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerView.h; sourceTree = "<group>"; };
+		01002CFF189408940041451D /* ControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerView.m; sourceTree = "<group>"; };
+		01002D021894B5830041451D /* TopicDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDataModel.h; sourceTree = "<group>"; };
+		01002D031894B5830041451D /* TopicDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDataModel.m; sourceTree = "<group>"; };
 		01010F5B18842A010004D0CE /* FTWCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTWCache.h; path = FTWCache/FTWCache.h; sourceTree = "<group>"; };
 		01010F5C18842A010004D0CE /* FTWCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTWCache.m; path = FTWCache/FTWCache.m; sourceTree = "<group>"; };
 		01010F671885890D0004D0CE /* STRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STRootViewController.h; path = "算法/STRootViewController.h"; sourceTree = "<group>"; };
@@ -172,8 +180,6 @@
 		01454979186C24DB007E8C25 /* constVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constVar.h; sourceTree = "<group>"; };
 		01454981186C6A8B007E8C25 /* PersonsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsTableViewController.h; sourceTree = "<group>"; };
 		01454982186C6A8B007E8C25 /* PersonsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsTableViewController.m; sourceTree = "<group>"; };
-		01454987186C7100007E8C25 /* TopicsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsTableViewController.h; sourceTree = "<group>"; };
-		01454988186C7100007E8C25 /* TopicsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsTableViewController.m; sourceTree = "<group>"; };
 		0145498E186C7A90007E8C25 /* ViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPagerController.m; sourceTree = "<group>"; };
 		0145498F186C7A90007E8C25 /* ViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPagerController.h; sourceTree = "<group>"; };
 		01454992186C7DB1007E8C25 /* newsContentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsContentTableViewController.h; sourceTree = "<group>"; };
@@ -331,6 +337,40 @@
 				01002CF518916F340041451D /* UIViewController+MJPopupViewController.m */,
 			);
 			name = popUp;
+			sourceTree = "<group>";
+		};
+		01002CF8189404310041451D /* 投票话题列表 */ = {
+			isa = PBXGroup;
+			children = (
+				01002CFB189404950041451D /* TopicViewController.h */,
+				01002CFC189404950041451D /* TopicViewController.m */,
+			);
+			name = "投票话题列表";
+			sourceTree = "<group>";
+		};
+		01002CF91894043E0041451D /* 话题动态Cell */ = {
+			isa = PBXGroup;
+			children = (
+				01002CFE189408940041451D /* ControllerView.h */,
+				01002CFF189408940041451D /* ControllerView.m */,
+			);
+			name = "话题动态Cell";
+			sourceTree = "<group>";
+		};
+		01002CFA189404650041451D /* 话题展开View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "话题展开View";
+			sourceTree = "<group>";
+		};
+		01002D011894B5640041451D /* 数据模型 */ = {
+			isa = PBXGroup;
+			children = (
+				01002D021894B5830041451D /* TopicDataModel.h */,
+				01002D031894B5830041451D /* TopicDataModel.m */,
+			);
+			name = "数据模型";
 			sourceTree = "<group>";
 		};
 		01010F5A188429E80004D0CE /* FTWCache */ = {
@@ -605,8 +645,10 @@
 		0145497D186C5C62007E8C25 /* 话题类 */ = {
 			isa = PBXGroup;
 			children = (
-				01454987186C7100007E8C25 /* TopicsTableViewController.h */,
-				01454988186C7100007E8C25 /* TopicsTableViewController.m */,
+				01002D011894B5640041451D /* 数据模型 */,
+				01002CFA189404650041451D /* 话题展开View */,
+				01002CF91894043E0041451D /* 话题动态Cell */,
+				01002CF8189404310041451D /* 投票话题列表 */,
 			);
 			name = "话题类";
 			sourceTree = "<group>";
@@ -1064,6 +1106,7 @@
 				01DCE53418714D52006AD3FE /* AMScrollingNavbarViewController.m in Sources */,
 				0152399A186EA8CF000C729C /* MenuItem.m in Sources */,
 				015239DB186EAE9C000C729C /* Reachability.m in Sources */,
+				01002CFD189404950041451D /* TopicViewController.m in Sources */,
 				015239D7186EADE4000C729C /* MKNetworkEngine.m in Sources */,
 				01523A081870088E000C729C /* UIButton+WebCache.m in Sources */,
 				01454972186C22B9007E8C25 /* REBackgroundView.m in Sources */,
@@ -1075,6 +1118,7 @@
 				0152399D186EA8CF000C729C /* JSONModel.m in Sources */,
 				015239D8186EADE4000C729C /* MKNetworkOperation.m in Sources */,
 				01454990186C7A90007E8C25 /* ViewPagerController.m in Sources */,
+				01002D00189408940041451D /* ControllerView.m in Sources */,
 				01523A021870088E000C729C /* SDWebImageCompat.m in Sources */,
 				01523A041870088E000C729C /* SDWebImageDownloader.m in Sources */,
 				01523A051870088E000C729C /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1097,11 +1141,11 @@
 				0145499B186D6500007E8C25 /* TopLineCell.m in Sources */,
 				015239E0186EAFA9000C729C /* RESTfulEngine.m in Sources */,
 				017968BA188AD07D0015B254 /* BookSearchResultTableViewController.m in Sources */,
+				01002D041894B5830041451D /* TopicDataModel.m in Sources */,
 				01454978186C23CE007E8C25 /* NewsViewController.m in Sources */,
 				01010F7A188589470004D0CE /* STSortOperation.m in Sources */,
 				01454935186C19A2007E8C25 /* main.m in Sources */,
 				0152399C186EA8CF000C729C /* UserItem.m in Sources */,
-				01454989186C7100007E8C25 /* TopicsTableViewController.m in Sources */,
 				0152399B186EA8CF000C729C /* PeopleItem.m in Sources */,
 				01002CF718916F340041451D /* UIViewController+MJPopupViewController.m in Sources */,
 				015239BB186EAB70000C729C /* NSData+Base64.m in Sources */,

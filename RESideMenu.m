@@ -135,6 +135,7 @@ const int INTERSTITIAL_STEPS = 99;
     
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     //window.rootViewController = NULL;
+#warning  点击新闻类 闪退的代码
     window.rootViewController = viewController;
    _screenshotView.image = [window re_snapshotWithStatusBar:YES];  //返回过程中就更新下一controller中的view信息
     [window bringSubviewToFront:_backgroundView];

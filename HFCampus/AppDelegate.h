@@ -13,9 +13,10 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) RESTfulEngine *restfulEngine;
-@property (strong, nonatomic) UINavigationController *globalNewsNavigationController; //咨询
-@property (strong, nonatomic) UINavigationController *globalPersonsNavigationController; //人物
-@property (strong, nonatomic) UINavigationController *globalAlgorithmNavigationController; //算法
+@property (strong, nonatomic) UINavigationController *globalNewsNavigationController;       //咨询
+@property (strong, nonatomic) UINavigationController *globalPersonsNavigationController;    //人物
+@property (strong, nonatomic) UINavigationController *globalTopicNavigationController;      //话题
+@property (strong, nonatomic) UINavigationController *globalAlgorithmNavigationController;  //算法
 
 
 //****工具*****

@@ -186,31 +186,6 @@
             </objects>
             <point key="canvasLocation" x="-2139" y="-22"/>
         </scene>
-        <!--Topics Table View Controller - 话题-->
-        <scene sceneID="rCJ-Ld-zDp">
-            <objects>
-                <tableViewController storyboardIdentifier="topicTableViewController" title="话题" id="Ztz-Ow-Sgu" customClass="TopicsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dYE-wA-IdT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ehg-8q-bii">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ehg-8q-bii" id="kIf-Xi-g40">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="g4N-Hm-09T"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0KO-us-Toh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2524" y="653"/>
-        </scene>
         <!--Navigation Controller - 话题类-->
         <scene sceneID="h5I-8h-xfo">
             <objects>
@@ -219,7 +194,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Ztz-Ow-Sgu" kind="relationship" relationship="rootViewController" id="fom-rk-qzx"/>
+                        <segue destination="IU2-1S-UdR" kind="relationship" relationship="rootViewController" id="nWP-sv-c14"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6m3-vM-o1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,6 +215,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtn-1a-138" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3060" y="1341"/>
+        </scene>
+        <!--Topic View Controller-->
+        <scene sceneID="fgO-Ka-CVy">
+            <objects>
+                <viewController storyboardIdentifier="TopicViewControllerID" id="IU2-1S-UdR" customClass="TopicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fIJ-EQ-6SQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="S8W-qx-upk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f5Y-Mg-f7a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0bj-UA-v7z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VrW-2o-8nR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2533" y="653"/>
         </scene>
         <!--View Controller - 图说-->
         <scene sceneID="MGb-RU-sQV">
