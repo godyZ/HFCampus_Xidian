@@ -20,6 +20,7 @@ typedef enum _THBSState
 #import "ControllerView.h"
 #import "TopicDataModel.h"
 
+
 @interface TopicViewController ()
 
 @property (nonatomic,assign) THBSState state;
@@ -79,15 +80,12 @@ NSDictionary *custDictinary;
                 
                 [self.filteredCountryArr addObject:countryDictinary];
             }
-            
         }
-        
     }
-    
-    
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
     
     if (self.state == STATE_FULL_MENU) {
         self.mainScrollView.scrollEnabled = TRUE;
@@ -113,7 +111,6 @@ NSDictionary *custDictinary;
         self.searchBarReagion.text = @"";
         [self.searchBarReagion setShowsCancelButton: NO animated: YES];
         [self.searchBarReagion resignFirstResponder];
-        //[self drawAllViewsOnScrollview:self.allRegionArr];
     }
     else if (self.state == STATE_DETAILS_MENU) {
         
@@ -122,7 +119,6 @@ NSDictionary *custDictinary;
         [self.searchBarReagion setShowsCancelButton: NO animated: YES];
         [self.searchBarReagion resignFirstResponder];
         
-     //   [countryTbl reloadData];
     }
 }
 
@@ -217,21 +213,27 @@ NSDictionary *custDictinary;
     testTopicOne.topicItems = [[NSMutableArray alloc] init];
     
     TopicItem *topicItem = [[TopicItem alloc] init];
-    topicItem.topicOption = @"还行";
+    topicItem.topicOption = @"为新校长点赞";
     topicItem.topicPercet = 30;
     topicItem.topicBallots = 30;
     [testTopicOne.topicItems addObject:topicItem];
     
     topicItem = [[TopicItem alloc] init];
-    topicItem.topicOption = @"不行";
+    topicItem.topicOption = @"还行，比前任好些";
     topicItem.topicPercet = 40;
     topicItem.topicBallots = 40;
     [testTopicOne.topicItems addObject:topicItem];
     
     topicItem = [[TopicItem alloc] init];
-    topicItem.topicOption = @"很差";
-    topicItem.topicPercet = 30;
-    topicItem.topicBallots = 30;
+    topicItem.topicOption = @"并不是很了解";
+    topicItem.topicPercet = 20;
+    topicItem.topicBallots = 20;
+    [testTopicOne.topicItems addObject:topicItem];
+    
+    topicItem = [[TopicItem alloc] init];
+    topicItem.topicOption = @"感觉可以做的更好";
+    topicItem.topicPercet = 10;
+    topicItem.topicBallots = 10;
     
     [testTopicOne.topicItems addObject:topicItem];
     
@@ -289,7 +291,7 @@ NSDictionary *custDictinary;
 
 
 
--(void)drawAllViewsOnScrollview :(NSArray *)drawArr
+-(void)drawAllViewsOnScrollview :(NSArray *)drawArr    //绘制所有话题view
 {
     [self.mainScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)]; //先清除mainScrollView下面的subViews
 
@@ -325,13 +327,13 @@ NSDictionary *custDictinary;
 #pragma mark
 #pragma mark Expanding
 
--(IBAction)dummyBtnPressed:(id)sender {
-    
-    
-    
+-(IBAction)dummyBtnPressed:(id)sender
+{
     self.searchBarReagion.text = @"";                 //searchBar
     [self.searchBarReagion resignFirstResponder];
     [self.searchBarReagion setShowsCancelButton: NO animated: YES];
+    
+    //extend View
     
     fromPosition = [sender superview].frame;
     
@@ -339,10 +341,18 @@ NSDictionary *custDictinary;
     
     float scrollViewContentHeight = [(UIScrollView *)[[sender superview] superview] contentSize].height +50;
     
+    CGFloat screenheight=[[UIScreen mainScreen]bounds].size.height;
+    CGFloat tableheight= screenheight - (64+44+EACH_MODEL_HEIGHT);
+    
+    self.extendView=[[ExtendView alloc]initWithFrame:CGRectMake(0.0, CGRectGetMaxY(fromPosition), 320.0, screenheight) DataModel:[self.allTopicArr objectAtIndex:0]];  //extendView的高度使用screenHeight
+    
+    [self.mainScrollView addSubview:self.extendView];
+    
+    
     
     for (UIView* view in [[[sender superview] superview] subviews]) {
         
-        float mid_view = CGRectGetMidY(view.frame);
+        float mid_view = CGRectGetMidY(view.frame);  //mid_view controllerView  , mid_clicked 所点击的位子
         
         if([view isKindOfClass:[ControllerView class]] && (mid_view < mid_clicked))
         {
@@ -359,11 +369,13 @@ NSDictionary *custDictinary;
                 
             }];
         }
-        else if([view isKindOfClass:[ControllerView class]] && (mid_view == mid_clicked))
+        else if([view isKindOfClass:[ControllerView class]] && (mid_view == mid_clicked))  //所点击的controllerView
         {
             [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionTransitionCrossDissolve|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionAllowAnimatedContent animations:^{
                 
                 view.frame = CGRectMake(0, self.mainScrollView.contentOffset.y, 320, 50);
+                self.extendView.frame = CGRectMake(0.0f, 50.0f, 320.0, tableheight);
+                
                // view.backgroundColor = selectedHeaderBackGroundColor;
                 
             } completion:^(BOOL finished) {
@@ -431,8 +443,8 @@ NSDictionary *custDictinary;
         }
     }
     
-   // [self loadHeadingData:clickedCountryName withSubHeadings:allCountryArr withFrame:fromPosition];
-    
+
+
 }
 
 
@@ -530,16 +542,7 @@ NSDictionary *custDictinary;
         
     }
     
-   // [mainScrollView sendSubviewToBack:countryTbl];
-    [NSTimer scheduledTimerWithTimeInterval: 0.2 target: self selector: @selector(callAfterFewSecond:) userInfo:nil repeats: NO];
-    
-    
-    //[countryTbl removeFromSuperview];
-}
-
--(void) callAfterFewSecond:(NSTimer*)t
-{
-    //[countryTbl removeFromSuperview];
+    [self.extendView removeFromSuperview];
 }
 
 

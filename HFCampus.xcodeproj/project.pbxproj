@@ -15,6 +15,11 @@
 		01002CFD189404950041451D /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CFC189404950041451D /* TopicViewController.m */; };
 		01002D00189408940041451D /* ControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002CFF189408940041451D /* ControllerView.m */; };
 		01002D041894B5830041451D /* TopicDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002D031894B5830041451D /* TopicDataModel.m */; };
+		01002D1C1898AD560041451D /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002D171898AD560041451D /* NSMutableArray+pieEx.m */; };
+		01002D1D1898AD560041451D /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002D191898AD560041451D /* PieElement.m */; };
+		01002D1E1898AD560041451D /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002D1B1898AD560041451D /* PieLayer.m */; };
+		01002D221898B2EB0041451D /* PieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002D211898B2EB0041451D /* PieView.m */; };
+		01002D251898B4200041451D /* ExtendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01002D241898B4200041451D /* ExtendView.m */; };
 		01010F5D18842A010004D0CE /* FTWCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F5C18842A010004D0CE /* FTWCache.m */; };
 		01010F691885890D0004D0CE /* STRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F681885890D0004D0CE /* STRootViewController.m */; };
 		01010F711885893A0004D0CE /* STHanoiOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F6C1885893A0004D0CE /* STHanoiOperation.m */; };
@@ -127,6 +132,17 @@
 		01002CFF189408940041451D /* ControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerView.m; sourceTree = "<group>"; };
 		01002D021894B5830041451D /* TopicDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDataModel.h; sourceTree = "<group>"; };
 		01002D031894B5830041451D /* TopicDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDataModel.m; sourceTree = "<group>"; };
+		01002D151898AD560041451D /* MagicPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPieLayer.h; sourceTree = "<group>"; };
+		01002D161898AD560041451D /* NSMutableArray+pieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+pieEx.h"; sourceTree = "<group>"; };
+		01002D171898AD560041451D /* NSMutableArray+pieEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+pieEx.m"; sourceTree = "<group>"; };
+		01002D181898AD560041451D /* PieElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieElement.h; sourceTree = "<group>"; };
+		01002D191898AD560041451D /* PieElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieElement.m; sourceTree = "<group>"; };
+		01002D1A1898AD560041451D /* PieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieLayer.h; sourceTree = "<group>"; };
+		01002D1B1898AD560041451D /* PieLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieLayer.m; sourceTree = "<group>"; };
+		01002D201898B2EB0041451D /* PieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieView.h; sourceTree = "<group>"; };
+		01002D211898B2EB0041451D /* PieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieView.m; sourceTree = "<group>"; };
+		01002D231898B4200041451D /* ExtendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendView.h; sourceTree = "<group>"; };
+		01002D241898B4200041451D /* ExtendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendView.m; sourceTree = "<group>"; };
 		01010F5B18842A010004D0CE /* FTWCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTWCache.h; path = FTWCache/FTWCache.h; sourceTree = "<group>"; };
 		01010F5C18842A010004D0CE /* FTWCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTWCache.m; path = FTWCache/FTWCache.m; sourceTree = "<group>"; };
 		01010F671885890D0004D0CE /* STRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STRootViewController.h; path = "算法/STRootViewController.h"; sourceTree = "<group>"; };
@@ -360,6 +376,9 @@
 		01002CFA189404650041451D /* 话题展开View */ = {
 			isa = PBXGroup;
 			children = (
+				01002D1F1898B2B50041451D /* 圆盘View */,
+				01002D231898B4200041451D /* ExtendView.h */,
+				01002D241898B4200041451D /* ExtendView.m */,
 			);
 			name = "话题展开View";
 			sourceTree = "<group>";
@@ -371,6 +390,46 @@
 				01002D031894B5830041451D /* TopicDataModel.m */,
 			);
 			name = "数据模型";
+			sourceTree = "<group>";
+		};
+		01002D061898ACDB0041451D /* 框架工具 */ = {
+			isa = PBXGroup;
+			children = (
+				01002D071898AD170041451D /* 统计 */,
+				0145495E186C19D2007E8C25 /* 框架布局工具 */,
+			);
+			name = "框架工具";
+			sourceTree = "<group>";
+		};
+		01002D071898AD170041451D /* 统计 */ = {
+			isa = PBXGroup;
+			children = (
+				01002D141898AD560041451D /* MagicPieLayer */,
+			);
+			name = "统计";
+			sourceTree = "<group>";
+		};
+		01002D141898AD560041451D /* MagicPieLayer */ = {
+			isa = PBXGroup;
+			children = (
+				01002D151898AD560041451D /* MagicPieLayer.h */,
+				01002D161898AD560041451D /* NSMutableArray+pieEx.h */,
+				01002D171898AD560041451D /* NSMutableArray+pieEx.m */,
+				01002D181898AD560041451D /* PieElement.h */,
+				01002D191898AD560041451D /* PieElement.m */,
+				01002D1A1898AD560041451D /* PieLayer.h */,
+				01002D1B1898AD560041451D /* PieLayer.m */,
+			);
+			path = MagicPieLayer;
+			sourceTree = "<group>";
+		};
+		01002D1F1898B2B50041451D /* 圆盘View */ = {
+			isa = PBXGroup;
+			children = (
+				01002D201898B2EB0041451D /* PieView.h */,
+				01002D211898B2EB0041451D /* PieView.m */,
+			);
+			name = "圆盘View";
 			sourceTree = "<group>";
 		};
 		01010F5A188429E80004D0CE /* FTWCache */ = {
@@ -475,7 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				0145495F186C19E7007E8C25 /* 通用工具 */,
-				0145495E186C19D2007E8C25 /* 框架布局工具 */,
+				01002D061898ACDB0041451D /* 框架工具 */,
 				0145495D186C19C7007E8C25 /* 网络工具 */,
 				0145492E186C19A2007E8C25 /* HFCampus */,
 				0145494D186C19A2007E8C25 /* HFCampusTests */,
@@ -1100,6 +1159,7 @@
 				01DCE54818716356006AD3FE /* SVProgressHUD.m in Sources */,
 				017968BE188AD4590015B254 /* HiHelper.m in Sources */,
 				01DCE54118715599006AD3FE /* FileHelper.m in Sources */,
+				01002D251898B4200041451D /* ExtendView.m in Sources */,
 				017968A81888E70C0015B254 /* PhoneSearchViewController.m in Sources */,
 				015239E3186EAFB2000C729C /* RESTfulOperation.m in Sources */,
 				01D956661879390D00E3948C /* PeronContentImageCell.m in Sources */,
@@ -1131,6 +1191,7 @@
 				01002CEF1890F0DB0041451D /* ExpressViewController.m in Sources */,
 				015239BD186EAB70000C729C /* NSDictionary+RequestEncoding.m in Sources */,
 				01454983186C6A8B007E8C25 /* PersonsTableViewController.m in Sources */,
+				01002D221898B2EB0041451D /* PieView.m in Sources */,
 				01D956691879392E00E3948C /* PersonIntroductionCell.m in Sources */,
 				01010F5D18842A010004D0CE /* FTWCache.m in Sources */,
 				01DCE5541876F1C4006AD3FE /* PersonContentViewController.m in Sources */,
@@ -1152,10 +1213,12 @@
 				01010F7F188589510004D0CE /* STCodeViewController.m in Sources */,
 				01010F691885890D0004D0CE /* STRootViewController.m in Sources */,
 				01D95670187A96F600E3948C /* UIImage+BoxBlur.m in Sources */,
+				01002D1C1898AD560041451D /* NSMutableArray+pieEx.m in Sources */,
 				0145499E186D6529007E8C25 /* NewsLineCell.m in Sources */,
 				015239E9186F07A9000C729C /* IndicatorTableViewCell.m in Sources */,
 				01523999186EA8CF000C729C /* DetailItem.m in Sources */,
 				01523A0C18713E47000C729C /* NewsContentViewController.m in Sources */,
+				01002D1E1898AD560041451D /* PieLayer.m in Sources */,
 				015239BF186EAB70000C729C /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				01454966186C228F007E8C25 /* Evaluate.m in Sources */,
 				017968B2188AC8F20015B254 /* BookSearchHelper.m in Sources */,
@@ -1166,6 +1229,7 @@
 				01DCE54E187561D3006AD3FE /* PersonListCell.m in Sources */,
 				01523A011870088E000C729C /* SDImageCache.m in Sources */,
 				01010F7C188589470004D0CE /* STSortViewController.m in Sources */,
+				01002D1D1898AD560041451D /* PieElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

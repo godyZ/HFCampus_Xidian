@@ -24,6 +24,14 @@
 #define kLeftSelectColor [UIColor colorWithRed:210.0/255.0f green:210.0/255.0f blue:210.0/255.0f alpha:1]
 #define PhoneNoSelectedColor [UIColor colorWithRed:135.0f/255.0f green:206.0f/255.0f blue:235.0f/255.0f alpha: 1]
 
+
+//统计图表四种颜色
+#define itemOneColor [UIColor colorWithRed:221.0f/255.0f green:160.0f/255.0f blue:221.0f/255.0f alpha: 1]
+#define itemTwoColor [UIColor colorWithRed:135.0f/255.0f green:206.0f/255.0f blue:235.0f/255.0f alpha: 1]
+#define itemThreeColor [UIColor colorWithRed:255.0f/255.0f green:99.0f/255.0f blue:71.0f/255.0f alpha: 1]
+#define itemFourColor [UIColor colorWithRed:0.0f/255.0f green:201.0f/255.0f blue:87.0f/255.0f alpha: 1]
+
+
 //高度表
 #define CONETHEIGHT 64
 #define NewsTVCOriginalY 64+30

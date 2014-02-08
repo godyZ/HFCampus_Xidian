@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RESideMenu.h"
+#import "ExtendView.h"
 
 @interface TopicViewController : UIViewController<UISearchBarDelegate>
 {
@@ -30,6 +31,7 @@
 @property (nonatomic) UISearchBar* searchBarReagion;
 
 @property(nonatomic,strong) UITableView *countryTbl;
+@property (nonatomic, strong) ExtendView *extendView;
 @property(nonatomic,strong) NSMutableArray *allCountryArr,*filteredCountryArr;
 @property(nonatomic,strong) NSString *clickedCountryName;
 
