@@ -56,7 +56,7 @@ typedef enum  //枚举新闻类型
 {
     [super viewDidLoad];
 
-    
+    [self setNeedsStatusBarAppearanceUpdate];
     self.navigationController.navigationBar.barTintColor = colorNavBarTint;
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,200,100)];
     titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -70,6 +70,7 @@ typedef enum  //枚举新闻类型
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"general"] style:UIBarButtonItemStylePlain target:self action:@selector(showRightMenu)];
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -237,4 +238,11 @@ typedef enum  //枚举新闻类型
 {
     
 }
+
+
+
+
+
+
+
 @end

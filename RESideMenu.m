@@ -121,6 +121,8 @@ const int INTERSTITIAL_STEPS = 99;
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     
     [self performSelector:@selector(showAfterDelay) withObject:nil afterDelay:0.1];
+    
+    
 }
 
 - (void)hide

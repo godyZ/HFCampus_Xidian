@@ -32,6 +32,14 @@
 		0134421118ACBF3800FD4D7E /* BTGlassScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134420E18ACBF3800FD4D7E /* BTGlassScrollView.m */; };
 		0134421218ACBF3800FD4D7E /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134421018ACBF3800FD4D7E /* UIImage+ImageEffects.m */; };
 		0134421518ACC04100FD4D7E /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134421418ACC04100FD4D7E /* AboutUsViewController.m */; };
+		014279E218ADC4D700CB3D14 /* NewsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014279E118ADC4D700CB3D14 /* NewsNavigationController.m */; };
+		014279E518ADC55300CB3D14 /* PersonsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014279E418ADC55300CB3D14 /* PersonsNavigationController.m */; };
+		014279E818ADC57900CB3D14 /* TopicNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014279E718ADC57900CB3D14 /* TopicNavigationController.m */; };
+		014279EB18ADC5B500CB3D14 /* AlgorithmNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014279EA18ADC5B500CB3D14 /* AlgorithmNavigationController.m */; };
+		014279EE18ADC5CF00CB3D14 /* AboutNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014279ED18ADC5CF00CB3D14 /* AboutNavigationController.m */; };
+		014279F118ADC6B200CB3D14 /* SearchBookNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014279F018ADC6B200CB3D14 /* SearchBookNavigationController.m */; };
+		014279F418ADC6D300CB3D14 /* SearchExpressNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014279F318ADC6D300CB3D14 /* SearchExpressNavigationController.m */; };
+		014279F718ADC6E600CB3D14 /* SearchPhoneNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014279F618ADC6E600CB3D14 /* SearchPhoneNavigationController.m */; };
 		01454929186C19A2007E8C25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01454928186C19A2007E8C25 /* Foundation.framework */; };
 		0145492B186C19A2007E8C25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0145492A186C19A2007E8C25 /* CoreGraphics.framework */; };
 		0145492D186C19A2007E8C25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0145492C186C19A2007E8C25 /* UIKit.framework */; };
@@ -170,6 +178,22 @@
 		0134421018ACBF3800FD4D7E /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		0134421318ACC04100FD4D7E /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
 		0134421418ACC04100FD4D7E /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		014279E018ADC4D700CB3D14 /* NewsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsNavigationController.h; sourceTree = "<group>"; };
+		014279E118ADC4D700CB3D14 /* NewsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsNavigationController.m; sourceTree = "<group>"; };
+		014279E318ADC55300CB3D14 /* PersonsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsNavigationController.h; sourceTree = "<group>"; };
+		014279E418ADC55300CB3D14 /* PersonsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsNavigationController.m; sourceTree = "<group>"; };
+		014279E618ADC57900CB3D14 /* TopicNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicNavigationController.h; sourceTree = "<group>"; };
+		014279E718ADC57900CB3D14 /* TopicNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicNavigationController.m; sourceTree = "<group>"; };
+		014279E918ADC5B500CB3D14 /* AlgorithmNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlgorithmNavigationController.h; sourceTree = "<group>"; };
+		014279EA18ADC5B500CB3D14 /* AlgorithmNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlgorithmNavigationController.m; sourceTree = "<group>"; };
+		014279EC18ADC5CF00CB3D14 /* AboutNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutNavigationController.h; sourceTree = "<group>"; };
+		014279ED18ADC5CF00CB3D14 /* AboutNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutNavigationController.m; sourceTree = "<group>"; };
+		014279EF18ADC6B200CB3D14 /* SearchBookNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBookNavigationController.h; sourceTree = "<group>"; };
+		014279F018ADC6B200CB3D14 /* SearchBookNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBookNavigationController.m; sourceTree = "<group>"; };
+		014279F218ADC6D300CB3D14 /* SearchExpressNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchExpressNavigationController.h; sourceTree = "<group>"; };
+		014279F318ADC6D300CB3D14 /* SearchExpressNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchExpressNavigationController.m; sourceTree = "<group>"; };
+		014279F518ADC6E600CB3D14 /* SearchPhoneNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPhoneNavigationController.h; sourceTree = "<group>"; };
+		014279F618ADC6E600CB3D14 /* SearchPhoneNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPhoneNavigationController.m; sourceTree = "<group>"; };
 		01454925186C19A2007E8C25 /* HFCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HFCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01454928186C19A2007E8C25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0145492A186C19A2007E8C25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -589,7 +613,6 @@
 			isa = PBXGroup;
 			children = (
 				01454980186C5CDF007E8C25 /* 关于类 */,
-				0145497F186C5CB8007E8C25 /* 图说类 */,
 				0145497E186C5C6D007E8C25 /* 算法类 */,
 				0145497D186C5C62007E8C25 /* 话题类 */,
 				0145497C186C5C40007E8C25 /* 工具类 */,
@@ -698,6 +721,8 @@
 				01454991186C7CB8007E8C25 /* 新闻内容 */,
 				01454976186C23CE007E8C25 /* NewsViewController.h */,
 				01454977186C23CE007E8C25 /* NewsViewController.m */,
+				014279E018ADC4D700CB3D14 /* NewsNavigationController.h */,
+				014279E118ADC4D700CB3D14 /* NewsNavigationController.m */,
 			);
 			name = "新闻类";
 			sourceTree = "<group>";
@@ -708,6 +733,8 @@
 				01DCE54B187554DC006AD3FE /* 人物Cell */,
 				01DCE54A187554CE006AD3FE /* 人物内容 */,
 				01DCE549187554B3006AD3FE /* 人物列表 */,
+				014279E318ADC55300CB3D14 /* PersonsNavigationController.h */,
+				014279E418ADC55300CB3D14 /* PersonsNavigationController.m */,
 			);
 			name = "人物类";
 			sourceTree = "<group>";
@@ -729,6 +756,8 @@
 				01002CFA189404650041451D /* 话题展开View */,
 				01002CF91894043E0041451D /* 话题动态Cell */,
 				01002CF8189404310041451D /* 投票话题列表 */,
+				014279E618ADC57900CB3D14 /* TopicNavigationController.h */,
+				014279E718ADC57900CB3D14 /* TopicNavigationController.m */,
 			);
 			name = "话题类";
 			sourceTree = "<group>";
@@ -744,15 +773,10 @@
 				01010F61188588B00004D0CE /* 排序 */,
 				01010F60188588A90004D0CE /* 递归 */,
 				01010F5F1885889E0004D0CE /* 算法列表 */,
+				014279E918ADC5B500CB3D14 /* AlgorithmNavigationController.h */,
+				014279EA18ADC5B500CB3D14 /* AlgorithmNavigationController.m */,
 			);
 			name = "算法类";
-			sourceTree = "<group>";
-		};
-		0145497F186C5CB8007E8C25 /* 图说类 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "图说类";
 			sourceTree = "<group>";
 		};
 		01454980186C5CDF007E8C25 /* 关于类 */ = {
@@ -760,6 +784,8 @@
 			children = (
 				0134421318ACC04100FD4D7E /* AboutUsViewController.h */,
 				0134421418ACC04100FD4D7E /* AboutUsViewController.m */,
+				014279EC18ADC5CF00CB3D14 /* AboutNavigationController.h */,
+				014279ED18ADC5CF00CB3D14 /* AboutNavigationController.m */,
 			);
 			name = "关于类";
 			sourceTree = "<group>";
@@ -921,6 +947,8 @@
 				017968A91889001C0015B254 /* phone_number.xml */,
 				017968A61888E70C0015B254 /* PhoneSearchViewController.h */,
 				017968A71888E70C0015B254 /* PhoneSearchViewController.m */,
+				014279F518ADC6E600CB3D14 /* SearchPhoneNavigationController.h */,
+				014279F618ADC6E600CB3D14 /* SearchPhoneNavigationController.m */,
 			);
 			name = "查询电话";
 			sourceTree = "<group>";
@@ -930,6 +958,8 @@
 			children = (
 				01002CED1890F0DB0041451D /* ExpressViewController.h */,
 				01002CEE1890F0DB0041451D /* ExpressViewController.m */,
+				014279F218ADC6D300CB3D14 /* SearchExpressNavigationController.h */,
+				014279F318ADC6D300CB3D14 /* SearchExpressNavigationController.m */,
 			);
 			name = "查询快递";
 			sourceTree = "<group>";
@@ -941,6 +971,8 @@
 				017968B7188AD0500015B254 /* 书籍查询结果 */,
 				017968B3188ACA550015B254 /* 查询书籍接入 */,
 				017968AF188AC8D90015B254 /* 辅助类 */,
+				014279EF18ADC6B200CB3D14 /* SearchBookNavigationController.h */,
+				014279F018ADC6B200CB3D14 /* SearchBookNavigationController.m */,
 			);
 			name = "查询书籍";
 			sourceTree = "<group>";
@@ -1180,11 +1212,15 @@
 				01454973186C22B9007E8C25 /* RESideMenu.m in Sources */,
 				01454974186C22B9007E8C25 /* RESideMenuCell.m in Sources */,
 				01DCE54818716356006AD3FE /* SVProgressHUD.m in Sources */,
+				014279E518ADC55300CB3D14 /* PersonsNavigationController.m in Sources */,
 				017968BE188AD4590015B254 /* HiHelper.m in Sources */,
+				014279E818ADC57900CB3D14 /* TopicNavigationController.m in Sources */,
+				014279F418ADC6D300CB3D14 /* SearchExpressNavigationController.m in Sources */,
 				01DCE54118715599006AD3FE /* FileHelper.m in Sources */,
 				01002D251898B4200041451D /* ExtendView.m in Sources */,
 				017968A81888E70C0015B254 /* PhoneSearchViewController.m in Sources */,
 				015239E3186EAFB2000C729C /* RESTfulOperation.m in Sources */,
+				014279F718ADC6E600CB3D14 /* SearchPhoneNavigationController.m in Sources */,
 				01D956661879390D00E3948C /* PeronContentImageCell.m in Sources */,
 				01DCE53418714D52006AD3FE /* AMScrollingNavbarViewController.m in Sources */,
 				0152399A186EA8CF000C729C /* MenuItem.m in Sources */,
@@ -1206,6 +1242,7 @@
 				01523A041870088E000C729C /* SDWebImageDownloader.m in Sources */,
 				01523A051870088E000C729C /* SDWebImageDownloaderOperation.m in Sources */,
 				01523A031870088E000C729C /* SDWebImageDecoder.m in Sources */,
+				014279EE18ADC5CF00CB3D14 /* AboutNavigationController.m in Sources */,
 				01523A061870088E000C729C /* SDWebImageManager.m in Sources */,
 				01DCE55118769806006AD3FE /* IndicatorPersonCell.m in Sources */,
 				01454969186C22A1007E8C25 /* UIWindow+RESideMenuExtensions.m in Sources */,
@@ -1219,6 +1256,7 @@
 				01010F5D18842A010004D0CE /* FTWCache.m in Sources */,
 				01DCE5541876F1C4006AD3FE /* PersonContentViewController.m in Sources */,
 				015239BE186EAB70000C729C /* NSString+MKNetworkKitAdditions.m in Sources */,
+				014279E218ADC4D700CB3D14 /* NewsNavigationController.m in Sources */,
 				01010F711885893A0004D0CE /* STHanoiOperation.m in Sources */,
 				01523A091870088E000C729C /* UIImageView+WebCache.m in Sources */,
 				01454939186C19A2007E8C25 /* AppDelegate.m in Sources */,
@@ -1232,6 +1270,7 @@
 				0152399C186EA8CF000C729C /* UserItem.m in Sources */,
 				0134421118ACBF3800FD4D7E /* BTGlassScrollView.m in Sources */,
 				0152399B186EA8CF000C729C /* PeopleItem.m in Sources */,
+				014279EB18ADC5B500CB3D14 /* AlgorithmNavigationController.m in Sources */,
 				01002CF718916F340041451D /* UIViewController+MJPopupViewController.m in Sources */,
 				0134421218ACBF3800FD4D7E /* UIImage+ImageEffects.m in Sources */,
 				015239BB186EAB70000C729C /* NSData+Base64.m in Sources */,
@@ -1241,6 +1280,7 @@
 				01002D1C1898AD560041451D /* NSMutableArray+pieEx.m in Sources */,
 				0145499E186D6529007E8C25 /* NewsLineCell.m in Sources */,
 				015239E9186F07A9000C729C /* IndicatorTableViewCell.m in Sources */,
+				014279F118ADC6B200CB3D14 /* SearchBookNavigationController.m in Sources */,
 				01523999186EA8CF000C729C /* DetailItem.m in Sources */,
 				01523A0C18713E47000C729C /* NewsContentViewController.m in Sources */,
 				01002D1E1898AD560041451D /* PieLayer.m in Sources */,

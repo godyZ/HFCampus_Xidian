@@ -24,8 +24,6 @@
 {
     // Override point for customization after application launch.
     self.restfulEngine = [[RESTfulEngine alloc]initWithHostName:HICAMPOUS_URL];
-#warning 黑白statusBar
-    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;
 }
 							
