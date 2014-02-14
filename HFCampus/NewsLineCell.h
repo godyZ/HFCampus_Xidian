@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tagLabel4;
 @property (weak, nonatomic) IBOutlet UILabel *newsGentie;
 
+@property (weak, nonatomic) IBOutlet UIImageView *readFlagImage;
 
 
 @end

@@ -26,6 +26,7 @@
     [aCoder encodeObject:self.itemId forKey:@"ItemId"];
     [aCoder encodeObject:self.author_thumbnail forKey:@"AuthorThumbnail"];
     [aCoder encodeObject:self.create_time forKey:@"CreateTime"];
+    [aCoder encodeObject:self.readFlag forKey:@"ReadedFlag"];
     
      //讲座
     
@@ -47,6 +48,7 @@
         self.itemId = [aDecoder decodeObjectForKey:@"ItemId"];
         self.author_name = [aDecoder decodeObjectForKey:@"AuthorThumbnail"];
         self.create_time = [aDecoder decodeObjectForKey:@"CreateTime"];
+        self.readFlag = [aDecoder decodeObjectForKey:@"ReadedFlag"];
         
         //讲座
         self.person = [aDecoder decodeObjectForKey:@"person"];

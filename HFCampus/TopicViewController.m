@@ -552,6 +552,7 @@ NSDictionary *custDictinary;
 -(void)showLeftMenu
 {
     
+    
     if (!_sideMenu) {
         RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"资讯" action:^(RESideMenu *menu, RESideMenuItem *item)
                                     {
@@ -576,10 +577,7 @@ NSDictionary *custDictinary;
                                           }
                                           [menu setRootViewController:HFcampusDelegate.globalTopicNavigationController];
                                       }];
-        RESideMenuItem *picturesItem = [[RESideMenuItem alloc] initWithTitle:@"图说" action:^(RESideMenu *menu, RESideMenuItem *item) {
-            [menu hide];
-            NSLog(@"Item %@", item);
-        }];
+        
         RESideMenuItem *algorithmsItem = [[RESideMenuItem alloc] initWithTitle:@"算法" action:^(RESideMenu *menu, RESideMenuItem *item)
                                           {
                                               if (!HFcampusDelegate.globalAlgorithmNavigationController){
@@ -625,7 +623,7 @@ NSDictionary *custDictinary;
                                          
                                      }];
         
-        _sideMenu = [[RESideMenu alloc] initWithItems:@[newsItem, personsItem, topicsItem, picturesItem,algorithmsItem, toolsItem,aboutItem]];
+        _sideMenu = [[RESideMenu alloc] initWithItems:@[newsItem, personsItem, topicsItem,algorithmsItem, toolsItem,aboutItem]];
         _sideMenu.verticalOffset = IS_WIDESCREEN ? 45: 76;
     }
     

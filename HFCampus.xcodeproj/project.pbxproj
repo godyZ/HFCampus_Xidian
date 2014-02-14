@@ -29,6 +29,9 @@
 		01010F7B188589470004D0CE /* STSortView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F77188589470004D0CE /* STSortView.m */; };
 		01010F7C188589470004D0CE /* STSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F79188589470004D0CE /* STSortViewController.m */; };
 		01010F7F188589510004D0CE /* STCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01010F7E188589510004D0CE /* STCodeViewController.m */; };
+		0134421118ACBF3800FD4D7E /* BTGlassScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134420E18ACBF3800FD4D7E /* BTGlassScrollView.m */; };
+		0134421218ACBF3800FD4D7E /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134421018ACBF3800FD4D7E /* UIImage+ImageEffects.m */; };
+		0134421518ACC04100FD4D7E /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134421418ACC04100FD4D7E /* AboutUsViewController.m */; };
 		01454929186C19A2007E8C25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01454928186C19A2007E8C25 /* Foundation.framework */; };
 		0145492B186C19A2007E8C25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0145492A186C19A2007E8C25 /* CoreGraphics.framework */; };
 		0145492D186C19A2007E8C25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0145492C186C19A2007E8C25 /* UIKit.framework */; };
@@ -161,6 +164,12 @@
 		01010F79188589470004D0CE /* STSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STSortViewController.m; path = "算法/STSortViewController.m"; sourceTree = "<group>"; };
 		01010F7D188589510004D0CE /* STCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STCodeViewController.h; path = "算法/STCodeViewController.h"; sourceTree = "<group>"; };
 		01010F7E188589510004D0CE /* STCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STCodeViewController.m; path = "算法/STCodeViewController.m"; sourceTree = "<group>"; };
+		0134420D18ACBF3800FD4D7E /* BTGlassScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTGlassScrollView.h; sourceTree = "<group>"; };
+		0134420E18ACBF3800FD4D7E /* BTGlassScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTGlassScrollView.m; sourceTree = "<group>"; };
+		0134420F18ACBF3800FD4D7E /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		0134421018ACBF3800FD4D7E /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		0134421318ACC04100FD4D7E /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		0134421418ACC04100FD4D7E /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		01454925186C19A2007E8C25 /* HFCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HFCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01454928186C19A2007E8C25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0145492A186C19A2007E8C25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -530,6 +539,17 @@
 			name = "汉诺塔";
 			sourceTree = "<group>";
 		};
+		0134420C18ACBF0D00FD4D7E /* BTGlassScrollerView */ = {
+			isa = PBXGroup;
+			children = (
+				0134420D18ACBF3800FD4D7E /* BTGlassScrollView.h */,
+				0134420E18ACBF3800FD4D7E /* BTGlassScrollView.m */,
+				0134420F18ACBF3800FD4D7E /* UIImage+ImageEffects.h */,
+				0134421018ACBF3800FD4D7E /* UIImage+ImageEffects.m */,
+			);
+			name = BTGlassScrollerView;
+			sourceTree = "<group>";
+		};
 		0145491C186C19A2007E8C25 = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +646,7 @@
 		0145495E186C19D2007E8C25 /* 框架布局工具 */ = {
 			isa = PBXGroup;
 			children = (
+				0134420C18ACBF0D00FD4D7E /* BTGlassScrollerView */,
 				01D9566A187A969400E3948C /* realTimeBlurEffect */,
 				01DCE53118714D25006AD3FE /* AMScrollingNavbar */,
 				0145499F186D6ECD007E8C25 /* 滚动图片框 */,
@@ -737,6 +758,8 @@
 		01454980186C5CDF007E8C25 /* 关于类 */ = {
 			isa = PBXGroup;
 			children = (
+				0134421318ACC04100FD4D7E /* AboutUsViewController.h */,
+				0134421418ACC04100FD4D7E /* AboutUsViewController.m */,
 			);
 			name = "关于类";
 			sourceTree = "<group>";
@@ -1207,8 +1230,10 @@
 				01010F7A188589470004D0CE /* STSortOperation.m in Sources */,
 				01454935186C19A2007E8C25 /* main.m in Sources */,
 				0152399C186EA8CF000C729C /* UserItem.m in Sources */,
+				0134421118ACBF3800FD4D7E /* BTGlassScrollView.m in Sources */,
 				0152399B186EA8CF000C729C /* PeopleItem.m in Sources */,
 				01002CF718916F340041451D /* UIViewController+MJPopupViewController.m in Sources */,
+				0134421218ACBF3800FD4D7E /* UIImage+ImageEffects.m in Sources */,
 				015239BB186EAB70000C729C /* NSData+Base64.m in Sources */,
 				01010F7F188589510004D0CE /* STCodeViewController.m in Sources */,
 				01010F691885890D0004D0CE /* STRootViewController.m in Sources */,
@@ -1225,6 +1250,7 @@
 				01523A001870088E000C729C /* MKAnnotationView+WebCache.m in Sources */,
 				014549A2186D6EF0007E8C25 /* EScrollerView.m in Sources */,
 				015239BC186EAB70000C729C /* NSDate+RFC1123.m in Sources */,
+				0134421518ACC04100FD4D7E /* AboutUsViewController.m in Sources */,
 				01010F721885893A0004D0CE /* STHanoiView.m in Sources */,
 				01DCE54E187561D3006AD3FE /* PersonListCell.m in Sources */,
 				01523A011870088E000C729C /* SDImageCache.m in Sources */,
@@ -1315,7 +1341,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "3B5C0B72-93A6-4E29-B6DC-BDAE041DB741";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1337,8 +1363,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Dingding Qu (9KP5LLH6LH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dingding Qu (9KP5LLH6LH)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1349,7 +1375,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "1AE67722-2351-4AEF-AD83-1C3F2AFF8296";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1366,7 +1392,7 @@
 				INFOPLIST_FILE = "HFCampus/HFCampus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3B5C0B72-93A6-4E29-B6DC-BDAE041DB741";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1376,13 +1402,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Dingding Qu (9KP5LLH6LH)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HFCampus/HFCampus-Prefix.pch";
 				INFOPLIST_FILE = "HFCampus/HFCampus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1AE67722-2351-4AEF-AD83-1C3F2AFF8296";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

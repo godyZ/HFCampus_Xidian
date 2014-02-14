@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UINavigationController *globalPersonsNavigationController;    //人物
 @property (strong, nonatomic) UINavigationController *globalTopicNavigationController;      //话题
 @property (strong, nonatomic) UINavigationController *globalAlgorithmNavigationController;  //算法
+@property (strong, nonatomic) UINavigationController *globalAboutUsNavigationController;    //关于
 
 
 //****工具*****

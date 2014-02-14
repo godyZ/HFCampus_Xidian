@@ -59,6 +59,11 @@
         if (tableViewCacheData)
         {
             self.menuItems = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
+//#warning "测试缓存"
+//            for (MenuItem *tempMenuItem in self.menuItems)
+//            {
+//                tempMenuItem.readFlag = @"NoRead";
+//            }
         }
 
     }
@@ -89,6 +94,7 @@
     else if ([self.newsType isEqualToString: @"grapevane"])
     {
         tableViewCacheData = [FTWCache objectForKey:@"八卦缓存"];
+
         if (tableViewCacheData)
         {
             self.menuItems = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
@@ -141,16 +147,66 @@
     
     [HFcampusDelegate.restfulEngine fetchMenuItemsForPath:urlStr
                                                 onSucceed:^(NSMutableArray *listOfModelBaseObjects){
-                                                    [self.loadMoreIndicatorView stopAnimating];
-                                                    self.menuItems = listOfModelBaseObjects;
+                                                    [self.loadMoreIndicatorView stopAnimating];     //停止读取动画
+                                                    self.menuItems = listOfModelBaseObjects;        //读取的数据赋值
                                                     if([self.menuItems count] > 0){
-                                                        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+                                                        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;  //分隔符
                                                         
-                                                        [self.tableView reloadData];
+                                                        [self.tableView reloadData];         //reload TableView数据
                                                         
                                                         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-                                                        dispatch_async(queue, ^{
-                                                            NSData *tableViewCacheData = NULL;
+                                                        dispatch_async(queue, ^{              //分线程将加载的数据写入缓存
+                                                            NSData *tableViewCacheData = NULL;//此时必须判定哪些是新读取的新闻，并将其标记为未读
+                                                                                              //一开始全部标记为未读，只有点击打开后的新闻才能更改器未读状态
+                                                                                              //只有前十条才有资格标记为未读，已读的标记效果很强
+                                                            
+                                                            //*********判断哪些是最新数据，设置标记为未读，更改标志位****
+                                                            
+                                                            //读取的信息与缓存中第一条进行比较，知道相同为止，不相同的即为新加入新闻，标记为未读
+                                                            //新加入的为@"NoRead"
+                                                            if ([self.newsType isEqualToString: @"news"])   //新闻
+                                                            {
+                                                                tableViewCacheData = [FTWCache objectForKey:@"新闻缓存"];
+                                                            }
+                                                            else if ([self.newsType isEqualToString: @"activity"])  //活动
+                                                            {
+                                                                tableViewCacheData = [FTWCache objectForKey:@"活动缓存"];
+                                                            }
+                                                            else if ([self.newsType isEqualToString: @"job"])    //招聘
+                                                            {
+                                                                tableViewCacheData = [FTWCache objectForKey:@"招聘缓存"];
+                                                            }
+                                                            else if ([self.newsType isEqualToString: @"lecture"])   //讲座
+                                                            {
+                                                                tableViewCacheData = [FTWCache objectForKey:@"讲座缓存"];
+                                                            }
+                                                            else if ([self.newsType isEqualToString: @"grapevane"])    //八卦
+                                                            {
+                                                                tableViewCacheData = [FTWCache objectForKey:@"八卦缓存"];
+                                                            }
+                                                            if (tableViewCacheData) //对应分类中的前十天缓存数据
+                                                            {
+                                                                NSMutableArray * tempArray = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
+                                                                MenuItem *cacheFirstItem = [tempArray objectAtIndex:0];
+                                                                
+                                                                int i = 0;
+                                                                while (![cacheFirstItem.title isEqualToString:((MenuItem *)[self.menuItems objectAtIndex:i]).title])
+                                                                {
+                                                                    //获取的是新消息
+                                                                    ((MenuItem *)[self.menuItems objectAtIndex:i]).readFlag = @"NoRead"; //标记为未读
+                                                                    i++;
+                                                                }
+                                                                //剩下的保持原样
+                                                                int cacheCount = 0;
+                                                                while (i < self.menuItems.count)
+                                                                {
+                                                                    ((MenuItem *)[self.menuItems objectAtIndex:i]).readFlag = ((MenuItem *)[tempArray objectAtIndex:cacheCount]).readFlag;
+                                                                    cacheCount ++;
+                                                                    i++;
+                                                                }
+                                                            }
+                                                            
+
                                                             //*********根据不同类型写入缓存****************
                                                             if ([self.newsType isEqualToString: @"news"])
                                                             {
@@ -301,15 +357,39 @@
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
         MenuItem *item  = [self.menuItems objectAtIndex:indexPath.row -1 ];
+        //获取标题
         cell.newsTitle.text = item.title;
+        
+        //如果为未读标记
+        if ([item.readFlag isEqualToString:@"NoRead"])
+        {
+            cell.newsTitle.textColor = [UIColor blackColor];
+            cell.readFlagImage.hidden = NO;
+            cell.readFlagImage.backgroundColor = colorChinaRed;
+        }
+        else if ([item.readFlag isEqualToString:@"Readed"])
+        {
+            cell.newsTitle.textColor = [UIColor lightGrayColor];
+            cell.readFlagImage.hidden = YES;
+        }
+        else if (item.readFlag == NULL)
+        {
+            cell.newsTitle.textColor = [UIColor lightGrayColor];
+            cell.readFlagImage.hidden = YES;
+        }
+        
+        
 
+        //获取时间
         NSTimeInterval dateInt = [[item.create_time objectForKey:@"$date"] doubleValue];
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:dateInt/1000];  //获取的数据多了3个000
         NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
         dateFormater.dateFormat = @"MM-dd";
     
+        //获取描述
         cell.newsDescription.text = [NSString stringWithFormat:@"%@ | %@",item.author_name,[dateFormater stringFromDate:date]];
         
+        //获取图片
         cell.newsThumbnailImage.layer.cornerRadius = 4.0f;
         cell.newsThumbnailImage.layer.masksToBounds = YES;
         cell.newsThumbnailImage.layer.borderWidth = 0.2f ;
@@ -326,6 +406,53 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     MenuItem *tempItem = [self.menuItems objectAtIndex:indexPath.row - 1];
+    
+    
+    if ([tempItem.readFlag isEqualToString:@"NoRead"]) //如果点开未读新闻
+    {
+        tempItem.readFlag = @"Readed";//将该条新闻标记为已读
+        
+        [self.tableView reloadData];  //刷新tableView标记
+        
+        //并且马上缓存前十条
+        //*********根据不同类型写入缓存****************
+        
+        NSData *tableViewCacheData = NULL;
+        
+        if ([self.newsType isEqualToString: @"news"])
+        {
+            tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+            [FTWCache setObject:tableViewCacheData forKey:@"新闻缓存"];
+//            
+//#warning "缓存测试"
+//            tableViewCacheData = [FTWCache objectForKey:@"新闻缓存"];
+//            self.menuItems = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
+       }
+        else if ([self.newsType isEqualToString: @"activity"])
+        {
+            tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+            [FTWCache setObject:tableViewCacheData forKey:@"活动缓存"];
+        }
+        else if ([self.newsType isEqualToString: @"job"])
+        {
+            tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+            [FTWCache setObject:tableViewCacheData forKey:@"招聘缓存"];
+        }
+        else if ([self.newsType isEqualToString: @"lecture"])
+        {
+            tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+            [FTWCache setObject:tableViewCacheData forKey:@"讲座缓存"];
+        }
+        else if ([self.newsType isEqualToString: @"grapevane"])
+        {
+            tableViewCacheData = [NSKeyedArchiver archivedDataWithRootObject:self.menuItems];
+            [FTWCache setObject:tableViewCacheData forKey:@"八卦缓存"];
+        }
+        //*********************************************
+
+    }
+
+    
     NewsContentViewController *newsContentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsContentViewController"];
     
     if([self.newsType isEqualToString:@"lecture"]){
@@ -358,10 +485,10 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
+    }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 */
 

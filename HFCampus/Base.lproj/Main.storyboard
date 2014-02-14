@@ -269,6 +269,40 @@
             </objects>
             <point key="canvasLocation" x="-3055" y="2050"/>
         </scene>
+        <!--Navigation Controller - 关于类-->
+        <scene sceneID="qAF-pg-jUG">
+            <objects>
+                <navigationController storyboardIdentifier="AboutUsNavigationControllerID" title="关于类" definesPresentationContext="YES" id="KuZ-Vw-XFx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sy4-EM-jUf">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="f3E-nF-mjk" kind="relationship" relationship="rootViewController" id="rwb-0R-ToJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ip-NS-UNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3053" y="2745"/>
+        </scene>
+        <!--About Us View Controller-->
+        <scene sceneID="g84-yJ-svt">
+            <objects>
+                <viewController id="f3E-nF-mjk" customClass="AboutUsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mjf-4k-Vkz"/>
+                        <viewControllerLayoutGuide type="bottom" id="IuE-Zc-h6v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CIk-yB-3nN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xM4-mp-2yM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4m-HA-PUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2505" y="2741"/>
+        </scene>
         <!--Root View Controller - 算法-->
         <scene sceneID="3uE-n3-Tel">
             <objects>
@@ -770,7 +804,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="比特币" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOx-Qq-WKe">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="独家" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOx-Qq-WKe">
                                             <rect key="frame" x="271" y="49" width="32" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.88949983016304346" green="0.51751940810598618" blue="0.61725905369856482" alpha="1" colorSpace="calibratedRGB"/>
@@ -782,15 +816,15 @@
                                             <rect key="frame" x="9" y="8" width="79" height="55"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100跟贴" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-m7-T4s">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="189跟贴" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-m7-T4s">
                                             <rect key="frame" x="229" y="46" width="60" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="PKI-xF-PeH">
-                                            <rect key="frame" x="294" y="0.0" width="20" height="20"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PKI-xF-PeH">
+                                            <rect key="frame" x="311" y="20" width="3" height="6"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -802,6 +836,7 @@
                                     <outlet property="newsGentie" destination="cfw-m7-T4s" id="JjM-SH-v7C"/>
                                     <outlet property="newsThumbnailImage" destination="ifV-Eb-5cI" id="IaF-fM-odI"/>
                                     <outlet property="newsTitle" destination="KXs-sH-mG4" id="1hq-Hh-XVc"/>
+                                    <outlet property="readFlagImage" destination="PKI-xF-PeH" id="RDd-WS-xwb"/>
                                     <outlet property="tagLabel4" destination="EOx-Qq-WKe" id="mWl-WM-sCy"/>
                                 </connections>
                             </tableViewCell>
@@ -905,7 +940,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFf-iL-fm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3079" y="2795"/>
+            <point key="canvasLocation" x="-1639" y="2775"/>
         </scene>
         <!--View Controller - 注册-->
         <scene sceneID="Ubx-sP-Pq9">
@@ -1079,7 +1114,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Star" width="32" height="32"/>
         <image name="barcode" width="352" height="108"/>
         <image name="newsLineTestImage" width="600" height="454"/>
     </resources>

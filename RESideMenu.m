@@ -57,7 +57,7 @@ const int INTERSTITIAL_STEPS = 99;
     self.verticalOffset = 100;
     self.horizontalOffset = 50;
     self.itemHeight = 60;
-    self.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
+    self.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20];
     self.textColor = [UIColor whiteColor];
     self.highlightedTextColor = [UIColor lightGrayColor];
     self.hideStatusBarArea = YES;
@@ -320,7 +320,8 @@ const int INTERSTITIAL_STEPS = 99;
     RESideMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[RESideMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.backgroundColor = (indexPath.row == 0) ? [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.03] : [UIColor clearColor];
+#warning 添加选择跟踪
+        cell.backgroundColor = (indexPath.row == 0) ? [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.01] : [UIColor clearColor];
         cell.selectedBackgroundView = [[UIView alloc] init];
         cell.textLabel.font = self.font;
         cell.textLabel.textColor = self.textColor;
@@ -331,9 +332,9 @@ const int INTERSTITIAL_STEPS = 99;
     
     RESideMenuItem *item = [_items objectAtIndex:indexPath.row];
     cell.textLabel.text = item.title;
-//    cell.imageView.image = item.image;
+    cell.imageView.image = item.image;
 //    cell.imageView.highlightedImage = item.highlightedImage;
-    cell.imageView.image = [UIImage imageNamed:@"SharedMapsBarIcon"];
+//    cell.imageView.image = [UIImage imageNamed:@"SharedMapsBarIcon"];
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
     cell.horizontalOffset = 35;
     

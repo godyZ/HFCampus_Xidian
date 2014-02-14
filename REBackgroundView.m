@@ -40,7 +40,7 @@
         _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
         _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
       //  _imageView.image = _backgroundImage; //外接设置
-        _imageView.image = [UIImage imageNamed:@"Background-MidLayer@2x.png"];
+        _imageView.image = [UIImage imageNamed:@"background"];
         [self addSubview:_imageView];
     }
     return self;

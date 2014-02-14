@@ -31,6 +31,7 @@
 @property (strong, nonatomic) NSString *itemId;
 @property (strong, nonatomic) NSString *author_thumbnail;
 @property (strong, nonatomic) NSDictionary *create_time;
+@property (strong, nonatomic) NSString *readFlag;
 
 /*
  title: "EBSD fundamentals and challenges in the investigation of semiconductor materials",

@@ -71,6 +71,20 @@
     [bezierPath setLineWidth:1.0];
     [bezierPath stroke];
     
+    // Draw Seperated line
+    
+    bezierPath = [UIBezierPath bezierPath];
+    [bezierPath moveToPoint:CGPointMake(0.0, 10.0)];
+    [bezierPath addLineToPoint:CGPointMake(0.0, rect.size.height - 10.0)];
+    [bezierPath setLineWidth:1.5];
+    [bezierPath stroke];
+    
+    [bezierPath moveToPoint:CGPointMake(rect.size.width, 10.0)];
+    [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height - 10.0f)];
+    [bezierPath setLineWidth:1.5];
+    [bezierPath stroke];
+    
+    
     // Draw an indicator line if tab is selected
     if (self.selected) {
         
