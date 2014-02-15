@@ -48,8 +48,19 @@
         };
         self.pieView.layer.showTitles = ShowTitlesAlways;
         
+        int offset1 = 0;
+        int offset2 = 0;
+        if (!IS_WIDESCREEN)
+        {
+            offset1 = 220 ;
+            offset2 = 190 ;
+        }else
+        {
+            offset1 = 260 ;
+            offset2 = 220 ;
+        }
         UIButton *optionOne = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        optionOne.frame = CGRectMake(20.0f, frame.size.height - 260, 130.0f, 25.0f);
+        optionOne.frame = CGRectMake(20.0f, frame.size.height - offset1, 130.0f, 25.0f);
         [optionOne setTitle:((TopicItem *)[topicDataModel.topicItems objectAtIndex:0]).topicOption forState:UIControlStateNormal];
         [optionOne setFont:[UIFont fontWithName:@"Arial-BoldMT" size:14]];
         [optionOne.layer setMasksToBounds:YES];
@@ -58,7 +69,7 @@
         [optionOne addTarget:self action:@selector(OptionOneClick:) forControlEvents:UIControlEventTouchUpInside];
 
         UIButton *optionTwo = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        optionTwo.frame = CGRectMake(180.0f, frame.size.height - 260, 130.0f, 25.0f);
+        optionTwo.frame = CGRectMake(180.0f, frame.size.height - offset1, 130.0f, 25.0f);
         [optionTwo setTitle:((TopicItem *)[topicDataModel.topicItems objectAtIndex:1]).topicOption forState:UIControlStateNormal];
         [optionTwo setTitle:((TopicItem *)[topicDataModel.topicItems objectAtIndex:1]).topicOption forState:UIControlStateHighlighted];
         [optionTwo setFont:[UIFont fontWithName:@"Arial-BoldMT" size:14]];
@@ -68,7 +79,7 @@
         [optionTwo addTarget:self action:@selector(OptionTwoClick:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton *optionThree = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        optionThree.frame = CGRectMake(20.0f, frame.size.height - 220, 130.0f, 25.0f);
+        optionThree.frame = CGRectMake(20.0f, frame.size.height - offset2, 130.0f, 25.0f);
         [optionThree setTitle:((TopicItem *)[topicDataModel.topicItems objectAtIndex:2]).topicOption forState:UIControlStateNormal];
         [optionThree setTitle:((TopicItem *)[topicDataModel.topicItems objectAtIndex:2]).topicOption forState:UIControlStateHighlighted];
         [optionThree setFont:[UIFont fontWithName:@"Arial-BoldMT" size:14]];
@@ -78,7 +89,7 @@
         [optionThree addTarget:self action:@selector(OptionThreeClick:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton *optionFour = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        optionFour.frame = CGRectMake(180.0f, frame.size.height - 220, 130.0f, 25.0f);
+        optionFour.frame = CGRectMake(180.0f, frame.size.height - offset2, 130.0f, 25.0f);
         [optionFour setTitle:((TopicItem *)[topicDataModel.topicItems objectAtIndex:3]).topicOption forState:UIControlStateNormal];
         [optionFour setTitle:((TopicItem *)[topicDataModel.topicItems objectAtIndex:3]).topicOption forState:UIControlStateHighlighted];
         [optionFour setFont:[UIFont fontWithName:@"Arial-BoldMT" size:14]];

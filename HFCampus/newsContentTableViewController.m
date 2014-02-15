@@ -149,13 +149,13 @@
                                                 onSucceed:^(NSMutableArray *listOfModelBaseObjects){
                                                     [self.loadMoreIndicatorView stopAnimating];     //停止读取动画
                                                     self.menuItems = listOfModelBaseObjects;        //读取的数据赋值
-                                                    if([self.menuItems count] > 0){
+                                                    if([self.menuItems count] > 0)
+                                                    {
                                                         self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;  //分隔符
                                                         
                                                         [self.tableView reloadData];         //reload TableView数据
                                                         
-                                                        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-                                                        dispatch_async(queue, ^{              //分线程将加载的数据写入缓存
+                                                      
                                                             NSData *tableViewCacheData = NULL;//此时必须判定哪些是新读取的新闻，并将其标记为未读
                                                                                               //一开始全部标记为未读，只有点击打开后的新闻才能更改器未读状态
                                                                                               //只有前十条才有资格标记为未读，已读的标记效果很强
@@ -184,6 +184,7 @@
                                                             {
                                                                 tableViewCacheData = [FTWCache objectForKey:@"八卦缓存"];
                                                             }
+                                                        
                                                             if (tableViewCacheData) //对应分类中的前十天缓存数据
                                                             {
                                                                 NSMutableArray * tempArray = [NSKeyedUnarchiver unarchiveObjectWithData:tableViewCacheData];   //上次刷新的前十条信息
@@ -203,6 +204,13 @@
                                                                     ((MenuItem *)[self.menuItems objectAtIndex:i]).readFlag = ((MenuItem *)[tempArray objectAtIndex:cacheCount]).readFlag;
                                                                     cacheCount ++;
                                                                     i++;
+                                                                }
+                                                            }
+                                                            else if (!tableViewCacheData) //如果没有缓存数据,全部为未读
+                                                            {
+                                                                for (MenuItem *tempItem in self.menuItems)
+                                                                {
+                                                                    tempItem.readFlag = @"NoRead"; //标记为未读
                                                                 }
                                                             }
                                                             
@@ -235,8 +243,9 @@
                                                             }
                                                             //***********************************************
 
-                                                            
-                                                        });
+                                                            [self.tableView reloadData];         //reload TableView数据
+                                                        
+                                                        
                                                     }
                                                 }
                                                 onError:^(NSError *engineError) {
@@ -313,6 +322,7 @@
     }
     return value;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

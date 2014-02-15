@@ -56,7 +56,6 @@ typedef enum  //枚举新闻类型
 {
     [super viewDidLoad];
 
-    [self setNeedsStatusBarAppearanceUpdate];
     self.navigationController.navigationBar.barTintColor = colorNavBarTint;
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,200,100)];
     titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -185,7 +184,7 @@ typedef enum  //枚举新闻类型
             [menu setRootViewController:HFcampusDelegate.globalAlgorithmNavigationController];
         }];
         
-        RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" image:[UIImage imageNamed:@"书籍查询"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
         {
             if (!HFcampusDelegate.globalBooksSearchNavigationController) {
                 HFcampusDelegate.globalBooksSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BookSearchNavigationController"];
@@ -193,7 +192,7 @@ typedef enum  //枚举新闻类型
             [menu setRootViewController:HFcampusDelegate.globalBooksSearchNavigationController];
         }];
         
-        RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" image:[UIImage imageNamed:@"快递查询"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
         {
             if (!HFcampusDelegate.globalExpressSearchNavigationController)
             {
@@ -202,7 +201,7 @@ typedef enum  //枚举新闻类型
             [menu setRootViewController:HFcampusDelegate.globalExpressSearchNavigationController];
 
         }];
-        RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" image:[UIImage imageNamed:@"电话查询"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
         {
             if (!HFcampusDelegate.globalPhoneSearchNavigationController) {
                 HFcampusDelegate.globalPhoneSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PhoneSearchNavigationController"];

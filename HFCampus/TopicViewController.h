@@ -34,6 +34,7 @@
 @property (nonatomic, strong) ExtendView *extendView;
 @property(nonatomic,strong) NSMutableArray *allCountryArr,*filteredCountryArr;
 @property(nonatomic,strong) NSString *clickedCountryName;
+@property(nonatomic,strong) UILabel *remainLabel;
 
 //---set customozing---
 

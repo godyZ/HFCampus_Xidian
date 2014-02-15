@@ -14,7 +14,12 @@
 #define HFcampusDelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
 
 //常用颜色表
-#define colorNavBarTint [UIColor colorWithRed:219.0f/255.0f green:112.0f/255.0f blue:147.0f/255.0f alpha:1.0f]
+#define colorNavBarTint [UIColor colorWithRed:61.0f/255.0f green:89.0f/255.0f blue:171.0f/255.0f alpha:1.0f] //备选1
+//#define colorNavBarTint [UIColor colorWithRed:30.0f/255.0f green:144.0f/255.0f blue:255.0f/255.0f alpha:1.0f]  //备选2
+//#define colorNavBarTint [UIColor colorWithRed:51.0f/255.0f green:161.0f/255.0f blue:201.0f/255.0f alpha:1.0f] //备选3
+//#define colorNavBarTint [UIColor colorWithRed:65.0f/255.0f green:105.0f/255.0f blue:225.0f/255.0f alpha:1.0f] //备选4
+//#define colorNavBarTint [UIColor colorWithRed:0.0f/255.0f green:199.0f/255.0f blue:140.0f/255.0f alpha:1.0f] //备选5
+
 #define colorBlueTint [UIColor colorWithRed:0.0f/255.0f green:191.0f/255.0f blue:255.0f/255.0f alpha:1.0f]
 //#define colorNavBarTint [UIColor colorWithRed:128.0f/255.0f green:42.0f/255.0f blue:47.0f/255.0f alpha:1.0f]
 #define colorPurpleTint [UIColor colorWithRed:138.0/255.0f green:43.0/255.0f blue:226.0/255.0f alpha:1.0f]  //亮紫色

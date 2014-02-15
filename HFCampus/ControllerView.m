@@ -28,9 +28,6 @@
     if (self) {
         // Initialization code
         
-        
-        
-        
         nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 5, 280, 35)];
         nameLabel.backgroundColor = [UIColor clearColor];
         nameLabel.textColor = customizationDict[@"headerLabelColor"];
@@ -49,8 +46,6 @@
         optionBtn.contentMode = UIViewContentModeScaleAspectFit;
         //optionBtn.layer.borderWidth = 0.5;
         optionBtn.tag = 4;
-        
-        
         
         
         dummyBtn=[UIButton buttonWithType:UIButtonTypeCustom];

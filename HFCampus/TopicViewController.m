@@ -196,6 +196,17 @@ NSDictionary *custDictinary;
     [self.view addSubview:self.searchBarReagion];
     [self.view addSubview:self.mainScrollView];
     
+    int offset = 0;
+    if (!IS_WIDESCREEN) {
+        offset = 350;
+    }else{
+        offset = 450;
+    }
+    
+    self.remainLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, offset, 200, 100)];
+    self.remainLabel.textColor = [UIColor lightGrayColor];
+    self.remainLabel.text = @"投票模块仍在完善中^_^...";
+    [self.view addSubview:self.remainLabel];
     
     [self addTestArrayData];
     
@@ -329,6 +340,7 @@ NSDictionary *custDictinary;
 
 -(IBAction)dummyBtnPressed:(id)sender
 {
+    self.remainLabel.hidden = YES;
     self.searchBarReagion.text = @"";                 //searchBar
     [self.searchBarReagion resignFirstResponder];
     [self.searchBarReagion setShowsCancelButton: NO animated: YES];
@@ -450,6 +462,7 @@ NSDictionary *custDictinary;
 
 -(IBAction)optionBtnPressed:(id)sender {
     
+    self.remainLabel.hidden = NO;
     [self searchBarCancelButtonClicked:self.searchBarReagion];
     
     
@@ -553,22 +566,25 @@ NSDictionary *custDictinary;
 {
     
     
+    
     if (!_sideMenu) {
-        RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"资讯" action:^(RESideMenu *menu, RESideMenuItem *item)
+        
+        RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"资讯" image:[UIImage imageNamed:@"资讯"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
                                     {
                                         if (!HFcampusDelegate.globalNewsNavigationController) {
                                             HFcampusDelegate.globalNewsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"newsNavigationController"];
                                         }
                                         [menu setRootViewController:HFcampusDelegate.globalNewsNavigationController];
                                     }];
-        RESideMenuItem *personsItem = [[RESideMenuItem alloc] initWithTitle:@"人物" action:^(RESideMenu *menu, RESideMenuItem *item)
+        
+        RESideMenuItem *personsItem = [[RESideMenuItem alloc] initWithTitle:@"人物" image:[UIImage imageNamed:@"人物"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
                                        {
                                            if (!HFcampusDelegate.globalPersonsNavigationController) {
                                                HFcampusDelegate.globalPersonsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"personsNavigationController"];
                                            }
                                            [menu setRootViewController:HFcampusDelegate.globalPersonsNavigationController];
                                        }];
-        RESideMenuItem *topicsItem = [[RESideMenuItem alloc] initWithTitle:@"话题" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *topicsItem = [[RESideMenuItem alloc] initWithTitle:@"投票" image:[UIImage imageNamed:@"投票"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
                                       {
                                           if (!HFcampusDelegate.globalTopicNavigationController)
                                           {
@@ -578,7 +594,7 @@ NSDictionary *custDictinary;
                                           [menu setRootViewController:HFcampusDelegate.globalTopicNavigationController];
                                       }];
         
-        RESideMenuItem *algorithmsItem = [[RESideMenuItem alloc] initWithTitle:@"算法" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *algorithmsItem = [[RESideMenuItem alloc] initWithTitle:@"算法" image:[UIImage imageNamed:@"算法"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
                                           {
                                               if (!HFcampusDelegate.globalAlgorithmNavigationController){
                                                   HFcampusDelegate.globalAlgorithmNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AlgorithmNavigationController"];
@@ -586,7 +602,7 @@ NSDictionary *custDictinary;
                                               [menu setRootViewController:HFcampusDelegate.globalAlgorithmNavigationController];
                                           }];
         
-        RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" image:[UIImage imageNamed:@"书籍查询"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
                                          {
                                              if (!HFcampusDelegate.globalBooksSearchNavigationController) {
                                                  HFcampusDelegate.globalBooksSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BookSearchNavigationController"];
@@ -594,7 +610,7 @@ NSDictionary *custDictinary;
                                              [menu setRootViewController:HFcampusDelegate.globalBooksSearchNavigationController];
                                          }];
         
-        RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" image:[UIImage imageNamed:@"快递查询"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
                                            {
                                                if (!HFcampusDelegate.globalExpressSearchNavigationController)
                                                {
@@ -603,7 +619,7 @@ NSDictionary *custDictinary;
                                                [menu setRootViewController:HFcampusDelegate.globalExpressSearchNavigationController];
                                                
                                            }];
-        RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" image:[UIImage imageNamed:@"电话查询"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
                                           {
                                               if (!HFcampusDelegate.globalPhoneSearchNavigationController) {
                                                   HFcampusDelegate.globalPhoneSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PhoneSearchNavigationController"];
@@ -612,15 +628,19 @@ NSDictionary *custDictinary;
                                               
                                           }];
         
-        RESideMenuItem *toolsItem = [[RESideMenuItem alloc] initWithTitle:@"工具" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *toolsItem = [[RESideMenuItem alloc] initWithTitle:@"工具" image:[UIImage imageNamed:@"工具"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
                                      {
                                          
                                      }];
         toolsItem.subItems  = @[booksSearcher, expressSearcher, phonesSearcher];
         
-        RESideMenuItem *aboutItem = [[RESideMenuItem alloc] initWithTitle:@"关于" action:^(RESideMenu *menu, RESideMenuItem *item)
+        RESideMenuItem *aboutItem = [[RESideMenuItem alloc] initWithTitle:@"关于" image:[UIImage imageNamed:@"关于"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
                                      {
-                                         
+                                         if(!HFcampusDelegate.globalAboutUsNavigationController)
+                                         {
+                                             HFcampusDelegate.globalAboutUsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AboutUsNavigationControllerID"];
+                                         }
+                                         [menu setRootViewController:HFcampusDelegate.globalAboutUsNavigationController];
                                      }];
         
         _sideMenu = [[RESideMenu alloc] initWithItems:@[newsItem, personsItem, topicsItem,algorithmsItem, toolsItem,aboutItem]];

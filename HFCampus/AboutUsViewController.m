@@ -98,4 +98,87 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+//if (!_sideMenu) {
+//    
+//    RESideMenuItem *newsItem = [[RESideMenuItem alloc] initWithTitle:@"资讯" image:[UIImage imageNamed:@"资讯"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
+//                                {
+//                                    if (!HFcampusDelegate.globalNewsNavigationController) {
+//                                        HFcampusDelegate.globalNewsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"newsNavigationController"];
+//                                    }
+//                                    [menu setRootViewController:HFcampusDelegate.globalNewsNavigationController];
+//                                }];
+//    
+//    RESideMenuItem *personsItem = [[RESideMenuItem alloc] initWithTitle:@"人物" image:[UIImage imageNamed:@"人物"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
+//                                   {
+//                                       if (!HFcampusDelegate.globalPersonsNavigationController) {
+//                                           HFcampusDelegate.globalPersonsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"personsNavigationController"];
+//                                       }
+//                                       [menu setRootViewController:HFcampusDelegate.globalPersonsNavigationController];
+//                                   }];
+//    RESideMenuItem *topicsItem = [[RESideMenuItem alloc] initWithTitle:@"投票" image:[UIImage imageNamed:@"投票"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
+//                                  {
+//                                      if (!HFcampusDelegate.globalTopicNavigationController)
+//                                      {
+//                                          HFcampusDelegate.globalTopicNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
+//                                                                                              instantiateViewControllerWithIdentifier:@"topicsNavigationController"];
+//                                      }
+//                                      [menu setRootViewController:HFcampusDelegate.globalTopicNavigationController];
+//                                  }];
+//    
+//    RESideMenuItem *algorithmsItem = [[RESideMenuItem alloc] initWithTitle:@"算法" image:[UIImage imageNamed:@"算法"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
+//                                      {
+//                                          if (!HFcampusDelegate.globalAlgorithmNavigationController){
+//                                              HFcampusDelegate.globalAlgorithmNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AlgorithmNavigationController"];
+//                                          }
+//                                          [menu setRootViewController:HFcampusDelegate.globalAlgorithmNavigationController];
+//                                      }];
+//    
+//    RESideMenuItem *booksSearcher = [[RESideMenuItem alloc] initWithTitle:@"图书查询" image:[UIImage imageNamed:@"书籍查询"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
+//                                     {
+//                                         if (!HFcampusDelegate.globalBooksSearchNavigationController) {
+//                                             HFcampusDelegate.globalBooksSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BookSearchNavigationController"];
+//                                         }
+//                                         [menu setRootViewController:HFcampusDelegate.globalBooksSearchNavigationController];
+//                                     }];
+//    
+//    RESideMenuItem *expressSearcher = [[RESideMenuItem alloc] initWithTitle:@"快递查询" image:[UIImage imageNamed:@"快递查询"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
+//                                       {
+//                                           if (!HFcampusDelegate.globalExpressSearchNavigationController)
+//                                           {
+//                                               HFcampusDelegate.globalExpressSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ExpressSearchNavigationControllerID"];
+//                                           }
+//                                           [menu setRootViewController:HFcampusDelegate.globalExpressSearchNavigationController];
+//                                           
+//                                       }];
+//    RESideMenuItem *phonesSearcher = [[RESideMenuItem alloc] initWithTitle:@"电话查询" image:[UIImage imageNamed:@"电话查询"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
+//                                      {
+//                                          if (!HFcampusDelegate.globalPhoneSearchNavigationController) {
+//                                              HFcampusDelegate.globalPhoneSearchNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PhoneSearchNavigationController"];
+//                                          }
+//                                          [menu setRootViewController:HFcampusDelegate.globalPhoneSearchNavigationController];
+//                                          
+//                                      }];
+//    
+//    RESideMenuItem *toolsItem = [[RESideMenuItem alloc] initWithTitle:@"工具" image:[UIImage imageNamed:@"工具"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
+//                                 {
+//                                     
+//                                 }];
+//    toolsItem.subItems  = @[booksSearcher, expressSearcher, phonesSearcher];
+//    
+//    RESideMenuItem *aboutItem = [[RESideMenuItem alloc] initWithTitle:@"关于" image:[UIImage imageNamed:@"关于"] highlightedImage:NULL action:^(RESideMenu *menu, RESideMenuItem *item)
+//                                 {
+//                                     if(!HFcampusDelegate.globalAboutUsNavigationController)
+//                                     {
+//                                         HFcampusDelegate.globalAboutUsNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AboutUsNavigationControllerID"];
+//                                     }
+//                                     [menu setRootViewController:HFcampusDelegate.globalAboutUsNavigationController];
+//                                 }];
+//    
+//    _sideMenu = [[RESideMenu alloc] initWithItems:@[newsItem, personsItem, topicsItem,algorithmsItem, toolsItem,aboutItem]];
+//    _sideMenu.verticalOffset = IS_WIDESCREEN ? 45: 76;
+//}
+//
+//[_sideMenu show];
+
 @end
