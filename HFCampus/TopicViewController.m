@@ -203,9 +203,9 @@ NSDictionary *custDictinary;
         offset = 450;
     }
     
-    self.remainLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, offset, 200, 100)];
+    self.remainLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, offset, 200, 100)];
     self.remainLabel.textColor = [UIColor lightGrayColor];
-    self.remainLabel.text = @"投票模块仍在完善中^_^...";
+    self.remainLabel.text = @"投票模块仍在完善中，请见谅^_^...";
     [self.view addSubview:self.remainLabel];
     
     [self addTestArrayData];

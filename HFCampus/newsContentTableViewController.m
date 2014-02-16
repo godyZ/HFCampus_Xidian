@@ -107,19 +107,32 @@
     [self GetMenuItems];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-
-//    NSData *dataTest = [FTWCache objectForKey:@"新闻测试"];
-//    if (dataTest) {
-//        NSMutableArray *tempArray = [NSKeyedUnarchiver unarchiveObjectWithData:dataTest ];
+//    UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+//    if ([self.newsType isEqualToString:@"news"])
+//    {
+//        [self.tableView addGestureRecognizer:panGesture];   //新闻类才加这个手势
 //    }
-
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+//-(void)handlePanGesture:(id)sender
+//{
+//    UIPanGestureRecognizer *panGestureRecognizer = (UIPanGestureRecognizer *)sender;
+//    
+//    CGPoint point = [panGestureRecognizer translationInView:self.view];
+//    
+//    
+//    if ([self.newsType isEqualToString:@"news"] && point.x > 100)   //左侧拉出侧边栏
+//    {
+//        [self.bigNewsViewController showLeftMenu];
+//    }
+//    else if([self.newsType isEqualToString:@"news"] && point.x < -100)  //右边键入jumpToIndexTwo;
+//    {
+//        [self.bigNewsViewController JumpToIndexTwo];
+//    }
+//}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -465,10 +478,12 @@
     
     NewsContentViewController *newsContentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsContentViewController"];
     
-    if([self.newsType isEqualToString:@"lecture"]){
+    if([self.newsType isEqualToString:@"lecture"])
+    {
         newsContentVC.contentType = 2;
     }
-    else{
+    else
+    {
         newsContentVC.contentType = 1;
     }
     newsContentVC.item = tempItem;

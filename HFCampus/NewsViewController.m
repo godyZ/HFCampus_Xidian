@@ -10,6 +10,7 @@
 #import "newsContentTableViewController.h"
 #import "DRNRealTimeBlurView.h"
 #import "AppDelegate.h"
+#import <UIKit/UIGestureRecognizer.h>
 
 typedef enum  //枚举新闻类型
 {
@@ -17,7 +18,7 @@ typedef enum  //枚举新闻类型
 } NewsType;
 
 
-@interface NewsViewController () <ViewPagerDataSource, ViewPagerDelegate>  //多个controll控制
+@interface NewsViewController () <ViewPagerDataSource, ViewPagerDelegate, UIGestureRecognizerDelegate>  //多个controll控制
 
 @property (copy, nonatomic)NSArray *typeArr;  //新闻类别
 @property (copy, nonatomic)NSArray *engTypes; //英文类别  用于填补url地址
@@ -68,7 +69,20 @@ typedef enum  //枚举新闻类型
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"LeftMenu"] style:UIBarButtonItemStylePlain target:self action:@selector(showLeftMenu)];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"general"] style:UIBarButtonItemStylePlain target:self action:@selector(showRightMenu)];
+    
+    
+//    UIPanGestureRecognizer *leftPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleLeftPan:)];
+//    [self.view addGestureRecognizer:leftPan];
+//    
+//    
+
 }
+//-(void)handleLeftPan:(id)sender
+//{
+//    
+//}
+
+
 
 
 - (void)viewWillAppear:(BOOL)animated
@@ -99,11 +113,13 @@ typedef enum  //枚举新闻类型
     return label;
 }
 
-- (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
+- (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index
+{
     
     newsContentTableViewController *newsTVC = [self.storyboard instantiateViewControllerWithIdentifier:@"newsContentTVB"];
     newsTVC.newsType = self.engTypes[index];
     newsTVC.originalNavigationController = self.navigationController;
+    newsTVC.bigNewsViewController = self;
     return newsTVC;
 }
 
@@ -143,6 +159,14 @@ typedef enum  //枚举新闻类型
     
     return color;
 }
+
+
+
+//#pragma mark - UIPageViewControllerDelegate
+//- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
+//{
+//}
+
 
 #pragma mark - 显示左边栏
 
@@ -226,7 +250,7 @@ typedef enum  //枚举新闻类型
         }];
         
         _sideMenu = [[RESideMenu alloc] initWithItems:@[newsItem, personsItem, topicsItem,algorithmsItem, toolsItem,aboutItem]];
-        _sideMenu.verticalOffset = IS_WIDESCREEN ? 45: 76;
+        _sideMenu.verticalOffset = IS_WIDESCREEN ? 45: 45;
     }
     
     [_sideMenu show];

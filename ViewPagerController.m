@@ -122,7 +122,6 @@
 
 @interface ViewPagerController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
-@property UIPageViewController *pageViewController;
 
 @property TabScrollView *tabsView;           //tabsScrollView
 @property UIView *contentView;              //only the current contentView
@@ -159,9 +158,12 @@
     
     [super viewDidLoad];
 	
+ 
     [self reloadData];
 
 }
+
+
 - (void)viewWillLayoutSubviews {
     
     CGRect frame;
@@ -408,11 +410,13 @@
         
         _contentView = _pageViewController.view;
         _contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        _contentView.backgroundColor = self.contentViewBackgroundColor;
+        _contentView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+        UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"aboutBackGround"]];
         _contentView.bounds = self.view.bounds;
         _contentView.tag = kPageViewTag;
         
         [self.view insertSubview:_contentView atIndex:0];
+        [self.view insertSubview:tempImageView atIndex:0];
     }
     
     // Set first viewController
@@ -509,12 +513,15 @@
 #pragma mark - UIPageViewControllerDataSource
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSUInteger index = [self indexForViewController:viewController];
+//    NSArray *temp = pageViewController.gestureRecognizers;
     index++;
     return [self viewControllerAtIndex:index];
 }
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    
     NSUInteger index = [self indexForViewController:viewController];
     index--;
+
     return [self viewControllerAtIndex:index];
 }
 

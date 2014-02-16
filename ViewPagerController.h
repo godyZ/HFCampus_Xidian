@@ -31,6 +31,9 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 @property id<ViewPagerDataSource> dataSource;
 @property id<ViewPagerDelegate> delegate;
 
+@property UIPageViewController *pageViewController;
+
+
 #pragma mark ViewPagerOptions
 // Tab bar's height, defaults to 49.0
 @property CGFloat tabHeight;
@@ -60,6 +63,8 @@ typedef NS_ENUM(NSUInteger, ViewPagerComponent) {
 #pragma mark Methods
 // Reload all tabs and contents
 - (void)reloadData;
+
+- (void)JumpToIndexOne;
 
 @end
 

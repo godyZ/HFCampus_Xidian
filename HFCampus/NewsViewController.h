@@ -15,4 +15,6 @@
 
 @property (strong, readonly, nonatomic) RESideMenu *sideMenu;  //左侧划栏
 
+-(void)showLeftMenu;
+
 @end
