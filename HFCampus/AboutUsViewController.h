@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BTGlassScrollView.h"
+#import "RESideMenu.h"
 
 @interface AboutUsViewController : UIViewController<UIScrollViewAccessibilityDelegate>
+
+@property (strong, readonly, nonatomic) RESideMenu *sideMenu;  //左侧划栏
 
 @end

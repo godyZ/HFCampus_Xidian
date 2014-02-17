@@ -17,6 +17,36 @@
             endingLineNumber = "93"
             landmarkName = "-handlePan:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PieView handlePan:]"
+                  moduleName = "HFCampus"
+                  urlString = "file://localhost/Users/zhangrongjian/Desktop/HFCampus/HFCampus/PieView.m"
+                  timestampString = "414336653.218854"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "98">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PieView handlePan:]"
+                  moduleName = "HFCampus"
+                  urlString = "file://localhost/Users/zhangrongjian/Desktop/HFCampus/HFCampus/PieView.m"
+                  timestampString = "414336653.219134"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -97,6 +127,66 @@
             endingLineNumber = "521"
             landmarkName = "-pageViewController:viewControllerBeforeViewController:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HFCampus/NewsViewController.m"
+            timestampString = "414335909.621528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NewsViewController viewDidLoad]"
+                  moduleName = "HFCampus"
+                  urlString = "file://localhost/Users/zhangrongjian/Desktop/HFCampus/HFCampus/NewsViewController.m"
+                  timestampString = "414336653.220643"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "55">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NewsViewController viewDidLoad]"
+                  moduleName = "HFCampus"
+                  urlString = "file://localhost/Users/zhangrongjian/Desktop/HFCampus/HFCampus/NewsViewController.m"
+                  timestampString = "414336653.221078"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "712">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NewsViewController viewDidLoad]"
+                  moduleName = "HFCampus"
+                  urlString = "file://localhost/Users/zhangrongjian/Desktop/HFCampus/HFCampus/NewsViewController.m"
+                  timestampString = "414336653.221524"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "864">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
